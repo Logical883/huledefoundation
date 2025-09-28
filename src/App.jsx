@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Editor from "./Pages/Editor";
-import Gallery from "./Pages/Gallery";
-import Home from "./Pages/Home";
-import Projects from "./Pages/Projects";
-import Support from "./Pages/Support";
-import Team from "./Pages/Team";
+import About from "./Pages/About.jsx";
+import Contact from "./Pages/Contact.jsx";
+import Editor from "./Pages/Editor.jsx";
+import Gallery from "./Pages/Gallery.jsx";
+import Home from "./Pages/Home.jsx";
+import Projects from "./Pages/Projects.jsx";
+import Support from "./Pages/Support.jsx";
+import Team from "./Pages/Team.jsx";
 
 function App() {
   // Height of navbar (adjust if you change navbar height in CSS)
