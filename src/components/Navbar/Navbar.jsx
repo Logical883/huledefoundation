@@ -4,10 +4,15 @@ import logo from "../../assets/logo.png";
 import menu_icon from "../../assets/menu-icon.png";
 import { Link } from "react-router-dom";
 
+import { useLocation } from "react-router-dom";
+
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const toggleMenu = () => setMobileMenu((prev) => !prev);
   const closeMenu = () => setMobileMenu(false);
+  const location = useLocation();
+  // Hide menu icon only on the Hero page ("/")
+  const hideMenuIcon = location.pathname === "/";
   return (
     <nav className="container navbar-root">
       <Link to="/" onClick={closeMenu}>
@@ -56,12 +61,14 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <img
-        src={menu_icon}
-        alt="Menu"
-        className="menu-icon"
-        onClick={toggleMenu}
-      />
+      {!hideMenuIcon && (
+        <img
+          src={menu_icon}
+          alt="Menu"
+          className="menu-icon"
+          onClick={toggleMenu}
+        />
+      )}
     </nav>
   );
 };
