@@ -28,7 +28,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/support" element={<Support />} />
           <Route path="/team" element={<Team />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
+          {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
         </Routes>
       </div>
     </Router>
