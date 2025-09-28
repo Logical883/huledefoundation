@@ -6,6 +6,9 @@ const Hero = () => {
   return (
     <div className="hero container">
       <div className="hero-text">
+        {" "}
+        <br />
+        <br />
         <h1>The Hulede Foundation</h1>
         <p>
           Our strength lies not only in the words we stand by, but most
