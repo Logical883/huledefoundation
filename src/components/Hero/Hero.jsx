@@ -9,6 +9,10 @@ const Hero = () => {
         {" "}
         <br />
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h1>The Hulede Foundation</h1>
         <p>
           Our strength lies not only in the words we stand by, but most
