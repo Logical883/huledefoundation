@@ -55,8 +55,9 @@ export default function Contact() {
             <div className="contact-info">
               <h2>Get in touch</h2>
               <p className="description">
-                Sociisque varius tellus placerat amet efficitur accumsan
-                vestibulum culla quis erat elit.
+                Every great connection starts with a simple message. Tell us a
+                little about yourself, your needs, or your ideas in the form —
+                we can’t wait to connect and make something meaningful together
               </p>
 
               <div className="contact-items">
