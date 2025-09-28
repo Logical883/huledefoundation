@@ -1,11 +1,12 @@
 /* Navbar Styles - Added to fix the overlay issue */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* High z-index to display over content */
-  background: rgba(44, 85, 48, 0.95);
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important; /* Very high z-index to display over everything */
+  background: rgba(44, 85, 48, 0.95) !important;
   backdrop-filter: blur(10px);
   padding: 0 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -53,27 +54,42 @@
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 10000;
 }
 
 .mobile-menu {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(44, 85, 48, 0.98);
+  position: fixed !important;
+  top: 70px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background: rgba(44, 85, 48, 0.98) !important;
   backdrop-filter: blur(10px);
-  z-index: 999;
+  z-index: 9998 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-menu.active {
-  display: block;
+  display: block !important;
+}
+
+.mobile-menu .nav-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .mobile-menu .nav-item a {
   display: block;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-menu .nav-item:last-child a {
+  border-bottom: none;
 }
 
 /* Contact Page Styles - Modified to account for fixed navbar */
@@ -83,7 +99,8 @@
   position: relative;
   overflow: hidden;
   font-family: "Arial", sans-serif;
-  padding-top: 70px; /* Added to account for fixed navbar */
+  padding-top: 80px !important; /* Added to account for fixed navbar */
+  z-index: 1; /* Lower z-index than navbar */
 }
 
 .background-overlay {
@@ -375,7 +392,7 @@
 
   /* Adjust contact page for mobile navbar */
   .contact-page {
-    padding-top: 70px; /* Keep navbar spacing */
+    padding-top: 80px !important; /* Keep navbar spacing */
   }
 
   .content-grid {
@@ -479,7 +496,7 @@
   }
 
   .contact-page {
-    padding-top: 60px;
+    padding-top: 70px !important;
   }
 
   .container {
