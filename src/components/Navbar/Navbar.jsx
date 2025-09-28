@@ -6,41 +6,62 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = React.useState(false);
-  const toggleMenu = () => {
-    mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
-  };
+  const toggleMenu = () => setMobileMenu((prev) => !prev);
+  const closeMenu = () => setMobileMenu(false);
   return (
-    <nav className="container">
-      <img src={logo} alt="" className="logo" />
-      <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
+    <nav className="container navbar-root">
+      <Link to="/" onClick={closeMenu}>
+        <img src={logo} alt="Logo" className="logo" />
+      </Link>
+
+      <ul className={mobileMenu ? "mobile-menu-open" : "hide-mobile-menu"}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/home" onClick={closeMenu}>
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about" onClick={closeMenu}>
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <Link to="/projects" onClick={closeMenu}>
+            Projects
+          </Link>
         </li>
         <li>
-          <Link to="/team">Our Team</Link>
+          <Link to="/team" onClick={closeMenu}>
+            Our Team
+          </Link>
         </li>
         <li>
-          <Link to="/gallery">Gallery</Link>
+          <Link to="/gallery" onClick={closeMenu}>
+            Gallery
+          </Link>
         </li>
         <li>
-          <Link to="/support">Support Us</Link>
+          <Link to="/support" onClick={closeMenu}>
+            Support Us
+          </Link>
         </li>
         <li>
-          <Link to="/editor">Editor</Link>
+          <Link to="/editor" onClick={closeMenu}>
+            Editor
+          </Link>
         </li>
         <li>
-          <Link to="/contact">
+          <Link to="/contact" onClick={closeMenu}>
             <button className="btn">Contact Us</button>
           </Link>
         </li>
       </ul>
-      <img src={menu_icon} alt="" className="menu-icon" onClick={toggleMenu} />
+      <img
+        src={menu_icon}
+        alt="Menu"
+        className="menu-icon"
+        onClick={toggleMenu}
+      />
     </nav>
   );
 };

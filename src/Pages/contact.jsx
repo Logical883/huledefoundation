@@ -1,13 +1,206 @@
+import React, { useState } from "react";
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
+import "./Contact.css";
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    console.log("Form submitted:", formData);
+    alert("Message sent! We will get back to you soon.");
+  };
+
   return (
-    <div
-      className="contact-page"
-      style={{ background: "#fff3e0", minHeight: "60vh", padding: "2rem" }}
-    >
-      <h1 style={{ color: "#e65100" }}>Contact Page</h1>
-      <p>
-        Get in touch with the Hudele Foundation. We would love to hear from you!
-      </p>
+    <div className="contact-page">
+      <div className="background-overlay"></div>
+
+      <div className="decorative-circle-1"></div>
+      <div className="decorative-circle-2"></div>
+
+      <div className="container">
+        <div className="header">
+          <h1>Contact us</h1>
+          <p>
+            Hudele Foundation is ready to provide the right solution according
+            to your needs
+          </p>
+        </div>
+
+        <div className="main-card">
+          <div className="content-grid">
+            <div className="contact-info">
+              <h2>Get in touch</h2>
+              <p className="description">
+                Sociisque varius tellus placerat amet efficitur accumsan
+                vestibulum culla quis erat elit.
+              </p>
+
+              <div className="contact-items">
+                <div className="contact-item">
+                  <div className="icon-circle">
+                    <MapPin size={24} />
+                  </div>
+                  <div className="contact-details">
+                    <h3>Head Office</h3>
+                    <p>
+                      Jalan Gamalama Wing No 22
+                      <br />
+                      Jakarta - Indonesia
+                    </p>
+                  </div>
+                </div>
+
+                <div className="contact-item">
+                  <div className="icon-circle">
+                    <Mail size={24} />
+                  </div>
+                  <div className="contact-details">
+                    <h3>Email Us</h3>
+                    <p>
+                      support@hudelefoundation.ltd
+                      <br />
+                      hello@hudelefoundation.ltd
+                    </p>
+                  </div>
+                </div>
+
+                <div className="contact-item">
+                  <div className="icon-circle">
+                    <Phone size={24} />
+                  </div>
+                  <div className="contact-details">
+                    <h3>Call Us</h3>
+                    <p>
+                      Phone: +62 21-2002-2012
+                      <br />
+                      Fax: +62 21-2002-3013
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="social-media">
+                <h3>Follow our social media</h3>
+                <div className="social-icons">
+                  <button className="social-icon facebook">
+                    <Facebook size={20} />
+                  </button>
+                  <button className="social-icon twitter">
+                    <Twitter size={20} />
+                  </button>
+                  <button className="social-icon linkedin">
+                    <Linkedin size={20} />
+                  </button>
+                  <button className="social-icon youtube">
+                    <Youtube size={20} />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="contact-form">
+              <h2>Send us a message</h2>
+
+              <div className="form-container">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="John"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Company</label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Company"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="Phone"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Email"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group full-width">
+                  <label>Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Subject"
+                  />
+                </div>
+
+                <div className="form-group full-width">
+                  <label>Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Message"
+                    rows={5}
+                  />
+                </div>
+
+                <button onClick={handleSubmit} className="submit-btn">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
