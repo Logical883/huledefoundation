@@ -28,9 +28,22 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    alert("Message sent! We will get back to you soon.");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if required fields are filled
+    if (
+      !formData.name ||
+      !formData.phone ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      return;
+    }
+
+    // Let the form submit naturally to Formspree
+    e.target.submit();
   };
 
   return (
@@ -57,7 +70,7 @@ export default function Contact() {
               <p className="description">
                 Every great connection starts with a simple message. Tell us a
                 little about yourself, your needs, or your ideas in the form —
-                we can’t wait to connect and make something meaningful together
+                we can't wait to connect and make something meaningful together
               </p>
 
               <div className="contact-items">
@@ -113,18 +126,20 @@ export default function Contact() {
                       <Linkedin size={20} />
                     </button>
                   </a>
-                  {/* <button className="social-icon youtube">
-                    <Youtube size={20} />
-                  </button> */}
                 </div>
               </div>
             </div>
 
             <div className="contact-form">
               <h2>Send us a message</h2>
-
-              <div className="form-container">
-                <div className="form-row">
+              <form
+                action="https://formspree.io/f/xwprvjaa"
+                method="POST"
+                className="form-container"
+                onSubmit={handleSubmit}
+                autoComplete="off"
+              >
+                <div className="form-group full-width">
                   <div className="form-group">
                     <label>Name</label>
                     <input
@@ -133,10 +148,10 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="John"
+                      required
                     />
                   </div>
                 </div>
-
                 <div className="form-row">
                   <div className="form-group">
                     <label>Phone</label>
@@ -146,6 +161,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone"
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -156,10 +172,10 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="Email"
+                      required
                     />
                   </div>
                 </div>
-
                 <div className="form-group full-width">
                   <label>Subject</label>
                   <input
@@ -168,9 +184,9 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="Subject"
+                    required
                   />
                 </div>
-
                 <div className="form-group full-width">
                   <label>Message</label>
                   <textarea
@@ -179,13 +195,17 @@ export default function Contact() {
                     onChange={handleInputChange}
                     placeholder="Message"
                     rows={5}
+                    required
                   />
                 </div>
 
-                <button onClick={handleSubmit} className="submit-btn">
+                {/* Add company field as hidden since it's in your state but not in form */}
+                <input type="hidden" name="company" value={formData.company} />
+
+                <button type="submit" className="submit-btn">
                   Send
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
