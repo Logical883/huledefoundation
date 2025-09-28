@@ -13,7 +13,6 @@ import "./Contact.css";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
     phone: "",
     email: "",
     subject: "",
@@ -198,9 +197,6 @@ export default function Contact() {
                     required
                   />
                 </div>
-
-                {/* Add company field as hidden since it's in your state but not in form */}
-                <input type="hidden" name="company" value={formData.company} />
 
                 <button type="submit" className="submit-btn">
                   Send
