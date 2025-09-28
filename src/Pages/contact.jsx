@@ -44,8 +44,9 @@ export default function Contact() {
         <div className="header">
           <h1>Contact us</h1>
           <p>
-            Hudele Foundation is ready to provide the right solution according
-            to your needs
+            Reach out with any questions, comments or suggestions and we will
+            respond to you as soon as possible. <br />
+            #We are here for you!
           </p>
         </div>
 
@@ -66,9 +67,8 @@ export default function Contact() {
                   <div className="contact-details">
                     <h3>Head Office</h3>
                     <p>
-                      Jalan Gamalama Wing No 22
-                      <br />
-                      Jakarta - Indonesia
+                      Mitchellevile MD, USA <br />
+                      KNUST, Kumasi, Ghana
                     </p>
                   </div>
                 </div>
@@ -79,11 +79,7 @@ export default function Contact() {
                   </div>
                   <div className="contact-details">
                     <h3>Email Us</h3>
-                    <p>
-                      support@hudelefoundation.ltd
-                      <br />
-                      hello@hudelefoundation.ltd
-                    </p>
+                    <p>huledefoundation@gmail.com</p>
                   </div>
                 </div>
 
@@ -93,11 +89,7 @@ export default function Contact() {
                   </div>
                   <div className="contact-details">
                     <h3>Call Us</h3>
-                    <p>
-                      Phone: +62 21-2002-2012
-                      <br />
-                      Fax: +62 21-2002-3013
-                    </p>
+                    <p>Phone: +1 (240) 708-0664</p>
                   </div>
                 </div>
               </div>
@@ -105,18 +97,24 @@ export default function Contact() {
               <div className="social-media">
                 <h3>Follow our social media</h3>
                 <div className="social-icons">
-                  <button className="social-icon facebook">
-                    <Facebook size={20} />
-                  </button>
-                  <button className="social-icon twitter">
-                    <Twitter size={20} />
-                  </button>
-                  <button className="social-icon linkedin">
-                    <Linkedin size={20} />
-                  </button>
-                  <button className="social-icon youtube">
+                  <a href="https://www.facebook.com/people/The-Hulede-Foundation/100086620458577/">
+                    <button className="social-icon facebook">
+                      <Facebook size={20} />
+                    </button>
+                  </a>
+                  <a href="https://x.com/TheHulede_F">
+                    <button className="social-icon twitter">
+                      <Twitter size={20} />
+                    </button>
+                  </a>
+                  <a href="linkedin.com/in/the-hulede-foundation-9b6623255/">
+                    <button className="social-icon linkedin">
+                      <Linkedin size={20} />
+                    </button>
+                  </a>
+                  {/* <button className="social-icon youtube">
                     <Youtube size={20} />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -134,16 +132,6 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="John"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>Company</label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      placeholder="Company"
                     />
                   </div>
                 </div>
