@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import menu_icon from "../../assets/menu-icon.png";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import { useLocation } from "react-router-dom";
 
@@ -21,44 +21,76 @@ const Navbar = () => {
 
       <ul className={mobileMenu ? "mobile-menu-open" : "hide-mobile-menu"}>
         <li>
-          <Link to="/home" onClick={closeMenu}>
+          <NavLink
+            to="/home"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" onClick={closeMenu}>
+          <NavLink
+            to="/about"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/projects" onClick={closeMenu}>
+          <NavLink
+            to="/projects"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Projects
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/team" onClick={closeMenu}>
+          <NavLink
+            to="/team"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Our Team
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/gallery" onClick={closeMenu}>
+          <NavLink
+            to="/gallery"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Gallery
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/support" onClick={closeMenu}>
+          <NavLink
+            to="/support"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Support Us
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/editor" onClick={closeMenu}>
+          <NavLink
+            to="/editor"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Editor
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact" onClick={closeMenu}>
+          <NavLink
+            to="/contact"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             <button className="btn">Contact Us</button>
-          </Link>
+          </NavLink>
         </li>
       </ul>
       {!hideMenuIcon && (

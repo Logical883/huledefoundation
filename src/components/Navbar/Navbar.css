@@ -21,9 +21,77 @@ nav,
 nav ul li {
   display: inline-block;
   list-style: none;
-  margin: 5px 20px;
+  margin: 5px 5px;
   font-size: 16px;
+  transition: background 0.2s, color 0.2s, border-radius 0.2s;
+  position: relative;
 }
+
+nav ul li a {
+  color: rgb(36, 177, 68);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  display: inline-block;
+}
+
+nav ul li a:hover:not(.btn) {
+  background: rgba(36, 177, 68, 0.08);
+  color: #219150;
+}
+
+nav ul li a.active:not(.btn) {
+  background: none;
+  color: #24b144 !important;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+}
+nav ul li a.active:not(.btn)::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  height: 3px;
+  background: #24b144;
+  border-radius: 2px;
+  position: absolute;
+  left: 15%;
+  bottom: -4px;
+  transition: width 0.2s;
+}
+
+/* Contact Us button styles - no hover/active effects */
+nav ul li a .btn,
+nav ul li a .btn:hover,
+nav ul li a .btn:active,
+nav ul li a.active .btn {
+  background: #24b144 !important;
+  color: #fff !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(36, 177, 68, 0.1);
+  transition: none;
+  border: none;
+  padding: 6px 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Remove hover and active effects from the NavLink containing the Contact Us button */
+nav ul li a:has(.btn):hover,
+nav ul li a:has(.btn).active {
+  background: none !important;
+  color: inherit !important;
+}
+
+/* Ensure no underline appears for Contact Us NavLink */
+nav ul li a:has(.btn)::after,
+nav ul li a:has(.btn).active::after {
+  display: none !important;
+}
+
 .menu-icon {
   width: 30px;
   margin-right: 20px;
@@ -57,14 +125,71 @@ nav ul li {
     padding-top: 70px;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.08);
-    height: 80vh;
+    height: 90vh;
     overflow-y: auto;
     border-radius: 50px 0 0 50px;
   }
   .navbar-root ul li {
     display: block;
-    margin: 25px 40px;
+    margin: 10px 40px;
   }
+  .navbar-root ul li a {
+    width: 100%;
+    display: block;
+    padding: 12px 18px;
+    border-radius: 20px;
+  }
+  .navbar-root ul li a.active:not(.btn) {
+    background: none;
+    color: #24b144 !important;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+  }
+  .navbar-root ul li a.active:not(.btn)::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 3px;
+    background: #24b144;
+    border-radius: 2px;
+    position: absolute;
+    left: 15%;
+    bottom: -4px;
+    transition: width 0.2s;
+  }
+
+  /* Mobile Contact Us button styles - no hover/active effects */
+  .navbar-root ul li a .btn,
+  .navbar-root ul li a .btn:hover,
+  .navbar-root ul li a .btn:active,
+  .navbar-root ul li a.active .btn {
+    background: #24b144 !important;
+    color: #fff !important;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(36, 177, 68, 0.1);
+    transition: none;
+    border: none;
+    padding: 12px 18px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  /* Remove hover and active effects from the mobile NavLink containing the Contact Us button */
+  .navbar-root ul li a:has(.btn):hover,
+  .navbar-root ul li a:has(.btn).active {
+    background: none !important;
+    color: inherit !important;
+  }
+
+  /* Ensure no underline appears for mobile Contact Us NavLink */
+  .navbar-root ul li a:has(.btn)::after,
+  .navbar-root ul li a:has(.btn).active::after {
+    display: none !important;
+  }
+
   .menu-icon {
     display: block;
     width: 30px;
