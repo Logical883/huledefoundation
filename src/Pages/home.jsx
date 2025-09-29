@@ -33,6 +33,8 @@ const Home = () => {
         ></div>
         <div className="hero-overlay">
           <div className="hero-content">
+            <br />
+            <br /> <br />
             <h1 className="hero-title">2025 MEET & GREET</h1>
             {/* <p className="hero-description">
               Our Meet & Greet was an inspiring success! The Hulede Foundation
