@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./home.css";
+import "./Homee.css";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
@@ -39,7 +39,7 @@ const Home = () => {
               hearts, and a shared vision of impact. It was more than just a
               gathering—it was a chance to connect, exchange ideas, and build
               lasting bonds that will drive positive change. Thank you to
-              everyone who joined us and made this event truly memorable
+              everyone who joined us and made this event truly memorable.
             </p>
             <button className="btn-primary">Read More</button>
           </div>

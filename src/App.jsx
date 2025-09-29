@@ -6,7 +6,7 @@ import About from "./Pages/about.jsx";
 import Contact from "./Pages/contact.jsx";
 import Editor from "./Pages/editor.jsx";
 import Gallery from "./Pages/gallery.jsx";
-import Home from "./Pages/home.jsx";
+import Home from "./Pages/Homee.jsx";
 import Projects from "./Pages/projects.jsx";
 import Support from "./Pages/support.jsx";
 import Team from "./Pages/team.jsx";
@@ -24,7 +24,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/editor" element={<Editor />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/Homee" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/support" element={<Support />} />
           <Route path="/team" element={<Team />} />
