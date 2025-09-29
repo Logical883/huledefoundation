@@ -74,7 +74,7 @@
 }
 
 .btn-primary {
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
   color: white;
   border: none;
   padding: 15px 40px;
@@ -87,7 +87,7 @@
 }
 
 .btn-primary:hover {
-  background-color: rgb(36, 177, 68);
+  background-color: #27ae60;
 }
 
 .hero-dots {
@@ -127,7 +127,7 @@
 .section-divider {
   width: 80px;
   height: 3px;
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
   margin: 0 auto 20px;
   position: relative;
 }
@@ -138,7 +138,7 @@
   position: absolute;
   width: 3px;
   height: 3px;
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
   border-radius: 50%;
 }
 
@@ -205,7 +205,7 @@
 }
 
 .about-heading {
-  color: rgb(36, 177, 68);
+  color: #2ecc71;
   font-size: 1.8rem;
   margin-bottom: 20px;
   font-weight: 600;
@@ -218,7 +218,7 @@
 }
 
 .btn-secondary {
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
   color: white;
   border: none;
   padding: 12px 35px;
@@ -230,7 +230,7 @@
 }
 
 .btn-secondary:hover {
-  background-color: rgb(42, 196, 78) 0;
+  background-color: #27ae60;
 }
 
 /* Features Grid */
@@ -258,7 +258,7 @@
 .feature-icon {
   width: 70px;
   height: 70px;
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -319,11 +319,11 @@
 .service-icon svg {
   width: 40px;
   height: 40px;
-  color: rgb(36, 177, 68);
+  color: #2ecc71;
 }
 
 .service-card:hover .service-icon {
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
 }
 
 .service-card:hover .service-icon svg {
@@ -346,13 +346,13 @@
 /* CTA Section */
 .cta-section {
   padding: 80px 20px;
-  background-color: rgb(36, 177, 68);
+  background-color: #2ecc71;
   text-align: center;
 }
 
 .btn-white {
   background-color: white;
-  color: rgb(36, 177, 68);
+  color: #2ecc71;
   border: none;
   padding: 15px 40px;
   font-size: 1rem;
@@ -396,7 +396,7 @@
 }
 
 .pricing-card.featured {
-  background: rgb(36, 177, 68);
+  background: #2ecc71;
   transform: scale(1.05);
 }
 
@@ -477,7 +477,7 @@
 .footer-section h4 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: rgb(36, 177, 68);
+  color: #2ecc71;
 }
 
 .footer-section p {
@@ -501,7 +501,7 @@
 }
 
 .footer-section a:hover {
-  color: rgb(36, 177, 68);
+  color: #2ecc71;
 }
 
 .footer-bottom {
