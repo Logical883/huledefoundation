@@ -14,7 +14,7 @@ const Hero = () => {
           importantly in the actions of our initiatives. We purposely create
           opportunities for the underprivileged in our society to better their
           lives. We strive to make a positive change and make a difference in
-          the lives of all of our pursuits
+          the lives of all of our pursuits.
         </p>
         <Link to="/home">
           <button className="btn">
