@@ -16,7 +16,7 @@ const Hero = () => {
           lives. We strive to make a positive change and make a difference in
           the lives of all of our pursuits
         </p>
-        <Link to="/Homee">
+        <Link to="/home">
           <button className="btn">
             Explore more <img src={white_arrow} alt="" />
           </button>
