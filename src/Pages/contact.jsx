@@ -132,7 +132,7 @@ export default function Contact() {
             <div className="contact-form">
               <h2>Send us a message</h2>
               <form
-                action="https://formspree.io/f/xwprvjaa"
+                action="https://formspree.io/f/mldpjqqp"
                 method="POST"
                 className="form-container"
                 onSubmit={handleSubmit}
