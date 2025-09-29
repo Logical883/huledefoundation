@@ -22,7 +22,7 @@ const Navbar = () => {
       <ul className={mobileMenu ? "mobile-menu-open" : "hide-mobile-menu"}>
         <li>
           <NavLink
-            to="/Homee"
+            to="/home"
             onClick={closeMenu}
             className={({ isActive }) => (isActive ? "active" : undefined)}
           >
