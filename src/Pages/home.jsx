@@ -33,15 +33,15 @@ const Home = () => {
         ></div>
         <div className="hero-overlay">
           <div className="hero-content">
-            <h1 className="hero-title">2025 MEET & GREET EVENT</h1>
-            <p className="hero-description">
+            <h1 className="hero-title">2025 MEET & GREET</h1>
+            {/* <p className="hero-description">
               Our Meet & Greet was an inspiring success! The Hulede Foundation
               brought together bright minds, passionate hearts, and a shared
               vision of impact. It was more than just a gathering—it was a
               chance to connect, exchange ideas, and build lasting bonds that
               will drive positive change. Thank you to everyone who joined us
               and made this event truly memorable
-            </p>
+            </p> */}
             <button className="btn-primary">Read More</button>
           </div>
           <div className="hero-dots">
