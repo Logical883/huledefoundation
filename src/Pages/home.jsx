@@ -340,33 +340,37 @@ const Home = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h4>About Us</h4>
+            <h4>Our Vision</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              condimentum rutrum ligula.
+              It is so easy to fall into a pattern of apathy as we go through
+              our lives. Our organization was born out of a commitment to stop
+              passing over the real issues of society and deal with them head
+              on. We have set out to aid those who need it most. THE HULEDE
+              FOUNDATION is here to help, and we believe that change is possible
+              when we put our hearts and minds to it.
             </p>
           </div>
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
               <li>
-                <a href="#home">Home</a>
+                <a href="/home">Home</a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="/About">About</a>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a href="/gallery">Gallery</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </div>
           <div className="footer-section">
             <h4>Contact</h4>
-            <p>Email: info@example.com</p>
-            <p>Phone: +1 234 567 890</p>
+            <p>Email: huledefoundation@gmail.com</p>
+            <p>Phone: +1 (240) 708-0664</p>
           </div>
         </div>
         <div className="footer-bottom">
