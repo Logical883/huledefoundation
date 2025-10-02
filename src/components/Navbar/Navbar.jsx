@@ -1,9 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-import menu_icon from "../../assets/menu-icon.png";
 import { NavLink, Link } from "react-router-dom";
-
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -94,12 +92,14 @@ const Navbar = () => {
         </li>
       </ul>
       {!hideMenuIcon && (
-        <img
-          src={menu_icon}
-          alt="Menu"
-          className="menu-icon"
+        <div
+          className={`hamburger-menu ${mobileMenu ? "active" : ""}`}
           onClick={toggleMenu}
-        />
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       )}
     </nav>
   );
