@@ -3,6 +3,7 @@ import "./home.css";
 import image1 from "../assets/image1.JPG";
 import image2 from "../assets/image2.JPG";
 import image3 from "../assets/image3.JPG";
+import Hero from "../assets/Hero.jpg";
 
 const Home = () => {
   // Hero Images - Replace these URLs with your own images
@@ -57,35 +58,56 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* About Us Section */}
       <section className="about-section">
-        <h2 className="section-title">ABOUT US</h2>
+        <h2 className="section-title">WHO ARE WE ?</h2>
         <div className="section-divider"></div>
         <p className="section-subtitle">
-          Maecenas vel turpis quis lorem aliquam tempus eun non mi. Pellentesque
-          habitant morbi tristique senectus et netus ac malesuada fames ac
-          turpis egestas.
+          Our strength lies not only in the words we stand by, but most
+          importantly in the actions of our initiatives. We purposely create
+          opportunities for the underprivileged in our society to better their
+          lives. We strive to make a positive change and make a difference in
+          the lives of all of our pursuits.
         </p>
 
         <div className="about-content">
           <div className="about-image">
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=400&fit=crop"
-              alt="Professional"
-            />
+            <img src={Hero} alt="Professional" />
           </div>
           <div className="about-text">
-            <h3 className="about-heading">Welcome to Our Site</h3>
+            <h3 className="about-heading">
+              About Hulede Foundation Scholarship
+            </h3>
             <p className="about-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              condimentum rutrum ligula, integer ac porttitor mi. In finibus
-              vehicula aliquet. Vestibulum ut velit placerat, pretium turna ut,
-              gravida ex. Aliquam tristique.
+              The Hulede Foundation Scholarship is a program for "brilliant but
+              needy" Ghanaian students, primarily at KNUST (Kwame Nkrumah
+              University of Science and Technology), aiming to create
+              opportunities for the underprivileged in society to improve their
+              lives. <br />
+              The foundation was established by the sons of Patrick Hulede to
+              honor their father and supports students in their first, second,
+              and third years through a fully-funded program.
+              <br />
+              This Scholarship is mainly for Ghanaian students, particularly at
+              KNUST, who are both academically strong (brilliant) and
+              financially disadvantaged (needy).
             </p>
             <button className="btn-secondary">Read More</button>
           </div>
         </div>
+
+        <h2 className="section-title">
+          CELEBRATING COMMUNITY, ONE STORY AT A TIME
+        </h2>
+        <div className="section-divider"></div>
+        <p className="section-subtitle">
+          Through our articles, we highlight the power of service, unity, and
+          compassion. Each story reflects the voices, experiences, and efforts
+          of individuals and groups who dedicate themselves to making a
+          difference. By sharing these inspiring journeys, we aim to encourage
+          more people to join hands in creating lasting impact and building
+          stronger, more resilient communities.
+        </p>
 
         {/* Mission, Vision, Objective */}
         <div className="features-grid">
@@ -101,12 +123,15 @@ const Home = () => {
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
             </div>
-            <h4 className="feature-title">Our Mission</h4>
+            <h4 className="feature-title">The "GIVE BACK" Story</h4>
             <p className="feature-description">
-              Aenean volutpat, dolor eu finibus rhoncus, ant felis vehicula
-              nunc, ut posuere ex enim nec lacus. Phasellus id amet mauris
-              turpis. Aenean tristique auctor arcula, ac sodales sapien
-              sagittis.
+              I am Daniel Coffie. God being so good, I commenced my volunteering
+              project on September 1, 2023, at the Anyaa M/A "1" Primary and
+              Junior High School located within the Anyaa-Sowutwom constituency.
+              After conducting an investigation, I discovered that the students
+              had limited knowledge in computing. Therefore, I undertook the
+              initiative to provide them with education in computer literacy,
+              starting...
             </p>
             <button className="btn-secondary">Read More</button>
           </div>
@@ -119,16 +144,19 @@ const Home = () => {
                 stroke="currentColor"
                 strokeWidth="2"
               >
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
+                <polyline points="9 11 12 14 22 4"></polyline>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
             </div>
-            <h4 className="feature-title">Our Vision</h4>
+            <h4 className="feature-title">Strength in Service</h4>
             <p className="feature-description">
-              Aenean volutpat, dolor eu finibus rhoncus, ant felis vehicula
-              nunc, ut posuere ex enim nec lacus. Phasellus id amet mauris
-              turpis. Aenean tristique auctor arcula, ac sodales sapien
-              sagittis.
+              My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT.
+              As part of giving back to the community, I decided to find a
+              place(community) that indeed deserves such a voluntary service and
+              will always have such an experience in memory. So I traveled from
+              Kumasi to a small neighborhood in one of the newly created
+              districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a
+              community......
             </p>
             <button className="btn-secondary">Read More</button>
           </div>
@@ -141,22 +169,24 @@ const Home = () => {
                 stroke="currentColor"
                 strokeWidth="2"
               >
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                <polyline points="9 11 12 14 22 4"></polyline>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
             </div>
-            <h4 className="feature-title">Our Objective</h4>
+            <h4 className="feature-title">The Power of Giving</h4>
             <p className="feature-description">
-              Aenean volutpat, dolor eu finibus rhoncus, ant felis vehicula
-              nunc, ut posuere ex enim nec lacus. Phasellus id amet mauris
-              turpis. Aenean tristique auctor arcula, ac sodales sapien
-              sagittis.
+              I am Ama Serwaa, a passionate youth committed to empowering young
+              girls in my community. On October 15, 2024, I officially launched
+              my mentorship initiative at the Koforidua Methodist Junior High
+              School. Through my observations, I realized that many of the girls
+              lacked guidance and motivation regarding education and career
+              opportunities. To address this, I introduced a series of
+              mentorship and personal development....
             </p>
             <button className="btn-secondary">Read More</button>
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section className="services-section">
         <h2 className="section-title">SERVICES</h2>
@@ -262,8 +292,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section>
-
+      </section>{" "}
       {/* Call to Action Section */}
       <section className="cta-section">
         <h2 className="section-title white">CALL TO ACTION</h2>
@@ -275,67 +304,8 @@ const Home = () => {
         </p>
         <button className="btn-white">CALL TO ACTION</button>
       </section>
-
-      {/* Pricing Section */}
-      <section className="pricing-section">
-        <h2 className="section-title">OUR PRICING</h2>
-        <div className="section-divider"></div>
-        <p className="section-subtitle">
-          Nulla in est tincidunt, volutpat nisl quis, gravida tortor.
-          Suspendisse potenti. Nullam ornare, dui a vulputate mollis, est lorem
-          rutrum urna.
-        </p>
-
-        <div className="pricing-grid">
-          <div className="pricing-card">
-            <h3 className="pricing-plan">Silver</h3>
-            <div className="pricing-amount">
-              <span className="currency">$</span>
-              <span className="price">0</span>
-            </div>
-            <ul className="pricing-features">
-              <li>Feature One</li>
-              <li>Feature Two</li>
-              <li>Feature Three</li>
-              <li>Feature Four</li>
-            </ul>
-            <button className="btn-pricing">CHOOSE PLAN</button>
-          </div>
-
-          <div className="pricing-card featured">
-            <h3 className="pricing-plan">Gold</h3>
-            <div className="pricing-amount">
-              <span className="currency">$</span>
-              <span className="price">19</span>
-              <span className="period">.99</span>
-            </div>
-            <ul className="pricing-features">
-              <li>Feature One</li>
-              <li>Feature Two</li>
-              <li>Feature Three</li>
-              <li>Feature Four</li>
-            </ul>
-            <button className="btn-pricing">CHOOSE PLAN</button>
-          </div>
-
-          <div className="pricing-card">
-            <h3 className="pricing-plan">Platinum</h3>
-            <div className="pricing-amount">
-              <span className="currency">$</span>
-              <span className="price">39</span>
-              <span className="period">.99</span>
-            </div>
-            <ul className="pricing-features">
-              <li>Feature One</li>
-              <li>Feature Two</li>
-              <li>Feature Three</li>
-              <li>Feature Four</li>
-            </ul>
-            <button className="btn-pricing">CHOOSE PLAN</button>
-          </div>
-        </div>
-      </section>
-
+      <br />
+      <br />
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">

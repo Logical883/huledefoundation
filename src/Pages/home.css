@@ -74,7 +74,7 @@
 }
 
 .btn-primary {
-  background-color: #2ecc71;
+  background-color: rgb(36, 177, 68);
   color: white;
   border: none;
   padding: 15px 40px;
@@ -127,7 +127,7 @@
 .section-divider {
   width: 80px;
   height: 3px;
-  background-color: #2ecc71;
+  background-color: rgb(36, 177, 68);
   margin: 0 auto 20px;
   position: relative;
 }
@@ -138,7 +138,7 @@
   position: absolute;
   width: 3px;
   height: 3px;
-  background-color: #2ecc71;
+  background-color: rgb(36, 177, 68);
   border-radius: 50%;
 }
 
@@ -205,7 +205,7 @@
 }
 
 .about-heading {
-  color: #2ecc71;
+  color: rgb(36, 177, 68);
   font-size: 1.8rem;
   margin-bottom: 20px;
   font-weight: 600;
@@ -218,7 +218,7 @@
 }
 
 .btn-secondary {
-  background-color: #2ecc71;
+  background-color: rgb(36, 177, 68);
   color: white;
   border: none;
   padding: 12px 35px;
@@ -258,7 +258,7 @@
 .feature-icon {
   width: 70px;
   height: 70px;
-  background-color: #2ecc71;
+  background-color: rgb(36, 177, 68);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -319,11 +319,11 @@
 .service-icon svg {
   width: 40px;
   height: 40px;
-  color: #2ecc71;
+  color: rgb(36, 177, 68);
 }
 
 .service-card:hover .service-icon {
-  background-color: #2ecc71;
+  background-color: rgb(36, 177, 68);
 }
 
 .service-card:hover .service-icon svg {
@@ -352,7 +352,7 @@
 
 .btn-white {
   background-color: white;
-  color: #2ecc71;
+  color: rgb(36, 177, 68);
   border: none;
   padding: 15px 40px;
   font-size: 1rem;
@@ -396,7 +396,7 @@
 }
 
 .pricing-card.featured {
-  background: #2ecc71;
+  background: rgb(36, 177, 68);
   transform: scale(1.05);
 }
 
@@ -477,7 +477,7 @@
 .footer-section h4 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #2ecc71;
+  color: rgb(36, 177, 68);
 }
 
 .footer-section p {
@@ -501,7 +501,7 @@
 }
 
 .footer-section a:hover {
-  color: #2ecc71;
+  color: rgb(36, 177, 68);
 }
 
 .footer-bottom {
