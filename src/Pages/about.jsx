@@ -6,7 +6,7 @@ export default function About() {
     >
       <h1 style={{ color: "#00796b" }}>About Page</h1>
       <p>
-        This is the About page for the Hudele Foundation. Here you can learn
+        This is the About page for the Hulede Foundation. Here you can learn
         more about our mission and values.
       </p>
     </div>

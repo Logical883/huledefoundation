@@ -6,7 +6,7 @@ export default function Projects() {
     >
       <h1 style={{ color: "#d84315" }}>Projects Page</h1>
       <p>
-        Learn more about our ongoing and completed projects at the Hudele
+        Learn more about our ongoing and completed projects at the Hulede
         Foundation.
       </p>
     </div>

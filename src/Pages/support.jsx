@@ -6,7 +6,7 @@ export default function Support() {
     >
       <h1 style={{ color: "#512da8" }}>Support Page</h1>
       <p>
-        Support the Hudele Foundation and help us make a difference in our
+        Support the Hulede Foundation and help us make a difference in our
         community.
       </p>
     </div>
