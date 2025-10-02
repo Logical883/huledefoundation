@@ -34,22 +34,20 @@ const Gallery = () => {
       link: "https://huledefoundation.pixieset.com/2023huledefoundationscholarshipgallery/",
       size: "small",
     },
-    // {
-    //   id: 4,
-    //   title: "NOTHING IS PROMISED",
-    //   date: "SEPTEMBER 10, 2024",
-    //   image: "/images/image4.jpg", // Replace with your image filename
-    //   link: "YOUR_LINK_HERE_4",
-    //   size: "small",
-    // },
-    // {
-    //   id: 5,
-    //   title: "LAPOINT VINNARE",
-    //   date: "SEPTEMBER 08, 2024",
-    //   image: "/images/image5.jpg", // Replace with your image filename
-    //   link: "YOUR_LINK_HERE_5",
-    //   size: "large",
-    // },
+    {
+      id: 4,
+      title: "HULEDE FOUNDATION COMMUNITY SERVICE GALLERY",
+      image: "/images/COM_1.jpg", // Replace with your image filename
+      link: "https://huledefoundation.pixieset.com/huledefoundationcommunityservicegallery/",
+      size: "small",
+    },
+    {
+      id: 5,
+      title: "HULEDE FOUNDATION SCHOLARHIP ( LAPTOP RECEPIENTS ) GALLERY",
+      image: "/images/LAP_1.jpg", // Replace with your image filename
+      link: "https://huledefoundation.pixieset.com/huledefoundationscholarhiplaptoprecipientsgallery/",
+      size: "large",
+    },
     // {
     //   id: 6,
     //   title: "LAST NIGHT WAS REAL",
