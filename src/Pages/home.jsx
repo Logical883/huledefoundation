@@ -143,7 +143,7 @@ const Home = () => {
           COMMUNITY SERVICE: THE SPIRIT OF GIVING MULTIPLES
         </h2>
         <div className="section-divider"></div>
-        <p className="section-subtitle">
+        <p className="section-subtitles">
           The Hulede Foundation KNUST Scholarship is built on a commitment to
           academic excellence and civic responsibility. We believe in "The
           Spirit of Giving Multiples," where our recipients pay their privilege

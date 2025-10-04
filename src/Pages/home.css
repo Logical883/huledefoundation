@@ -202,7 +202,7 @@
 }
 
 .section-subtitle {
-  text-align: left;
+  text-align: center;
   max-width: 800px;
   margin: 0 auto 50px;
   color: #666;
@@ -211,6 +211,19 @@
 }
 
 .section-subtitle.white {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-subtitles {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  color: #666;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+.section-subtitles.white {
   color: rgba(255, 255, 255, 0.9);
 }
 
