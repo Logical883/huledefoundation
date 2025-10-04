@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./home.css";
 import image1 from "../assets/image1.JPG";
 import image2 from "../assets/image2.JPG";
@@ -9,11 +9,6 @@ const Home = () => {
   // Hero Images
   const heroImages = [image1, image2, image3];
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentStorySlide, setCurrentStorySlide] = useState(0);
-
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
 
   // Featured stories data
   const featuredStories = [
@@ -63,9 +58,6 @@ const Home = () => {
   const laptopData = [
     { year: "2025", laptops: 27 },
     { year: "2024", laptops: 27 },
-    // { year: "2023", laptops: 75 },
-    // { year: "2022", laptops: 80 },
-    // { year: "2021", laptops: 70 },
   ];
 
   const totalRecipients = scholarshipData.reduce(
@@ -77,77 +69,6 @@ const Home = () => {
   // Go directly to hero slide
   const goToSlide = (index) => {
     setCurrentSlide(index);
-  };
-
-  // Go directly to story slide (by page, not individual card)
-  const goToStorySlide = (index) => {
-    setCurrentStorySlide(index);
-  };
-
-  // // Auto-slide effect for hero
-  // useEffect(() => {
-  //   const slideInterval = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-  //   }, 5000);
-
-  //   return () => clearInterval(slideInterval);
-  // }, [heroImages.length]);
-
-  // detect screen size for cards per view
-  const [cardsPerView, setCardsPerView] = useState(
-    window.innerWidth <= 768 ? 1 : 3
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setCardsPerView(window.innerWidth <= 768 ? 1 : 3);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // total slides = how many "pages" of cards
-  const totalSlides = Math.ceil(featuredStories.length / cardsPerView);
-
-  // prev/next buttons
-  const nextStory = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentStorySlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-    setTimeout(() => setIsTransitioning(false), 600);
-  };
-
-  const prevStory = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentStorySlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-    setTimeout(() => setIsTransitioning(false), 600);
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      nextStory();
-    }
-    if (isRightSwipe) {
-      prevStory();
-    }
-
-    setTouchStart(0);
-    setTouchEnd(0);
   };
 
   return (
@@ -229,79 +150,27 @@ const Home = () => {
           stronger, more resilient communities.
         </p>
 
-        {/* Featured Stories Carousel */}
-        <div className="carousel-container">
-          <button className="carousel-btn prev" onClick={prevStory}>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-
-          <div
-            className="carousel-wrapper"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div
-              className="carousel-track"
-              style={{
-                transform: `translateX(-${
-                  currentStorySlide * (100 / cardsPerView)
-                }%)`,
-                "--cards-per-view": cardsPerView,
-              }}
-            >
-              {featuredStories.map((story, index) => (
-                <div className="feature-card carousel-card" key={index}>
-                  <div className="feature-icon">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <polyline points="9 11 12 14 22 4"></polyline>
-                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                    </svg>
-                  </div>
-                  <h4 className="feature-title">{story.title}</h4>
-                  <p className="feature-description">{story.description}</p>
-                  <button className="btn-secondary">
-                    <a href={story.link}>Read More</a>
-                  </button>
-                </div>
-              ))}
+        {/* Featured Stories Grid */}
+        <div className="features-grid">
+          {featuredStories.map((story, index) => (
+            <div className="feature-card" key={index}>
+              <div className="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <polyline points="9 11 12 14 22 4"></polyline>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+              </div>
+              <h4 className="feature-title">{story.title}</h4>
+              <p className="feature-description">{story.description}</p>
+              <button className="btn-secondary">
+                <a href={story.link}>Read More</a>
+              </button>
             </div>
-          </div>
-
-          <button className="carousel-btn next" onClick={nextStory}>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-        </div>
-
-        {/* Carousel Dots */}
-        <div className="carousel-dots">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <span
-              key={index}
-              className={`carousel-dot ${
-                currentStorySlide === index ? "active" : ""
-              }`}
-              onClick={() => goToStorySlide(index)}
-            ></span>
           ))}
         </div>
       </section>
@@ -351,7 +220,7 @@ const Home = () => {
                 <thead>
                   <tr>
                     <th>Year</th>
-                    <th>Laptops Received</th>
+                    <th>Laptops Donated</th>
                   </tr>
                 </thead>
                 <tbody>
