@@ -6,16 +6,38 @@ import image3 from "../assets/image3.JPG";
 import Hero from "../assets/Hero.jpg";
 
 const Home = () => {
-  // Hero Images - Replace these URLs with your own images
+  // Hero Images
   const heroImages = [image1, image2, image3];
-
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Sample data - replace with your actual data
+  const scholarshipData = [
+    { year: "2019", recipients: 75 },
+    { year: "2020", recipients: 84 },
+    { year: "2021", recipients: 87 },
+    { year: "2022", recipients: 87 },
+    { year: "2023", recipients: 83 },
+  ];
+
+  const laptopData = [
+    { year: "2019", laptops: 50 },
+    { year: "2020", laptops: 60 },
+    { year: "2021", laptops: 75 },
+    { year: "2022", laptops: 80 },
+    { year: "2023", laptops: 70 },
+  ];
+
+  const totalRecipients = scholarshipData.reduce(
+    (sum, item) => sum + item.recipients,
+    0
+  );
+  const totalLaptops = laptopData.reduce((sum, item) => sum + item.laptops, 0);
 
   // Auto-slide effect
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
@@ -35,16 +57,9 @@ const Home = () => {
         <div className="hero-overlay">
           <div className="hero-content">
             <br />
-            <br /> <br />
+            <br />
+            <br />
             <h1 className="hero-title">2025 MEET & GREET</h1>
-            {/* <p className="hero-description">
-              Our Meet & Greet was an inspiring success! The Hulede Foundation
-              brought together bright minds, passionate hearts, and a shared
-              vision of impact. It was more than just a gathering—it was a
-              chance to connect, exchange ideas, and build lasting bonds that
-              will drive positive change. Thank you to everyone who joined us
-              and made this event truly memorable
-            </p> */}
             <button className="btn-primary">Read More</button>
           </div>
           <div className="hero-dots">
@@ -58,6 +73,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* About Us Section */}
       <section className="about-section">
         <h2 className="section-title">WHO ARE WE ?</h2>
@@ -187,115 +203,74 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Services Section */}
-      <section className="services-section">
-        <h2 className="section-title">SERVICES</h2>
-        <div className="section-divider"></div>
-        <p className="section-subtitle">
-          Integer sollicitudin sed nulla non consequat. Nullam vitae erat quis
-          leo accumsan ullamcorper. Suspendisse hac porttis, pellentesque
-          posuere.
-        </p>
 
-        <div className="services-grid">
-          {[
-            { title: "Web Design", icon: "monitor" },
-            { title: "Web Development", icon: "laptop" },
-            { title: "App Design", icon: "tablet" },
-            { title: "App Development", icon: "smartphone" },
-            { title: "Web Design", icon: "monitor" },
-            { title: "Web Development", icon: "laptop" },
-            { title: "App Design", icon: "tablet" },
-            { title: "App Development", icon: "smartphone" },
-          ].map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon">
-                {service.icon === "monitor" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <rect
-                      x="2"
-                      y="3"
-                      width="20"
-                      height="14"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
-                )}
-                {service.icon === "laptop" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <rect
-                      x="2"
-                      y="3"
-                      width="20"
-                      height="14"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <line x1="2" y1="20" x2="22" y2="20"></line>
-                  </svg>
-                )}
-                {service.icon === "tablet" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <rect
-                      x="4"
-                      y="2"
-                      width="16"
-                      height="20"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                  </svg>
-                )}
-                {service.icon === "smartphone" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <rect
-                      x="5"
-                      y="2"
-                      width="14"
-                      height="20"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                  </svg>
-                )}
-              </div>
-              <h4 className="service-title">{service.title}</h4>
-              <p className="service-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesenterium.
-              </p>
+      {/* Statistics Section */}
+      <section className="statistics-section">
+        <div className="stat-container">
+          {/* Stats Cards */}
+          <div className="stats-section">
+            <div className="stat-card green-card">
+              <div className="stat-number">{totalRecipients}</div>
+              <div className="stat-label">SCHOLARSHIP RECIPIENTS</div>
             </div>
-          ))}
+            <div className="stat-card blue-card">
+              <div className="stat-number">{totalLaptops}</div>
+              <div className="stat-label">LAPTOPS RECEIVED</div>
+            </div>
+          </div>
+
+          {/* Tables Section */}
+          <div className="tables-section">
+            {/* Scholarship Table */}
+            <div className="table-container">
+              <h2 className="table-title">Scholarship Recipients</h2>
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Scholarship Year</th>
+                    <th>Number of Recipients</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {scholarshipData.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.year}</td>
+                      <td>{item.recipients}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Laptops Table */}
+            <div className="table-container">
+              <h2 className="table-title">Laptops Distribution</h2>
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>Laptops Received</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {laptopData.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.year}</td>
+                      <td>{item.laptops}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      </section>{" "}
+      </section>
+      <br />
+      <br />
+
       {/* Call to Action Section */}
       <section className="cta-section">
-        <h2 className="section-title white">CALL TO ACTION</h2>
+        <h2 className="section-title white">APPLY FOR SCHOLARSHIP</h2>
         <div className="section-divider white"></div>
         <p className="section-subtitle white">
           Integer sollicitudin sed nulla non consequat. Nullam vitae erat quis
@@ -306,6 +281,7 @@ const Home = () => {
       </section>
       <br />
       <br />
+
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
