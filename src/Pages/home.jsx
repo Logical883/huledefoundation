@@ -11,6 +11,10 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentStorySlide, setCurrentStorySlide] = useState(0);
 
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
   // Featured stories data
   const featuredStories = [
     {
@@ -70,40 +74,80 @@ const Home = () => {
   );
   const totalLaptops = laptopData.reduce((sum, item) => sum + item.laptops, 0);
 
-  // Auto-slide effect for hero
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-
-    return () => clearInterval(slideInterval);
-  }, [heroImages.length]);
-
-  // Auto-slide effect for featured stories carousel
-  useEffect(() => {
-    const storyInterval = setInterval(() => {
-      setCurrentStorySlide((prev) => (prev + 1) % featuredStories.length);
-    }, 6000);
-
-    return () => clearInterval(storyInterval);
-  }, [featuredStories.length]);
-
+  // Go directly to hero slide
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
 
+  // Go directly to story slide (by page, not individual card)
   const goToStorySlide = (index) => {
     setCurrentStorySlide(index);
   };
 
+  // // Auto-slide effect for hero
+  // useEffect(() => {
+  //   const slideInterval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  //   }, 5000);
+
+  //   return () => clearInterval(slideInterval);
+  // }, [heroImages.length]);
+
+  // detect screen size for cards per view
+  const [cardsPerView, setCardsPerView] = useState(
+    window.innerWidth <= 768 ? 1 : 3
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCardsPerView(window.innerWidth <= 768 ? 1 : 3);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // total slides = how many "pages" of cards
+  const totalSlides = Math.ceil(featuredStories.length / cardsPerView);
+
+  // prev/next buttons
   const nextStory = () => {
-    setCurrentStorySlide((prev) => (prev + 1) % featuredStories.length);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentStorySlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const prevStory = () => {
-    setCurrentStorySlide(
-      (prev) => (prev - 1 + featuredStories.length) % featuredStories.length
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentStorySlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+    setTimeout(() => setIsTransitioning(false), 600);
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextStory();
+    }
+    if (isRightSwipe) {
+      prevStory();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
   };
 
   return (
@@ -198,10 +242,20 @@ const Home = () => {
             </svg>
           </button>
 
-          <div className="carousel-wrapper">
+          <div
+            className="carousel-wrapper"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className="carousel-track"
-              style={{ transform: `translateX(-${currentStorySlide * 100}%)` }}
+              style={{
+                transform: `translateX(-${
+                  currentStorySlide * (100 / cardsPerView)
+                }%)`,
+                "--cards-per-view": cardsPerView,
+              }}
             >
               {featuredStories.map((story, index) => (
                 <div className="feature-card carousel-card" key={index}>
@@ -242,7 +296,7 @@ const Home = () => {
 
         {/* Carousel Dots */}
         <div className="carousel-dots">
-          {featuredStories.map((_, index) => (
+          {Array.from({ length: totalSlides }).map((_, index) => (
             <span
               key={index}
               className={`carousel-dot ${
@@ -265,7 +319,7 @@ const Home = () => {
             </div>
             <div className="stat-card blue-card">
               <div className="stat-number">{totalLaptops}</div>
-              <div className="stat-label">LAPTOPS RECEIVED</div>
+              <div className="stat-label">LAPTOPS DONATED</div>
             </div>
           </div>
 
