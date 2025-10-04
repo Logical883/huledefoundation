@@ -118,6 +118,7 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  height: 50px;
 }
 
 .btn-secondary:hover {
@@ -339,7 +340,7 @@
 .carousel-track {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 24px;
+  gap: 20px;
 }
 
 .carousel-card {

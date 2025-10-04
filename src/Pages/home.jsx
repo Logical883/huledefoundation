@@ -273,9 +273,7 @@ const Home = () => {
                   <h4 className="feature-title">{story.title}</h4>
                   <p className="feature-description">{story.description}</p>
                   <button className="btn-secondary">
-                    <a href={story.link} className="btn-secondary">
-                      Read More
-                    </a>
+                    <a href={story.link}>Read More</a>
                   </button>
                 </div>
               ))}
