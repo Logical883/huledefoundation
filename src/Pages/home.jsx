@@ -137,16 +137,35 @@ const Home = () => {
         </div>
 
         <h2 className="section-title">
-          CELEBRATING COMMUNITY, ONE STORY AT A TIME
+          COMMUNITY SERVICE: THE SPIRIT OF GIVING MULTIPLES
         </h2>
         <div className="section-divider"></div>
         <p className="section-subtitle">
-          Through our articles, we highlight the power of service, unity, and
-          compassion. Each story reflects the voices, experiences, and efforts
-          of individuals and groups who dedicate themselves to making a
-          difference. By sharing these inspiring journeys, we aim to encourage
-          more people to join hands in creating lasting impact and building
-          stronger, more resilient communities.
+          The Hulede Foundation KNUST Scholarship is built on a commitment to
+          academic excellence and civic responsibility. We believe in "The
+          Spirit of Giving Multiples," where our recipients pay their privilege
+          forward. As a core requirement, each scholar completes{" "}
+          <strong text-color="#27ae60">
+            40 hours minimum of annual community service
+          </strong>
+          . This initiative is a vital contribution to society and a mandatory
+          part of the scholarship renewal process. <br />
+          <br />
+          <h3>To be eligible, scholars must: </h3>
+          <br />
+          <li>Wear the official Hulede Foundation T-shirt during service.</li>
+          <li>
+            Document their work with photos, videos, and a detailed report.
+          </li>
+          <li>Complete at least 40 hours of service annually.</li> <br />
+          <li>
+            Submit all evidence to the designated HuledeFoundation Scholarship
+            Beneficiaries platform.
+          </li>{" "}
+          <br />
+          This page showcases the impactful work of our scholars as they apply
+          their knowledge to create positive change, embodying our mission of
+          ("Making a Difference.")
         </p>
 
         {/* Featured Stories Grid */}
