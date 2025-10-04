@@ -34,14 +34,14 @@ const Home = () => {
       title:
         "Hulede Foundation donates mechanized borehole to new Amakom M/A cluster of schools",
       description:
-        "Hulede Foundation, founded by John Hulede, a US-based non-profit organization.......",
+        "Hulede Foundation,founded by John Hulede,a US – based non profitable organization has donated mechanized borehole water to new Amakom cluster of schools in the Kumasi Metropolis of the Ashanti Region. The donation is to help pupils and teachers to have access to portable drinking water which will facilitate teaching, learning and enhance quality education in the school......",
       link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/ ",
     },
     {
       title:
         "Hulede Foundation supports 250 needy students to clear outstanding fees",
       description:
-        "The Hulede Foundation, a US-based non-governmental organization dedicated to assisting brilliant but underprivileged students in their pursuit of higher education.......",
+        "The Hulede Foundation, a US-based non-governmental organization dedicated to assisting brilliant but underprivileged students in their pursuit of higher education, has provided financial support to 250 students at Kwame Nkrumah University of Science and Technology (KNUST) to settle their outstanding fees......",
       link: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html ",
     },
   ];
