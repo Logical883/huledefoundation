@@ -65,12 +65,8 @@ const Home = () => {
           <div className="footer-section">
             <h4>Our Vision</h4>
             <p>
-              It is so easy to fall into a pattern of apathy as we go through
-              our lives. Our organization was born out of a commitment to stop
-              passing over the real issues of society and deal with them head
-              on. We have set out to aid those who need it most. THE HULEDE
-              FOUNDATION is here to help, and we believe that change is possible
-              when we put our hearts and minds to it.
+              THE HULEDE FOUNDATION is here to help, and we believe that change
+              is possible when we put our hearts and minds to it.
             </p>
           </div>
           <div className="footer-section">
