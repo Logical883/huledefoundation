@@ -702,6 +702,7 @@
     padding: 24px;
     min-height: 380px;
     margin: 0 8px;
+    width: calc(100% - 16px);
   }
 
   .feature-icon {
