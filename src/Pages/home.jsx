@@ -126,9 +126,8 @@ const Home = () => {
               opportunities for the underprivileged in society to improve their
               lives. <br />
               The foundation was established by the sons of Patrick Hulede to
-              honor their father and supports students in their first, second,
-              and third years through a fully-funded program.
-              <br />
+              honor their father and supports students in their first through
+              final year. We have consistently done so over the years. <br />
               This Scholarship is mainly for Ghanaian students, particularly at
               KNUST, who are both academically strong (brilliant) and
               financially disadvantaged (needy).
