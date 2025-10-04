@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
 import image1 from "../assets/image1.JPG";
 import image2 from "../assets/image2.JPG";
@@ -132,7 +133,9 @@ const Home = () => {
               KNUST, who are both academically strong (brilliant) and
               financially disadvantaged (needy).
             </p>
-            <button className="btn-secondary">Read More</button>
+            <Link to="/about">
+              <button className="btn-secondary">Read More</button>
+            </Link>
           </div>
         </div>
 
