@@ -16,20 +16,20 @@ const Home = () => {
       title: 'The "GIVE BACK" Story',
       description:
         'I am Daniel Coffie. God being so good, I commenced my volunteering project on September 1, 2023, at the Anyaa M/A "1" Primary and Junior High School located within the Anyaa-Sowutwom constituency. After conducting an investigation, I discovered that the students had limited knowledge in computing. Therefore, I undertook the initiative to provide them with education in computer literacy, starting...',
-      link: "https://huledefoundation.org/the-give-back-story/",
+      link: "https://www.facebook.com/people/The-Hulede-Foundation/100086620458577/",
     },
-    {
-      title: "Strength in Service",
-      description:
-        "My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT. As part of giving back to the community, I decided to find a place(community) that indeed deserves such a voluntary service and will always have such an experience in memory. So I traveled from Kumasi to a small neighborhood in one of the newly created districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a community......",
-      link: "https://huledefoundation.org/strength-in-service/",
-    },
-    {
-      title: "The Power of Giving",
-      description:
-        "I am Ama Serwaa, a passionate youth committed to empowering young girls in my community. On October 15, 2024, I officially launched my mentorship initiative at the Koforidua Methodist Junior High School. Through my observations, I realized that many of the girls lacked guidance and motivation regarding education and career opportunities. To address this, I introduced a series of mentorship and personal development....",
-      link: "https://huledefoundation.org/the-power-of-giving/",
-    },
+    // {
+    //   title: "Strength in Service",
+    //   description:
+    //     "My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT. As part of giving back to the community, I decided to find a place(community) that indeed deserves such a voluntary service and will always have such an experience in memory. So I traveled from Kumasi to a small neighborhood in one of the newly created districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a community......",
+    //   link: "https://huledefoundation.org/strength-in-service/",
+    // },
+    // {
+    //   title: "The Power of Giving",
+    //   description:
+    //     "I am Ama Serwaa, a passionate youth committed to empowering young girls in my community. On October 15, 2024, I officially launched my mentorship initiative at the Koforidua Methodist Junior High School. Through my observations, I realized that many of the girls lacked guidance and motivation regarding education and career opportunities. To address this, I introduced a series of mentorship and personal development....",
+    //   link: "https://huledefoundation.org/the-power-of-giving/",
+    // },
     {
       title:
         "Hulede Foundation donates mechanized borehole to new Amakom M/A cluster of schools",
