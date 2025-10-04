@@ -9,22 +9,59 @@ const Home = () => {
   // Hero Images
   const heroImages = [image1, image2, image3];
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentStorySlide, setCurrentStorySlide] = useState(0);
+
+  // Featured stories data
+  const featuredStories = [
+    {
+      title: 'The "GIVE BACK" Story',
+      description:
+        'I am Daniel Coffie. God being so good, I commenced my volunteering project on September 1, 2023, at the Anyaa M/A "1" Primary and Junior High School located within the Anyaa-Sowutwom constituency. After conducting an investigation, I discovered that the students had limited knowledge in computing. Therefore, I undertook the initiative to provide them with education in computer literacy, starting...',
+      link: "https://huledefoundation.org/the-give-back-story/",
+    },
+    {
+      title: "Strength in Service",
+      description:
+        "My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT. As part of giving back to the community, I decided to find a place(community) that indeed deserves such a voluntary service and will always have such an experience in memory. So I traveled from Kumasi to a small neighborhood in one of the newly created districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a community......",
+      link: "https://huledefoundation.org/strength-in-service/",
+    },
+    {
+      title: "The Power of Giving",
+      description:
+        "I am Ama Serwaa, a passionate youth committed to empowering young girls in my community. On October 15, 2024, I officially launched my mentorship initiative at the Koforidua Methodist Junior High School. Through my observations, I realized that many of the girls lacked guidance and motivation regarding education and career opportunities. To address this, I introduced a series of mentorship and personal development....",
+      link: "https://huledefoundation.org/the-power-of-giving/",
+    },
+    {
+      title:
+        "Hulede Foundation donates mechanized borehole to new Amakom M/A cluster of schools",
+      description:
+        "Hulede Foundation, founded by John Hulede, a US-based non-profit organization.......",
+      link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/ ",
+    },
+    {
+      title:
+        "Hulede Foundation supports 250 needy students to clear outstanding fees",
+      description:
+        "The Hulede Foundation, a US-based non-governmental organization dedicated to assisting brilliant but underprivileged students in their pursuit of higher education.......",
+      link: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html ",
+    },
+  ];
 
   // Sample data - replace with your actual data
   const scholarshipData = [
-    { year: "2019", recipients: 75 },
-    { year: "2020", recipients: 84 },
-    { year: "2021", recipients: 87 },
-    { year: "2022", recipients: 87 },
-    { year: "2023", recipients: 83 },
+    { year: "2025", recipients: 339 },
+    { year: "2024", recipients: 348 },
+    { year: "2023", recipients: 250 },
+    { year: "2022", recipients: 102 },
+    { year: "2021", recipients: 12 },
   ];
 
   const laptopData = [
-    { year: "2019", laptops: 50 },
-    { year: "2020", laptops: 60 },
-    { year: "2021", laptops: 75 },
-    { year: "2022", laptops: 80 },
-    { year: "2023", laptops: 70 },
+    { year: "2025", laptops: 27 },
+    { year: "2024", laptops: 27 },
+    // { year: "2023", laptops: 75 },
+    // { year: "2022", laptops: 80 },
+    // { year: "2021", laptops: 70 },
   ];
 
   const totalRecipients = scholarshipData.reduce(
@@ -33,7 +70,7 @@ const Home = () => {
   );
   const totalLaptops = laptopData.reduce((sum, item) => sum + item.laptops, 0);
 
-  // Auto-slide effect
+  // Auto-slide effect for hero
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
@@ -42,8 +79,31 @@ const Home = () => {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
+  // Auto-slide effect for featured stories carousel
+  useEffect(() => {
+    const storyInterval = setInterval(() => {
+      setCurrentStorySlide((prev) => (prev + 1) % featuredStories.length);
+    }, 6000);
+
+    return () => clearInterval(storyInterval);
+  }, [featuredStories.length]);
+
   const goToSlide = (index) => {
     setCurrentSlide(index);
+  };
+
+  const goToStorySlide = (index) => {
+    setCurrentStorySlide(index);
+  };
+
+  const nextStory = () => {
+    setCurrentStorySlide((prev) => (prev + 1) % featuredStories.length);
+  };
+
+  const prevStory = () => {
+    setCurrentStorySlide(
+      (prev) => (prev - 1 + featuredStories.length) % featuredStories.length
+    );
   };
 
   return (
@@ -125,82 +185,72 @@ const Home = () => {
           stronger, more resilient communities.
         </p>
 
-        {/* Mission, Vision, Objective */}
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <polyline points="9 11 12 14 22 4"></polyline>
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-              </svg>
+        {/* Featured Stories Carousel */}
+        <div className="carousel-container">
+          <button className="carousel-btn prev" onClick={prevStory}>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div className="carousel-wrapper">
+            <div
+              className="carousel-track"
+              style={{ transform: `translateX(-${currentStorySlide * 100}%)` }}
+            >
+              {featuredStories.map((story, index) => (
+                <div className="feature-card carousel-card" key={index}>
+                  <div className="feature-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <polyline points="9 11 12 14 22 4"></polyline>
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                  </div>
+                  <h4 className="feature-title">{story.title}</h4>
+                  <p className="feature-description">{story.description}</p>
+                  <button className="btn-secondary">
+                    <a href={story.link} className="btn-secondary">
+                      Read More
+                    </a>
+                  </button>
+                </div>
+              ))}
             </div>
-            <h4 className="feature-title">The "GIVE BACK" Story</h4>
-            <p className="feature-description">
-              I am Daniel Coffie. God being so good, I commenced my volunteering
-              project on September 1, 2023, at the Anyaa M/A "1" Primary and
-              Junior High School located within the Anyaa-Sowutwom constituency.
-              After conducting an investigation, I discovered that the students
-              had limited knowledge in computing. Therefore, I undertook the
-              initiative to provide them with education in computer literacy,
-              starting...
-            </p>
-            <button className="btn-secondary">Read More</button>
           </div>
 
-          <div className="feature-card">
-            <div className="feature-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <polyline points="9 11 12 14 22 4"></polyline>
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-              </svg>
-            </div>
-            <h4 className="feature-title">Strength in Service</h4>
-            <p className="feature-description">
-              My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT.
-              As part of giving back to the community, I decided to find a
-              place(community) that indeed deserves such a voluntary service and
-              will always have such an experience in memory. So I traveled from
-              Kumasi to a small neighborhood in one of the newly created
-              districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a
-              community......
-            </p>
-            <button className="btn-secondary">Read More</button>
-          </div>
+          <button className="carousel-btn next" onClick={nextStory}>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
 
-          <div className="feature-card">
-            <div className="feature-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <polyline points="9 11 12 14 22 4"></polyline>
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-              </svg>
-            </div>
-            <h4 className="feature-title">The Power of Giving</h4>
-            <p className="feature-description">
-              I am Ama Serwaa, a passionate youth committed to empowering young
-              girls in my community. On October 15, 2024, I officially launched
-              my mentorship initiative at the Koforidua Methodist Junior High
-              School. Through my observations, I realized that many of the girls
-              lacked guidance and motivation regarding education and career
-              opportunities. To address this, I introduced a series of
-              mentorship and personal development....
-            </p>
-            <button className="btn-secondary">Read More</button>
-          </div>
+        {/* Carousel Dots */}
+        <div className="carousel-dots">
+          {featuredStories.map((_, index) => (
+            <span
+              key={index}
+              className={`carousel-dot ${
+                currentStorySlide === index ? "active" : ""
+              }`}
+              onClick={() => goToStorySlide(index)}
+            ></span>
+          ))}
         </div>
       </section>
 
@@ -268,14 +318,13 @@ const Home = () => {
       <br />
       <br />
 
-      {/* Call to Action Section */}
+      {/* Application Section */}
       <section className="cta-section">
         <h2 className="section-title white">APPLY FOR SCHOLARSHIP</h2>
         <div className="section-divider white"></div>
         <p className="section-subtitle white">
-          Integer sollicitudin sed nulla non consequat. Nullam vitae erat quis
-          leo accumsan ullamcorper. Suspendisse hac porttis, pellentesque
-          posuere.
+          Take the next step toward your academic journey. Submit your
+          application today and let your dreams find the support they deserve.
         </p>
         <button className="btn-white">CALL TO ACTION</button>
       </section>
