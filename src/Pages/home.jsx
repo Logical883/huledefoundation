@@ -165,7 +165,7 @@ const Home = () => {
           <br />
           This page showcases the impactful work of our scholars as they apply
           their knowledge to create positive change, embodying our mission of
-          ("Making a Difference.")
+          "Making a Difference."
         </p>
 
         {/* Featured Stories Grid */}
