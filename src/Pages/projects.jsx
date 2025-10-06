@@ -10,13 +10,14 @@ const featuredStories = [
     image:
       "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=400&fit=crop",
   },
-  // {
-  //   title: "Strength in Service",
-  //   description:
-  //     "My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT. As part of giving back to the community, I decided to find a place(community) that indeed deserves such a voluntary service and will always have such an experience in memory. So I traveled from Kumasi to a small neighborhood in one of the newly created districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a community......",
-  //   link: "https://huledefoundation.org/strength-in-service/",
-  //   image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
-  // },
+  {
+    title: "Strength in Service",
+    description:
+      "My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT. As part of giving back to the community, I decided to find a place(community) that indeed deserves such a voluntary service and will always have such an experience in memory. So I traveled from Kumasi to a small neighborhood in one of the newly created districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a community......",
+    link: "https://drive.google.com/drive/folders/1PBSNs1xkpw-8q_5Qj_bQ9vdLde8__tVQ?usp=drive_link",
+    image:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
+  },
   // {
   //   title: "The Power of Giving",
   //   description:

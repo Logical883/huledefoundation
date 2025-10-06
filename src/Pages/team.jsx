@@ -28,35 +28,35 @@ const Team = () => {
       title: "VP of Design",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/public/images/jhulede.png",
+      image: "/images/jhulede.png",
     },
     {
       name: "Jessica Janet",
       title: "Project Manager",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/public/images/jhulede.png",
+      image: "/images/jhulede.png",
     },
     {
       name: "Samuel Lane",
       title: "Creative Director",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/public/images/jhulede.png",
+      image: "/images/jhulede.png",
     },
     {
       name: "Laurel Schaalia",
       title: "Supervisor",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/public/images/jhulede.png",
+      image: "/images/jhulede.png",
     },
     {
       name: "Justin Hubner",
       title: "Coordinator",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/public/images/jhulede.png",
+      image: "/images/jhulede.png",
     },
   ];
 
