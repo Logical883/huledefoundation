@@ -153,10 +153,9 @@ const Team = () => {
         <h4 className="section-titles">The Focus of Our Efforts</h4>
         <div className="section-divider"></div>
         <p className="section-subtitles">
-          We create opportunities in several ways; assisting primary and
-          elementary schools with much needed facilities to aid in their
-          teaching and learning experience, transforming lives and giving
-          scholarships to the brilliant but needy students.
+          At The Hulede Foundation we believe that each person is a special seed
+          and if properly nurtured will bear fruits and beget multiple seeds.
+          #Everyone matters.
         </p>
       </section>
 
