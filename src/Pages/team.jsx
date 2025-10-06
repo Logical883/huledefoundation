@@ -12,7 +12,7 @@ const Team = () => {
       "Before founding the company, Founder A served as a Manager",
       "Holds patents for technological innovations that led the industry",
     ],
-    image: "/public/images/jhulede.png",
+    image: "/images/jhulede.png",
   };
 
   const boardMembers = [
