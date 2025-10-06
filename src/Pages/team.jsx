@@ -21,7 +21,7 @@ const Team = () => {
       title: "Board Member",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "images/Irene.png",
+      image: "/images/Irene.png",
     },
     {
       name: "Linda Rose",
