@@ -268,7 +268,9 @@ const Home = () => {
           Take the next step toward your academic journey. Submit your
           application today and let your dreams find the support they deserve.
         </p>
-        <button className="btn-white">CALL TO ACTION</button>
+        <a href="https://forms.gle/5fv4RGFL9gX95QYQ9">
+          <button className="btn-white">Apply Now</button>
+        </a>
       </section>
       <br />
       <br />
