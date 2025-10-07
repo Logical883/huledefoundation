@@ -19,57 +19,57 @@ const Team = () => {
     {
       name: "MRS. IRENE HULEDE",
       title: "Board Member",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/Irene.png",
     },
     {
       name: "MR. PATRICK HULEDE",
       title: "Board Member",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/Patrick.png",
     },
     {
       name: "MR. ERIC ANANE ANTWI",
       title: "Board Member",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/Eric.png",
     },
     {
       name: "PROF RUDOLPH STEINER",
       title: "Board Member",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/Steiner.png",
     },
     {
       name: "MARY HULEDE",
       title: "Member",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/Mary.png",
     },
     {
       name: "JOHN HULEDE JNR",
       title: "Member",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/John.png",
     },
     {
       name: "MAUDUANA A. MENYAH",
       title: "General Secretary",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/Mauduana.png",
     },
     {
       name: "HULEDE FAMILY",
       title: "Mr. Hulede with family",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      // description:
+      //   "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
       image: "/images/WithFam.png",
     },
   ];
