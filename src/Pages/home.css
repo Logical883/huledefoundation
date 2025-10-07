@@ -13,7 +13,7 @@
 
 /* Hero Section */
 .hero-section {
-  width: 100vw;
+  width: 100vh;
   height: 100vh;
   display: flex;
   align-items: center;

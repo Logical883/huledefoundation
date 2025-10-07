@@ -6,11 +6,11 @@ const Team = () => {
     name: "MR. JOHN HULEDE",
     title: "CEO & Founder",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipis cingi lan vpurar elt. In ut elit tara telus tuctus nal amat mar tis pulvinar pibus leo dota In ut las tuo cimoo vitae, lamos daps, lermos por dodt amet taren.",
+      "I was born on KNUST campus to Mr. Patrick Hulede, then KNUST Printing Manager and Mrs. Mary Clara Araba Tachie-Mensah-Hulede. I attended University Primary, OWASS, and then KNUST for one year. I am an IT engineer by Profession and worked at DHS-USCIS, DHS-OBIM, Department of Energy, and others. At Department of Transportation - FHWA, I designed and implemented a nationwide Microsoft Active Directory and Mail system.",
     experience: [
-      "Over 15 years of experience in the technology industry",
-      "Before founding the company, Founder A served as a Manager",
-      "Holds patents for technological innovations that led the industry",
+      "Former President Akatakyie DMV. USA",
+      "Current President Akatakyie Z group. GLOBAL ",
+      "Current President AFA-DMV. USA",
     ],
     image: "/images/jhulede.png",
   };
@@ -24,39 +24,53 @@ const Team = () => {
       image: "/images/Irene.png",
     },
     {
-      name: "Linda Rose",
-      title: "VP of Design",
+      name: "MR. PATRICK HULEDE",
+      title: "Board Member",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/images/jhulede.png",
+      image: "/images/Patrick.png",
     },
     {
-      name: "Jessica Janet",
-      title: "Project Manager",
+      name: "MR. ERIC ANANE ANTWI",
+      title: "Board Member",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/images/jhulede.png",
+      image: "/images/Eric.png",
     },
     {
-      name: "Samuel Lane",
-      title: "Creative Director",
+      name: "PROF RUDOLPH STEINER",
+      title: "Board Member",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/images/jhulede.png",
+      image: "/images/Steiner.png",
     },
     {
-      name: "Laurel Schaalia",
-      title: "Supervisor",
+      name: "MARY HULEDE",
+      title: "Member",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/images/jhulede.png",
+      image: "/images/Mary.png",
     },
     {
-      name: "Justin Hubner",
-      title: "Coordinator",
+      name: "JOHN HULEDE JNR",
+      title: "Member",
       description:
         "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
-      image: "/images/jhulede.png",
+      image: "/images/John.png",
+    },
+    {
+      name: "MAUDUANA A. MENYAH",
+      title: "General Secretary",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      image: "/images/Mauduana.png",
+    },
+    {
+      name: "HULEDE FAMILY",
+      title: "Mr. Hulede with family",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur teral incididunt ut labore et dolore aliqua",
+      image: "/images/WithFam.png",
     },
   ];
 
@@ -86,24 +100,29 @@ const Team = () => {
             <p className="ceo-description">{ceo.description}</p>
 
             <div className="social-links">
-              <a href="#" aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/profile.php?id=100086620458577&mibextid=LQQJ4d"
+                aria-label="Facebook"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" aria-label="Twitter">
+              <a
+                href="https://x.com/thehulede_f/status/1750279247493496941?s=46&t=GtyqgkIjkfYbMMUKKy9Bpw"
+                aria-label="Twitter"
+              >
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
+              <a
+                href="https://instagram.com/p/C2f8SY-MZCK/"
+                aria-label="Instagram"
+              >
+                <i className="fab fa-instagram"></i>
               </a>
             </div>
 
             <div className="experience-section">
-              <h3>{ceo.name} Experience</h3>
-              <p className="experience-description">
-                Lorem ipsum dolor sit amet, consectetur adipis cingi lan vpurar
-                elt. In ut elit tara telus tuctus nal amat mar tis pulvinar
-                pibus leo.
-              </p>
+              <h3>{ceo.name}'s Leadership Roles:</h3>
+              <p className="experience-description"></p>
               <ul className="experience-list">
                 {ceo.experience.map((exp, index) => (
                   <li key={index}>
@@ -113,6 +132,8 @@ const Team = () => {
                 ))}
               </ul>
             </div>
+            <br />
+            <button>Read more</button>
           </div>
         </div>
       </section>
@@ -121,10 +142,7 @@ const Team = () => {
       <section className="board-section">
         <div className="board-header">
           <h2>Board of Directors</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipis cingi lan vpurar elt.
-            Ut elit tara telus tuctus nal amat mar tis pulvinar pibus ledo.
-          </p>
+          <p></p>
         </div>
 
         <div className="board-grid">
@@ -154,7 +172,8 @@ const Team = () => {
         <div className="section-divider"></div>
         <p className="section-subtitles">
           At The Hulede Foundation we believe that each person is a special seed
-          and if properly nurtured will bear fruits and beget multiple seeds.
+          and if properly nurtured will bear fruits and beget multiple seeds.{" "}
+          <br />
           #Everyone matters.
         </p>
       </section>
