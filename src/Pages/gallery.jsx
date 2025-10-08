@@ -56,14 +56,14 @@ const Gallery = () => {
       link: "https://huledefoundation.pixieset.com/2022huledefoundationscholarshipgallery/",
       size: "small",
     },
-    // {
-    //   id: 7,
-    //   title: "FESTIVAL READY",
-    //   date: "SEPTEMBER 02, 2024",
-    //   image: "/images/image7.jpg", // Replace with your image filename
-    //   link: "YOUR_LINK_HERE_7",
-    //   size: "large",
-    // },
+    {
+      id: 7,
+      title: "HULEDE FOUNDATION - OTHER ACTIVITIES GALLERY",
+      // date: "SEPTEMBER 02, 2024",
+      image: "/images/Service.jpg", // Replace with your image filename
+      link: "https://huledefoundation.pixieset.com/huledefoundationgeneralgallery/",
+      size: "large",
+    },
     // {
     //   id: 8,
     //   title: "SUMMER HEAVEN",
