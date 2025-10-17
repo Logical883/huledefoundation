@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 import image1 from "../assets/image1.JPG";
@@ -7,11 +7,18 @@ import image3 from "../assets/image3.JPG";
 import Hero from "../assets/Hero.jpg";
 
 const Home = () => {
-  // Hero Images
   const heroImages = [image1, image2, image3];
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Featured stories data
+  // Auto-slide effect
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(slideInterval);
+  }, [heroImages.length]);
+
   const featuredStories = [
     {
       title: 'The "GIVE BACK" Story',
@@ -19,35 +26,22 @@ const Home = () => {
         'I am Daniel Coffie. God being so good, I commenced my volunteering project on September 1, 2023, at the Anyaa M/A "1" Primary and Junior High School located within the Anyaa-Sowutwom constituency. After conducting an investigation, I discovered that the students had limited knowledge in computing. Therefore, I undertook the initiative to provide them with education in computer literacy, starting...',
       link: "https://www.facebook.com/people/The-Hulede-Foundation/100086620458577/",
     },
-    // {
-    //   title: "Strength in Service",
-    //   description:
-    //     "My name is Prince Fosu, offering GEOGRAPHY AND RURAL DEVELOPMENT. As part of giving back to the community, I decided to find a place(community) that indeed deserves such a voluntary service and will always have such an experience in memory. So I traveled from Kumasi to a small neighborhood in one of the newly created districts (AMANSIE SOUTH DISTRICT). Manso Apenimadi is a community......",
-    //   link: "https://huledefoundation.org/strength-in-service/",
-    // },
-    // {
-    //   title: "The Power of Giving",
-    //   description:
-    //     "I am Ama Serwaa, a passionate youth committed to empowering young girls in my community. On October 15, 2024, I officially launched my mentorship initiative at the Koforidua Methodist Junior High School. Through my observations, I realized that many of the girls lacked guidance and motivation regarding education and career opportunities. To address this, I introduced a series of mentorship and personal development....",
-    //   link: "https://huledefoundation.org/the-power-of-giving/",
-    // },
     {
       title:
         "Hulede Foundation donates mechanized borehole to new Amakom M/A cluster of schools",
       description:
-        "Hulede Foundation,founded by John Hulede,a US – based non profitable organization has donated mechanized borehole water to new Amakom cluster of schools in the Kumasi Metropolis of the Ashanti Region. The donation is to help pupils and teachers to have access to portable drinking water which will facilitate teaching, learning and enhance quality education in the school......",
-      link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/ ",
+        "Hulede Foundation, founded by John Hulede, a US-based non-profitable organization has donated mechanized borehole water to new Amakom cluster of schools in the Kumasi Metropolis of the Ashanti Region. The donation is to help pupils and teachers to have access to portable drinking water which will facilitate teaching, learning and enhance quality education in the school......",
+      link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
     },
     {
       title:
         "Hulede Foundation supports 250 needy students to clear outstanding fees",
       description:
         "The Hulede Foundation, a US-based non-governmental organization dedicated to assisting brilliant but underprivileged students in their pursuit of higher education, has provided financial support to 250 students at Kwame Nkrumah University of Science and Technology (KNUST) to settle their outstanding fees......",
-      link: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html ",
+      link: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html",
     },
   ];
 
-  // Sample data - replace with your actual data
   const scholarshipData = [
     { year: "2025", recipients: 339 },
     { year: "2024", recipients: 348 },
@@ -67,7 +61,6 @@ const Home = () => {
   );
   const totalLaptops = laptopData.reduce((sum, item) => sum + item.laptops, 0);
 
-  // Go directly to hero slide
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -76,15 +69,17 @@ const Home = () => {
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero-section">
-        <div
-          className="hero-background"
-          style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
-        ></div>
+        {heroImages.map((src, index) => (
+          <div
+            key={index}
+            className={`hero-background ${
+              currentSlide === index ? "active" : ""
+            }`}
+            style={{ backgroundImage: `url(${src})` }}
+          />
+        ))}
         <div className="hero-overlay">
           <div className="hero-content">
-            <br />
-            <br />
-            <br />
             <h1 className="hero-title">2025 MEET & GREET</h1>
             <button className="btn-primary">Read More</button>
           </div>
@@ -102,7 +97,7 @@ const Home = () => {
 
       {/* About Us Section */}
       <section className="about-section">
-        <h2 className="section-title">WHO ARE WE ?</h2>
+        <h2 className="section-title">WHO ARE WE?</h2>
         <div className="section-divider"></div>
         <p className="section-subtitle">
           Our strength lies not only in the words we stand by, but most
@@ -114,7 +109,7 @@ const Home = () => {
 
         <div className="about-content">
           <div className="about-image">
-            <img src={Hero} alt="Professional" />
+            <img src={Hero} alt="Hulede Foundation Professional" />
           </div>
           <div className="about-text">
             <h3 className="about-heading">
@@ -125,10 +120,14 @@ const Home = () => {
               needy" Ghanaian students, primarily at KNUST (Kwame Nkrumah
               University of Science and Technology), aiming to create
               opportunities for the underprivileged in society to improve their
-              lives. <br />
+              lives.
+              <br />
+              <br />
               The foundation was established by the sons of Patrick Hulede to
               honor their father and supports students in their first through
-              final year. We have consistently done so over the years. <br />
+              final year. We have consistently done so over the years.
+              <br />
+              <br />
               This Scholarship is mainly for Ghanaian students, particularly at
               KNUST, who are both academically strong (brilliant) and
               financially disadvantaged (needy).
@@ -143,33 +142,38 @@ const Home = () => {
           COMMUNITY SERVICE: THE SPIRIT OF GIVING MULTIPLES
         </h2>
         <div className="section-divider"></div>
-        <p className="section-subtitles">
-          The Hulede Foundation KNUST Scholarship is built on a commitment to
-          academic excellence and civic responsibility. We believe in "The
-          Spirit of Giving Multiples," where our recipients pay their privilege
-          forward. As a core requirement, each scholar completes{" "}
-          <strong text-color="#27ae60">
-            40 hours minimum of annual community service
-          </strong>
-          . This initiative is a vital contribution to society and a mandatory
-          part of the scholarship renewal process. <br />
+        <div className="section-subtitles">
+          <p>
+            The Hulede Foundation KNUST Scholarship is built on a commitment to
+            academic excellence and civic responsibility. We believe in "The
+            Spirit of Giving Multiples," where our recipients pay their
+            privilege forward. As a core requirement, each scholar completes{" "}
+            <strong className="highlight-text">
+              40 hours minimum of annual community service
+            </strong>
+            . This initiative is a vital contribution to society and a mandatory
+            part of the scholarship renewal process.
+          </p>
           <br />
-          <h3>To be eligible, scholars must: </h3>
+          <h3>To be eligible, scholars must:</h3>
+          <ul>
+            <li>Wear the official Hulede Foundation T-shirt during service.</li>
+            <li>
+              Document their work with photos, videos, and a detailed report.
+            </li>
+            <li>Complete at least 40 hours of service annually.</li>
+            <li>
+              Submit all evidence to the designated Hulede Foundation
+              Scholarship Beneficiaries platform.
+            </li>
+          </ul>
           <br />
-          <li>Wear the official Hulede Foundation T-shirt during service.</li>
-          <li>
-            Document their work with photos, videos, and a detailed report.
-          </li>
-          <li>Complete at least 40 hours of service annually.</li> <br />
-          <li>
-            Submit all evidence to the designated HuledeFoundation Scholarship
-            Beneficiaries platform.
-          </li>{" "}
-          <br />
-          This page showcases the impactful work of our scholars as they apply
-          their knowledge to create positive change, embodying our mission of
-          "Making a Difference."
-        </p>
+          <p>
+            This page showcases the impactful work of our scholars as they apply
+            their knowledge to create positive change, embodying our mission of
+            "Making a Difference."
+          </p>
+        </div>
 
         {/* Featured Stories Grid */}
         <div className="features-grid">
@@ -188,9 +192,14 @@ const Home = () => {
               </div>
               <h4 className="feature-title">{story.title}</h4>
               <p className="feature-description">{story.description}</p>
-              <button className="btn-secondary">
-                <a href={story.link}>Read More</a>
-              </button>
+              <a
+                href={story.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                Read More
+              </a>
             </div>
           ))}
         </div>
@@ -257,8 +266,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <br />
-      <br />
 
       {/* Application Section */}
       <section className="cta-section">
@@ -268,12 +275,14 @@ const Home = () => {
           Take the next step toward your academic journey. Submit your
           application today and let your dreams find the support they deserve.
         </p>
-        <a href="https://forms.gle/5fv4RGFL9gX95QYQ9">
+        <a
+          href="https://forms.gle/5fv4RGFL9gX95QYQ9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className="btn-white">Apply Now</button>
         </a>
       </section>
-      <br />
-      <br />
 
       {/* Footer */}
       <footer className="footer">
@@ -292,7 +301,7 @@ const Home = () => {
                 <a href="/home">Home</a>
               </li>
               <li>
-                <a href="/About">About</a>
+                <a href="/about">About</a>
               </li>
               <li>
                 <a href="/gallery">Gallery</a>

@@ -7,13 +7,12 @@
 .home-container {
   width: 100%;
   overflow-x: hidden;
-  padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Hero Section */
 .hero-section {
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -32,7 +31,12 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: background-image 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-background.active {
+  opacity: 1;
 }
 
 .hero-background::before {
@@ -75,6 +79,7 @@
   bottom: 30px;
   display: flex;
   gap: 10px;
+  z-index: 2;
 }
 
 .dot {
@@ -118,18 +123,13 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  height: 50px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-secondary:hover {
   background-color: #27ae60;
-}
-
-.btn-secondary a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  width: 100%;
 }
 
 .btn-white {
@@ -223,8 +223,18 @@
   padding: 0 20px;
 }
 
-.section-subtitles.white {
-  color: rgba(255, 255, 255, 0.9);
+.section-subtitles ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.section-subtitles li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.highlight-text {
+  color: #27ae60;
 }
 
 /* About Section */
@@ -334,6 +344,17 @@
   margin-bottom: 24px;
   flex-grow: 1;
   font-size: 0.95rem;
+}
+
+/* Statistics Section */
+.statistics-section {
+  padding: 80px 20px;
+  background-color: white;
+}
+
+.stat-container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Stats Cards Section */
@@ -530,12 +551,10 @@
   color: #999;
 }
 
-/* Tablet/Mobile (768px and below) */
-@media (max-width: 768px) {
-  .home-container {
-    padding: 20px 10px;
-  }
+/* Responsive Design */
 
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
   }
@@ -585,8 +604,44 @@
 
   .stats-section {
     gap: 20px;
+    padding: 0 20px;
   }
 
+  .stat-card {
+    width: 140px;
+    height: 140px;
+  }
+
+  .stat-number {
+    font-size: 40px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .tables-section {
+    padding: 0 10px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle,
+  .section-subtitles {
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium Mobile (640px and below) */
+@media (max-width: 640px) {
   .stat-card {
     width: 160px;
     height: 160px;
@@ -625,7 +680,8 @@
 /* Small Mobile (480px and below) */
 @media (max-width: 480px) {
   .hero-section {
-    height: 500px;
+    height: 70vh;
+    min-height: 500px;
   }
 
   .hero-title {
@@ -638,27 +694,40 @@
     font-size: 0.9rem;
   }
 
+  .section-title {
+    font-size: 1.5rem;
+  }
+
   .feature-card {
     padding: 30px 20px;
     min-height: 380px;
   }
 
   .stat-card {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .stat-number {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .stat-label {
     font-size: 11px;
   }
 
+  .features-grid {
+    padding: 0 10px;
+  }
+
+  .tables-section {
+    padding: 0 10px;
+    grid-template-columns: 1fr;
+  }
+
   .data-table th,
   .data-table td {
-    padding: 10px 12px;
-    font-size: 13px;
+    padding: 10px 8px;
+    font-size: 12px;
   }
 }
