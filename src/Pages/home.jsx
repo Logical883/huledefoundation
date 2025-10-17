@@ -269,18 +269,19 @@ const Home = () => {
 
       {/* Application Section */}
       <section className="cta-section">
-        <h2 className="section-title white">APPLY FOR SCHOLARSHIP</h2>
+        <h2 className="section-title white">COMMUNITY SERVICE REPORT</h2>
         <div className="section-divider white"></div>
         <p className="section-subtitle white">
-          Take the next step toward your academic journey. Submit your
-          application today and let your dreams find the support they deserve.
+          Take the next step toward your academic journey. Submit your Community
+          Service report today and let your dreams find the support they
+          deserve.
         </p>
         <a
           href="https://forms.gle/5fv4RGFL9gX95QYQ9"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="btn-white">Apply Now</button>
+          <button className="btn-white">Submit</button>
         </a>
       </section>
 
