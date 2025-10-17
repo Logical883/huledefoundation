@@ -65,15 +65,6 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/support"
-            onClick={closeMenu}
-            className={({ isActive }) => (isActive ? "active" : undefined)}
-          >
-            Support Us
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/editor"
             onClick={closeMenu}
             className={({ isActive }) => (isActive ? "active" : undefined)}
@@ -87,8 +78,19 @@ const Navbar = () => {
             onClick={closeMenu}
             className={({ isActive }) => (isActive ? "active" : undefined)}
           >
-            <button className="btn">Contact Us</button>
+            Contact
           </NavLink>
+        </li>
+
+        <li>
+          <a
+            href="https://forms.gle/5fv4RGFL9gX95QYQ9"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+          >
+            <button className="btn">Apply Now</button>
+          </a>
         </li>
       </ul>
       {!hideMenuIcon && (
