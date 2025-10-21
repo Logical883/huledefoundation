@@ -277,7 +277,7 @@ const Home = () => {
           deserve.
         </p>
         <a
-          href="https://forms.gle/5fv4RGFL9gX95QYQ9"
+          href="https://forms.gle/WQGC3LJrTnmkvTra7"
           target="_blank"
           rel="noopener noreferrer"
         >
