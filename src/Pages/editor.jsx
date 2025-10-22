@@ -1,4 +1,5 @@
 import "./editor.css";
+import Mauduana from "../assets/Mauduana.jpg";
 const Home = () => {
   return (
     <div className="home-container">
@@ -7,22 +8,20 @@ const Home = () => {
         <div className="blog-header">
           <h2 className="blog-title">About Our Editor-in-Chief</h2>
           <p className="blog-subtitle">
-            Discover the lives we've touched and the communities we've
-            transformed through our programs and initiatives
+            Discover more about Miss Mauduana, our dedicated Editor-in-Chief at
+            the Hulede Foundation, and her passion for making a difference
+            through storytelling.
           </p>
         </div>
 
         {/* Featured Article */}
         <div className="featured-article">
           <div className="featured-image">
-            <img
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800"
-              alt="Featured story"
-            />
+            <img src={Mauduana} alt="Featured story" />
           </div>
           <div className="featured-content">
-            <h3>Empowering Communities Through Education</h3>
-            <p className="featured-date">December 15, 2024</p>
+            <h3>Miss Mauduana</h3>
+            <p className="featured-date">Editor-in-Chief - Hulede Foundation</p>
             <p className="featured-excerpt">
               Join us as we share the incredible journey of how educational
               support has transformed lives in rural communities. Through
@@ -33,6 +32,15 @@ const Home = () => {
               Read Full Story →
             </a>
           </div>
+        </div>
+
+        <div className="blog-header">
+          <h2 className="blog-title">Our Newsletters</h2>
+          <p className="blog-subtitle">
+            Discover the lives we've touched and the communities we've
+            transformed through our programs and initiatives. Read our
+            Newsletters to know more about our impact.
+          </p>
         </div>
 
         {/* Recent Stories Grid */}
