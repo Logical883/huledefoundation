@@ -128,7 +128,7 @@ const Home = () => {
           <div className="story-card">
             <div className="story-image">
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400"
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400"
                 alt="Story"
               />
             </div>
