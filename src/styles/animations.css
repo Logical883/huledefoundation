@@ -1,0 +1,120 @@
+/* Global animations, hero crossfade, and UI transition rules used across pages */
+
+/* Base transitions for buttons and controls */
+.btn-primary,
+.btn-secondary,
+.btn-white,
+button {
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+  cursor: pointer;
+}
+
+/* Hover lift */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Remove underlines and green hover from footer/contact links globally */
+.footer a,
+.footer a:visited,
+.footer a:hover,
+.footer a:focus,
+a.contact,
+a.contact:visited,
+a.contact:hover,
+a.contact:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+/* Scroll-triggered reveal animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 620ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 620ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+}
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slightly longer duration for larger blocks (images/cards) */
+[data-animate].large,
+.about-image[data-animate],
+.feature-card[data-animate],
+.stat-card[data-animate],
+.table-container[data-animate],
+.cta-section[data-animate] {
+  transition-duration: 820ms;
+}
+
+/* HERO crossfade (global override) */
+.hero-section {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+.hero-section .hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1.6s ease-in-out,
+    transform 1.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+  z-index: 0;
+  backface-visibility: hidden;
+}
+.hero-section .hero-background::before {
+  transition: opacity 1.6s ease-in-out;
+}
+.hero-section .hero-background.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+.hero-section .hero-background:not(.active) {
+  pointer-events: none;
+}
+
+/* Dots / controls */
+.hero-dots .dot,
+.hero-dots button.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 420ms ease, background 420ms ease, opacity 420ms ease;
+  opacity: 0.9;
+}
+.hero-dots .dot.active,
+.hero-dots button.dot.active {
+  transform: scale(1.45);
+  background: #fff;
+  opacity: 1;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section .hero-background,
+  [data-animate],
+  .hero-dots .dot,
+  .btn-primary,
+  .btn-secondary,
+  .btn-white {
+    transition: none !important;
+    animation: none !important;
+  }
+}

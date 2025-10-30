@@ -19,6 +19,25 @@ const Home = () => {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
+  // IntersectionObserver to trigger smooth reveal animations
+  useEffect(() => {
+    const targets = document.querySelectorAll("[data-animate]");
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+          else entry.target.classList.remove("in-view");
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+
   const featuredStories = [
     {
       title: 'The "GIVE BACK" Story',
@@ -76,20 +95,27 @@ const Home = () => {
               currentSlide === index ? "active" : ""
             }`}
             style={{ backgroundImage: `url(${src})` }}
+            aria-hidden={currentSlide !== index}
           />
         ))}
         <div className="hero-overlay">
-          <div className="hero-content">
-            <h1 className="hero-title">2025 MEET & GREET</h1>
-            <button className="btn-primary">Read More</button>
+          <div className="hero-content" data-animate>
+            <h1 className="hero-title" data-animate>
+              2025 MEET & GREET
+            </h1>
+            <button className="btn-primary" data-animate>
+              Read More
+            </button>
           </div>
-          <div className="hero-dots">
+          <div className="hero-dots" data-animate>
             {heroImages.map((_, index) => (
-              <span
+              <button
                 key={index}
                 className={`dot ${currentSlide === index ? "active" : ""}`}
                 onClick={() => goToSlide(index)}
-              ></span>
+                aria-label={`Go to slide ${index + 1}`}
+                type="button"
+              />
             ))}
           </div>
         </div>
@@ -97,9 +123,11 @@ const Home = () => {
 
       {/* About Us Section */}
       <section className="about-section">
-        <h2 className="section-title">WHO ARE WE?</h2>
-        <div className="section-divider"></div>
-        <p className="section-subtitle">
+        <h2 className="section-title" data-animate>
+          WHO ARE WE?
+        </h2>
+        <div className="section-divider" data-animate />
+        <p className="section-subtitle" data-animate>
           Our strength lies not only in the words we stand by, but most
           importantly in the actions of our initiatives. We purposely create
           opportunities for the underprivileged in our society to better their
@@ -108,11 +136,11 @@ const Home = () => {
         </p>
 
         <div className="about-content">
-          <div className="about-image">
+          <div className="about-image" data-animate>
             <img src={Hero} alt="Hulede Foundation Professional" />
           </div>
-          <div className="about-text">
-            <h3 className="about-heading">
+          <div className="about-text" data-animate>
+            <h3 className="about-heading" data-animate>
               About Hulede Foundation Scholarship
             </h3>
             <p className="about-description">
@@ -133,16 +161,18 @@ const Home = () => {
               financially disadvantaged (needy).
             </p>
             <Link to="/about">
-              <button className="btn-secondary">Read More</button>
+              <button className="btn-secondary" data-animate>
+                Read More
+              </button>
             </Link>
           </div>
         </div>
 
-        <h2 className="section-title">
+        <h2 className="section-title" data-animate>
           COMMUNITY SERVICE: THE SPIRIT OF GIVING MULTIPLES
         </h2>
-        <div className="section-divider"></div>
-        <div className="section-subtitles">
+        <div className="section-divider" data-animate />
+        <div className="section-subtitles" data-animate>
           <p>
             The Hulede Foundation KNUST Scholarship is built on a commitment to
             academic excellence and civic responsibility. We believe in "The
@@ -178,7 +208,7 @@ const Home = () => {
         {/* Featured Stories Grid */}
         <div className="features-grid">
           {featuredStories.map((story, index) => (
-            <div className="feature-card" key={index}>
+            <div className="feature-card" key={index} data-animate>
               <div className="feature-icon">
                 <svg
                   viewBox="0 0 24 24"
@@ -208,22 +238,19 @@ const Home = () => {
       {/* Statistics Section */}
       <section className="statistics-section">
         <div className="stat-container">
-          {/* Stats Cards */}
           <div className="stats-section">
-            <div className="stat-card green-card">
+            <div className="stat-card green-card" data-animate>
               <div className="stat-number">{totalRecipients}</div>
               <div className="stat-label">SCHOLARSHIP RECIPIENTS</div>
             </div>
-            <div className="stat-card blue-card">
+            <div className="stat-card blue-card" data-animate>
               <div className="stat-number">{totalLaptops}</div>
               <div className="stat-label">LAPTOPS DONATED</div>
             </div>
           </div>
 
-          {/* Tables Section */}
           <div className="tables-section">
-            {/* Scholarship Table */}
-            <div className="table-container">
+            <div className="table-container" data-animate>
               <h2 className="table-title">Scholarship Recipients</h2>
               <table className="data-table">
                 <thead>
@@ -243,8 +270,7 @@ const Home = () => {
               </table>
             </div>
 
-            {/* Laptops Table */}
-            <div className="table-container">
+            <div className="table-container" data-animate>
               <h2 className="table-title">Laptops Distribution</h2>
               <table className="data-table">
                 <thead>
@@ -268,9 +294,9 @@ const Home = () => {
       </section>
 
       {/* Application Section */}
-      <section className="cta-section">
+      <section className="cta-section" data-animate>
         <h2 className="section-title white">COMMUNITY SERVICE REPORT</h2>
-        <div className="section-divider white"></div>
+        <div className="section-divider white" />
         <p className="section-subtitle white">
           Take the next step toward your academic journey. Submit your Community
           Service report today and let your dreams find the support they
@@ -281,12 +307,14 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="btn-white">Submit</button>
+          <button className="btn-white" data-animate>
+            Submit
+          </button>
         </a>
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer" data-animate>
         <div className="footer-content">
           <div className="footer-section">
             <h4>Our Vision</h4>

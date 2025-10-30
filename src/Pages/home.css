@@ -21,6 +21,7 @@
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  min-height: 60vh;
 }
 
 .hero-background {
@@ -33,10 +34,17 @@
   background-position: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  transform: scale(1.02);
+  transition: opacity 1s ease-in-out,
+    transform 1.2s cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+  z-index: 0;
 }
 
 .hero-background.active {
   opacity: 1;
+  transform: scale(1);
+  z-index: 1;
 }
 
 .hero-background::before {
@@ -58,6 +66,8 @@
   justify-content: center;
   position: relative;
   z-index: 1;
+  padding: 4rem 1rem;
+  text-align: center;
 }
 
 .hero-content {
@@ -80,6 +90,8 @@
   display: flex;
   gap: 10px;
   z-index: 2;
+  margin-top: 1.25rem;
+  justify-content: center;
 }
 
 .dot {
@@ -107,10 +119,13 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
 }
 
 .btn-primary:hover {
   background-color: #27ae60;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .btn-secondary {
@@ -126,10 +141,13 @@
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
 }
 
 .btn-secondary:hover {
   background-color: #27ae60;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .btn-white {
@@ -143,11 +161,13 @@
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.3s ease;
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
 }
 
 .btn-white:hover {
   background-color: #f8f9fa;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Section Common Styles */
@@ -729,5 +749,161 @@
   .data-table td {
     padding: 10px 8px;
     font-size: 12px;
+  }
+}
+
+/* HERO crossfade */
+.hero-section {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1s ease-in-out,
+    transform 1.2s cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+  z-index: 0;
+}
+.hero-background.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* Dots */
+.hero-dots {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.hero-dots .dot,
+.hero-dots button.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 300ms ease, background 300ms ease, opacity 300ms ease;
+  opacity: 0.9;
+}
+.hero-dots .dot.active,
+.hero-dots button.dot.active {
+  transform: scale(1.5);
+  background: #fff;
+  opacity: 1;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-white {
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+  cursor: pointer;
+}
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Remove green underline / hover effect on footer links and contact button */
+.footer a,
+.footer a:visited,
+.footer a:hover,
+.footer a:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+/* Scroll-triggered reveal animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 600ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+}
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slightly slower dot and control transitions to match the hero timing */
+.hero-dots .dot,
+.hero-dots button.dot {
+  transition: transform 400ms ease, background 400ms ease, opacity 400ms ease;
+}
+
+/* Smooth crossfade override for hero (slower, more natural fade out / fade in) */
+.hero-section {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+/* Use a slightly longer duration and ease-in-out for a professional crossfade */
+.hero-section .hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1.6s ease-in-out,
+    transform 1.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+  z-index: 0;
+  backface-visibility: hidden;
+}
+
+/* Keep gradient overlay's opacity in sync so the dimming also fades smoothly */
+.hero-section .hero-background::before {
+  transition: opacity 1.6s ease-in-out;
+}
+
+/* Active slide fades in smoothly */
+.hero-section .hero-background.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* Prevent pointer events on hidden slides and make sure transitions are smooth */
+.hero-section .hero-background:not(.active) {
+  pointer-events: none;
+}
+
+/* Ensure reduced-motion preference is respected (already present higher up) */
+@media (prefers-reduced-motion: reduce) {
+  .hero-background,
+  [data-animate],
+  .hero-dots .dot,
+  .btn-primary,
+  .btn-secondary,
+  .btn-white {
+    transition: none !important;
   }
 }
