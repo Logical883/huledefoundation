@@ -919,7 +919,7 @@
 .ticker-content {
   display: flex;
   gap: 3rem;
-  animation: scroll 30s linear infinite;
+  animation: scroll 10s linear infinite;
   white-space: nowrap;
 }
 
