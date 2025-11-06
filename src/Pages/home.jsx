@@ -5,6 +5,7 @@ import image1 from "../assets/image1.JPG";
 import image2 from "../assets/image2.JPG";
 import image3 from "../assets/image3.JPG";
 import Hero from "../assets/Hero.jpg";
+import Community from "../assets/Community.jpg";
 
 const Home = () => {
   const heroImages = [image1, image2, image3];
@@ -101,21 +102,21 @@ const Home = () => {
         <div className="popup-overlay" onClick={() => setShowPopup(false)}>
           <div
             className="popup-content"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+            // Prevent closing when clicking inside
           >
             <button className="popup-close" onClick={() => setShowPopup(false)}>
               ✕
             </button>
             <img
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800"
-              alt="Feast Celebration"
+              src={Community}
+              alt="Community Service"
               className="popup-image"
             />
-            <h2>🎉 Community Feast 2025 🎉</h2>
+            <h2>📋 Community Service Report Submission</h2>
             <p>
-              Join us for a special celebration of unity and giving at the
-              Hulede Foundation Feast! Let’s make memories and share joy
-              together.
+              Remember to compile all necessary documents (report, photos,
+              attendance sheets, certificates, etc.) into a single{" "}
+              <strong>ZIP file</strong> before submission.
             </p>{" "}
             <br />
             <a
