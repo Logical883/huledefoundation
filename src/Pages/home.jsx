@@ -84,8 +84,53 @@ const Home = () => {
     setCurrentSlide(index);
   };
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Show popup 1 second after page load
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="home-container">
+      {/* ---------- POPUP MESSAGE ---------- */}
+      {showPopup && (
+        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+          <div
+            className="popup-content"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+          >
+            <button className="popup-close" onClick={() => setShowPopup(false)}>
+              ✕
+            </button>
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800"
+              alt="Feast Celebration"
+              className="popup-image"
+            />
+            <h2>🎉 Community Feast 2025 🎉</h2>
+            <p>
+              Join us for a special celebration of unity and giving at the
+              Hulede Foundation Feast! Let’s make memories and share joy
+              together.
+            </p>{" "}
+            <br />
+            <a
+              href="https://forms.gle/WQGC3LJrTnmkvTra7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="popup-button" data-animate>
+                Submit
+              </button>
+            </a>
+            <br />
+          </div>
+        </div>
+      )}
       {/* Hero Section */}
       <section className="hero-section">
         {heroImages.map((src, index) => (
@@ -119,7 +164,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>{" "}
+      </section>
       <br />
       {/* Services Ticker */}
       <div className="services-ticker">
