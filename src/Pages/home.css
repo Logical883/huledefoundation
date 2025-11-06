@@ -907,3 +907,34 @@
     transition: none !important;
   }
 }
+
+/* Services Ticker */
+.services-ticker {
+  background: #d4af37;
+  padding: 1.2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-content {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-content span {
+  color: #1a4d2e;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

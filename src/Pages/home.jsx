@@ -121,6 +121,23 @@ const Home = () => {
         </div>
       </section>{" "}
       <br />
+      {/* Services Ticker */}
+      <div className="services-ticker">
+        <div className="ticker-content">
+          <span>✦ Education Support</span>
+          <span>✦ Healthcare Initiatives</span>
+          <span>✦ Community Development</span>
+          <span>✦ Youth Empowerment</span>
+          <span>✦ Women's Programs</span>
+          <span>✦ Environmental Projects</span>
+          <span>✦ Education Support</span>
+          <span>✦ Healthcare Initiatives</span>
+          <span>✦ Community Development</span>
+          <span>✦ Youth Empowerment</span>
+          <span>✦ Women's Programs</span>
+          <span>✦ Environmental Projects</span>
+        </div>
+      </div>
       <br />
       {/* Application Section */}
       <section className="cta-section" data-animate>
