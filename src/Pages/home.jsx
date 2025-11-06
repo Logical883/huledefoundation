@@ -124,18 +124,18 @@ const Home = () => {
       {/* Services Ticker */}
       <div className="services-ticker">
         <div className="ticker-content">
-          <span>✦ Education Support</span>
-          <span>✦ Healthcare Initiatives</span>
-          <span>✦ Community Development</span>
+          <span>✦ Educational Excellence</span>
+          <span>✦ Community Service</span>
+          <span>✦ Leadership Development</span>
+          <span>✦ Social Impact Projects</span>
+          <span>✦ Volunteerism</span>
           <span>✦ Youth Empowerment</span>
-          <span>✦ Women's Programs</span>
-          <span>✦ Environmental Projects</span>
-          <span>✦ Education Support</span>
-          <span>✦ Healthcare Initiatives</span>
-          <span>✦ Community Development</span>
-          <span>✦ Youth Empowerment</span>
-          <span>✦ Women's Programs</span>
-          <span>✦ Environmental Projects</span>
+          <span>✦ Sustainable Development</span>
+          <span>✦ Mentorship Programs</span>
+          <span>✦ Innovation for Change</span>
+          <span>✦ Empowering Future Leaders</span>
+          <span>✦ Civic Responsibility</span>
+          <span>✦ Lifelong Learning</span>
         </div>
       </div>
       <br />
