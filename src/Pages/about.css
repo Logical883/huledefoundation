@@ -94,12 +94,16 @@
 }
 
 .section-subtitles {
-  text-align: center;
+  text-align: left;
   max-width: 800px;
   margin: 0 auto 50px;
   color: #666;
   line-height: 1.6;
   padding: 0 20px;
+}
+.section-subtitles li {
+  text-align: left;
+  padding-left: 20px; /* Optional: Add padding for better alignment */
 }
 
 .section-subtitles.white {
