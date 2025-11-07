@@ -41,6 +41,19 @@ const Home = () => {
 
   const featuredStories = [
     {
+      title: "James Dankwah Amoako – Making a Difference Through Compassion",
+      description:
+        "James, a Hulede Foundation Scholar, dedicates his time to assist a physically challenged woman in Akim Osiem, providing mobility support and companionship to church. His act of compassion is inspiring others to serve with empathy and humility.",
+      link: "https://drive.google.com/file/d/1sDKU_kSPNlhLtiLrNEk7rSEkhWOFXzE7/view?usp=sharing",
+    },
+    {
+      title:
+        "Hon. Asare Freduah Edmond Senior – Empowering Minds Through Education",
+      description:
+        "Asare devoted 54 hours to tutor children in his community, helping them build confidence, improve academically, and develop an entrepreneurial mindset. His leadership and problem-solving skills continue to shine through impactful community teaching.......",
+      link: "https://drive.google.com/file/d/1ew-ytvSqDdn0UmwqHic08do_n8bt-Ofs/view?usp=sharing",
+    },
+    {
       title: 'The "GIVE BACK" Story',
       description:
         'I am Daniel Coffie. God being so good, I commenced my volunteering project on September 1, 2023, at the Anyaa M/A "1" Primary and Junior High School located within the Anyaa-Sowutwom constituency. After conducting an investigation, I discovered that the students had limited knowledge in computing. Therefore, I undertook the initiative to provide them with education in computer literacy, starting...',
@@ -52,13 +65,6 @@ const Home = () => {
       description:
         "Hulede Foundation, founded by John Hulede, a US-based non-profitable organization has donated mechanized borehole water to new Amakom cluster of schools in the Kumasi Metropolis of the Ashanti Region. The donation is to help pupils and teachers to have access to portable drinking water which will facilitate teaching, learning and enhance quality education in the school......",
       link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
-    },
-    {
-      title:
-        "Hulede Foundation supports 250 needy students to clear outstanding fees",
-      description:
-        "The Hulede Foundation, a US-based non-governmental organization dedicated to assisting brilliant but underprivileged students in their pursuit of higher education, has provided financial support to 250 students at Kwame Nkrumah University of Science and Technology (KNUST) to settle their outstanding fees......",
-      link: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html",
     },
   ];
 
