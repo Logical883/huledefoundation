@@ -191,25 +191,7 @@ const Home = () => {
         </div>
       </div>
       <br />
-      {/* Application Section */}
-      <section className="cta-section" data-animate>
-        <h2 className="section-title white">COMMUNITY SERVICE REPORT</h2>
-        <div className="section-divider white" />
-        <p className="section-subtitle white">
-          Take the next step toward your academic journey. Submit your Community
-          Service report today and let your dreams find the support they
-          deserve.
-        </p>
-        <a
-          href="https://forms.gle/WQGC3LJrTnmkvTra7"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="btn-white" data-animate>
-            Submit
-          </button>
-        </a>
-      </section>
+
       {/* About Us Section */}
       <section className="about-section">
         <h2 className="section-title" data-animate>
@@ -370,6 +352,25 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section>
+      {/* Application Section */}
+      <section className="cta-section" data-animate>
+        <h2 className="section-title white">COMMUNITY SERVICE REPORT</h2>
+        <div className="section-divider white" />
+        <p className="section-subtitle white">
+          Take the next step toward your academic journey. Submit your Community
+          Service report today and let your dreams find the support they
+          deserve.
+        </p>
+        <a
+          href="https://forms.gle/WQGC3LJrTnmkvTra7"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="btn-white" data-animate>
+            Submit
+          </button>
+        </a>
       </section>
       {/* Footer */}
       <footer className="footer" data-animate>
