@@ -190,6 +190,7 @@
   background-color: rgb(36, 177, 68);
   margin: 0 auto 20px;
   position: relative;
+  text-align: left;
 }
 
 .section-divider::before,
@@ -222,7 +223,7 @@
 }
 
 .section-subtitle {
-  text-align: center;
+  text-align: left;
   max-width: 800px;
   margin: 0 auto 50px;
   color: #666;
@@ -235,7 +236,7 @@
 }
 
 .section-subtitles {
-  text-align: left;
+  text-align: left; /* Align text to the left */
   max-width: 800px;
   margin: 0 auto 50px;
   color: #666;
@@ -246,6 +247,7 @@
 .section-subtitles ul {
   list-style-position: inside;
   padding-left: 0;
+  text-align: left;
 }
 
 .section-subtitles li {
@@ -295,12 +297,14 @@
   font-size: 1.8rem;
   margin-bottom: 20px;
   font-weight: 600;
+  text-align: left;
 }
 
 .about-description {
   color: #666;
   line-height: 1.8;
   margin-bottom: 25px;
+  text-align: left; /* Align text to the left */
 }
 
 /* Features Grid */

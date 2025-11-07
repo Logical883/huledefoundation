@@ -239,12 +239,6 @@ const Home = () => {
               opportunities for the underprivileged in society to improve their
               lives.
               <br />
-              <br />
-              The foundation was established by the sons of Patrick Hulede to
-              honor their father and supports students in their first through
-              final year. We have consistently done so over the years.
-              <br />
-              <br />
               This Scholarship is mainly for Ghanaian students, particularly at
               KNUST, who are both academically strong (brilliant) and
               financially disadvantaged (needy).
@@ -262,17 +256,16 @@ const Home = () => {
         </h2>
         <div className="section-divider" data-animate />
         <div className="section-subtitles" data-animate>
-          <p>
-            The Hulede Foundation KNUST Scholarship is built on a commitment to
-            academic excellence and civic responsibility. We believe in "The
-            Spirit of Giving Multiples," where our recipients pay their
-            privilege forward. As a core requirement, each scholar completes{" "}
-            <strong className="highlight-text">
-              40 hours minimum of annual community service
-            </strong>
-            . This initiative is a vital contribution to society and a mandatory
-            part of the scholarship renewal process.
-          </p>
+          The Hulede Foundation KNUST Scholarship is built on a commitment to
+          academic excellence and civic responsibility. We believe in "The
+          Spirit of Giving Multiples," where our recipients pay their privilege
+          forward. As a core requirement, each scholar completes{" "}
+          <strong className="highlight-text">
+            40 hours minimum of annual community service
+          </strong>
+          . This initiative is a vital contribution to society and a mandatory
+          part of the scholarship renewal process.
+          <br />
           <br />
           <h3>To be eligible, scholars must:</h3>
           <ul>
@@ -287,11 +280,9 @@ const Home = () => {
             </li>
           </ul>
           <br />
-          <p>
-            This page showcases the impactful work of our scholars as they apply
-            their knowledge to create positive change, embodying our mission of
-            "Making a Difference."
-          </p>
+          This page showcases the impactful work of our scholars as they apply
+          their knowledge to create positive change, embodying our mission of
+          "Making a Difference."
         </div>
 
         {/* Featured Stories Grid */}
