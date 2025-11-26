@@ -6,7 +6,7 @@ const featuredStories = [
     title: "ASSISTING COMMUNITY PUBLIC SCHOOLS",
     description:
       'I am Daniel Coffie. God being so good, I commenced my volunteering project on September 1, 2023, at the Anyaa M/A "1" Primary and Junior High School located within the Anyaa-Sowutwom constituency. After conducting an investigation, I discovered that the students had limited knowledge in computing. Therefore, I undertook the initiative to provide them with education in computer literacy, starting...',
-    link: "https://www.facebook.com/people/The-Hulede-Foundation/100086620458577/",
+    link: "https://www.facebook.com/permalink.php?story_fbid=pfbid0KHEEPaSDjnMPbbxTP3zWVhism81qNNJm7d1iFXAixr4gA6oWDdm7tQVrCBCGwSXJl&id=100086620458577",
     image:
       "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=400&fit=crop",
   },
