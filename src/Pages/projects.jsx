@@ -47,16 +47,16 @@ const featuredStories = [
 const Home = () => {
   return (
     <div className="home-container">
-      {/* About Us Section */}
-      <section className="about-section">
-        <h2 className="section-title">WAYS WE HELP</h2>
-        <h4 className="section-titles">The Focus of Our Efforts</h4>
+      <section className="about-sections">
+        <h2 className="section-title">COMMUNITY SERVICE REPORTS</h2>
+        <h4 className="section-titles">Empowering Change Through Service</h4>
         <div className="section-divider"></div>
         <p className="section-subtitles">
-          We create opportunities in several ways; assisting primary and
-          elementary schools with much needed facilities to aid in their
-          teaching and learning experience, transforming lives and giving
-          scholarships to the brilliant but needy students.
+          At the Hulede Foundation, community service is at the heart of our
+          mission. We empower scholars and volunteers to create lasting
+          impact—supporting education through improved learning facilities,
+          uplifting communities through compassionate action, and transforming
+          lives by providing scholarships to deserving students.
         </p>
       </section>
 
@@ -76,6 +76,19 @@ const Home = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="about-sections">
+        <h2 className="section-title">WAYS WE HELP</h2>
+        <h4 className="section-titles">The Focus of Our Efforts</h4>
+        <div className="section-divider"></div>
+        <p className="section-subtitles">
+          We create opportunities in several ways; assisting primary and
+          elementary schools with much needed facilities to aid in their
+          teaching and learning experience, transforming lives and giving
+          scholarships to the brilliant but needy students.
+        </p>
       </section>
 
       {/* Footer */}

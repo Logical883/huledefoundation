@@ -95,9 +95,10 @@
 }
 
 /* About Section */
-.about-section {
+.about-sections {
   padding: 60px 20px;
   text-align: center;
+  max-height: 400px;
 }
 
 .section-title {
@@ -141,7 +142,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
 }
