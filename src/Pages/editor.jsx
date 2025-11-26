@@ -4,6 +4,8 @@ import Whyte from "../assets/Whyte.png";
 import Comfort from "../assets/Comfort.png";
 import Hannah from "../assets/Hannah.png";
 import Jane from "../assets/Jane.png";
+import Patrick from "../assets/Patrick.png";
+import Students from "../assets/Students.png";
 const Home = () => {
   return (
     <div className="home-container">
@@ -128,10 +130,7 @@ const Home = () => {
 
           <div className="story-card">
             <div className="story-image">
-              <img
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400"
-                alt="Story"
-              />
+              <img src={Patrick} alt="Story" />
             </div>
             <div className="story-content">
               <h4>Annual Impact Report 2024</h4>
@@ -140,7 +139,10 @@ const Home = () => {
                 A comprehensive look at our achievements and the lives we've
                 touched this year
               </p>
-              <a href="#" className="story-link">
+              <a
+                href="https://drive.google.com/file/d/1RW6ZTWJWObpKIY4pZokeiaAh4XAq_T4y/view?usp=sharing"
+                className="story-link"
+              >
                 Read More →
               </a>
             </div>
@@ -148,10 +150,7 @@ const Home = () => {
 
           <div className="story-card">
             <div className="story-image">
-              <img
-                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400"
-                alt="Story"
-              />
+              <img src={Students} alt="Story" />
             </div>
             <div className="story-content">
               <h4>Partnership for Progress</h4>
@@ -160,7 +159,10 @@ const Home = () => {
                 Learn about our collaborations with local organizations to
                 expand our reach
               </p>
-              <a href="#" className="story-link">
+              <a
+                href="https://drive.google.com/file/d/1laGlY1NVK82eOd3bIxetEJZSMLqr6AuX/view?usp=sharing"
+                className="story-link"
+              >
                 Read More →
               </a>
             </div>
