@@ -23,7 +23,7 @@ const Gallery = () => {
       title: "2025 GUADUANDS GALLERY - HULEDE SCHOLARS",
       date: "JUNE 6, 2024",
       image: "/images/2024.jpg", // Replace with your image filename
-      link: "https://huledefoundation.pixieset.com/2024huledescholarshipfoundationgallery/",
+      link: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/",
       size: "small",
     },
     {
