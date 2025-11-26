@@ -169,11 +169,14 @@ const Home = () => {
           </div>
         </div>
         <div className="view-all-container">
-          <button className="view-all-btn">View All Stories</button>
+          <a
+            href="https://drive.google.com/drive/folders/1PBSNs1xkpw-8q_5Qj_bQ9vdLde8__tVQ?usp=drive_link"
+            className="view-all-btn"
+          >
+            View All Stories
+          </a>
         </div>
       </section>
-
-      {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
