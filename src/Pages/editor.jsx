@@ -1,6 +1,7 @@
 import "./editor.css";
 import Mauduana from "../assets/Mauduana.jpg";
 import Whyte from "../assets/Whyte.png";
+import Comfort from "../assets/Comfort.png";
 const Home = () => {
   return (
     <div className="home-container">
@@ -65,10 +66,7 @@ const Home = () => {
 
           <div className="story-card">
             <div className="story-image">
-              <img
-                src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400"
-                alt="Story"
-              />
+              <img src={Comfort} alt="Story" />
             </div>
             <div className="story-content">
               <h4>Mentorship Program Success Stories</h4>
@@ -77,7 +75,10 @@ const Home = () => {
                 Celebrating the achievements of students who found guidance
                 through our mentorship initiatives
               </p>
-              <a href="#" className="story-link">
+              <a
+                href="https://drive.google.com/file/d/1XEbOS6vFyCBHGi5k58SzkckFx0l6DNFg/view?usp=sharing"
+                className="story-link"
+              >
                 Read More →
               </a>
             </div>
