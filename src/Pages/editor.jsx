@@ -1,5 +1,6 @@
 import "./editor.css";
 import Mauduana from "../assets/Mauduana.jpg";
+import Whyte from "../assets/Whyte.png";
 const Home = () => {
   return (
     <div className="home-container">
@@ -13,7 +14,6 @@ const Home = () => {
             through storytelling.
           </p>
         </div>
-
         {/* Featured Article */}
         <div className="featured-article">
           <div className="featured-image">
@@ -33,7 +33,6 @@ const Home = () => {
             </a>
           </div>
         </div>
-
         <div className="blog-header">
           <h2 className="blog-title">Our Newsletters</h2>
           <p className="blog-subtitle">
@@ -42,15 +41,11 @@ const Home = () => {
             Newsletters to know more about our impact.
           </p>
         </div>
-
         {/* Recent Stories Grid */}
         <div className="stories-grid">
           <div className="story-card">
             <div className="story-image">
-              <img
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400"
-                alt="Story"
-              />
+              <img src={Whyte} alt="Story" />
             </div>
             <div className="story-content">
               <h4>Building Hope: New School Facilities</h4>
@@ -59,7 +54,10 @@ const Home = () => {
                 See how we're creating safe learning environments for children
                 in underserved areas
               </p>
-              <a href="#" className="story-link">
+              <a
+                href="https://drive.google.com/file/d/1jzlooyZCAKz98sOpr_DKImWAbq9oiTtS/view?usp=sharing"
+                className="story-link"
+              >
                 Read More →
               </a>
             </div>
@@ -165,7 +163,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         <div className="view-all-container">
           <button className="view-all-btn">View All Stories</button>
         </div>
