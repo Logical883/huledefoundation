@@ -4,6 +4,28 @@ const Home = () => {
     <div className="home-container">
       {/* About Us Section */}
       <section className="about-section">
+        <h2 className="section-title">
+          HULEDE FOUNDATION KNUST SCHOLARSHIP & LAPTOP DISTRIBUTION STATISTICS
+        </h2>
+        <div className="section-divider"></div>
+        <p className="section-subtitles">
+          Scholarships Awarded Per Year
+          <br /> A breakdown of scholarships awarded to students each year:{" "}
+          <br />
+          <li>2021: 12 scholarships</li>
+          <li>2022: 102 scholarships</li>
+          <li>2023: 250 scholarships</li>
+          <li>2024: 348 scholarships</li>
+          <li>2025: 339 scholarships</li>
+          <strong>Total Scholarships Awarded to Date: 1,051</strong>
+          <br />
+          Laptops Distributed to HuledeFoundation KNUST Students Annual
+          distribution of laptops to support academic excellence:
+          <li>2024: 27 laptops</li>
+          <li>2025: 27 laptops</li>
+          <strong>Total Laptops Distributed to Date: 54</strong>
+        </p>
+
         <h2 className="section-title">ABOUT US</h2>
         <div className="section-divider"></div>
         <p className="section-subtitles">

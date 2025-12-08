@@ -59,6 +59,7 @@ const Home = () => {
           lives by providing scholarships to deserving students.
         </p>
       </section>
+
       <br />
       <br />
 
