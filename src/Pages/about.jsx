@@ -8,7 +8,7 @@ const Home = () => {
           HULEDE FOUNDATION KNUST SCHOLARSHIP & LAPTOP DISTRIBUTION STATISTICS
         </h2>
         <div className="section-divider"></div>
-        <p className="section-subtitles">
+        <p className="section-subtitle">
           Scholarships Awarded Per Year
           <br /> A breakdown of scholarships awarded to students each year:{" "}
           <br />
@@ -18,6 +18,7 @@ const Home = () => {
           <li>2024: 348 scholarships</li>
           <li>2025: 339 scholarships</li>
           <strong>Total Scholarships Awarded to Date: 1,051</strong>
+          <br />
           <br />
           Laptops Distributed to HuledeFoundation KNUST Students Annual
           distribution of laptops to support academic excellence:
