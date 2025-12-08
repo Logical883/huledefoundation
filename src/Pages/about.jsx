@@ -20,7 +20,7 @@ const Home = () => {
           <strong>Total Scholarships Awarded to Date: 1,051</strong>
           <br />
           <br />
-          Laptops Distributed to HuledeFoundation KNUST Students Annual
+          Laptops Distributed to Hulede Foundation KNUST Students Annual
           distribution of laptops to support academic excellence:
           <li>2024: 27 laptops</li>
           <li>2025: 27 laptops</li>
