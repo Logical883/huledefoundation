@@ -45,40 +45,21 @@ const Home = () => {
         <h2 className="section-title">OUR VISION</h2>
         <div className="section-divider"></div>
         <p className="section-subtitles">
-          It is so easy to fall into a pattern of apathy as we go through our
-          lives. Our organization was born out of a commitment to stop passing
-          over the real issues of society and deal with them head on. We have
-          set out to aid those who need it most. THE HULEDE FOUNDATION is here
-          to help, and we believe that change is possible when we put our hearts
-          and minds to it.
+          A world where every child and young person—regardless of background or
+          circumstance—has equitable access to education, technology, and the
+          support needed to reach their full potential and become agents of
+          positive change in their communities.
         </p>
         <h2 className="section-title">OUR MISSION</h2>
         <div className="section-divider"></div>
         <p className="section-subtitles">
-          To create opportunities for the underprivileged in our global society
-          to better their lives. <br /> <br />
-          <li>
-            We assist Primary and elementary schools with much-needed facilities
-            to augment their teaching and learning experience. We provide items
-            such as desks, chairs, and mechanised borehole systems. Some
-            judiciary challenged students receiving mobility aids and laptops.
-          </li>
-          <li>
-            We enrich the lives of widows by empowering them to become
-            self-sufficient through financial support and mentoring.{" "}
-          </li>
-          <li>
-            The Hulede Foundation KNUST scholarship seeks to identify brilliant
-            students who are genuinely underprivileged and assist them in their
-            pursuit of higher education.
-          </li>{" "}
-          <br />
-          We are not just interested in giving out the money but rather in
-          cultivating a relationship with the recipients with the view to
-          assisting them through mentorship, career development and life
-          opportunities. Ultimately, the Foundation desires to train and
-          encourage its beneficiaries to develop and maintain the culture of
-          giving back to society.
+          Hulede Foundation exists to transform lives by expanding access to
+          education, empowering vulnerable children and families, and restoring
+          hope through sustainable support, mentorship, and opportunity. We are
+          committed to breaking cycles of poverty by investing in human
+          potential, promoting dignity, and inspiring collective
+          responsibility—so every child, regardless of circumstance, can learn,
+          thrive, and lead a purposeful future.
         </p>
       </section>
 
