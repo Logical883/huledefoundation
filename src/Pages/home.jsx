@@ -131,12 +131,12 @@ const Home = () => {
             </p>{" "}
             <br />
             <a
-              href="https://forms.gle/WQGC3LJrTnmkvTra7"
+              href="https://forms.gle/5fv4RGFL9gX95QYQ9s"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="popup-button" data-animate>
-                Apply
+                Apply Now
               </button>
             </a>
             <br />
