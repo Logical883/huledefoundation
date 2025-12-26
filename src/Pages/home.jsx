@@ -5,7 +5,7 @@ import image1 from "../assets/image1.JPG";
 import image2 from "../assets/image2.JPG";
 import image3 from "../assets/image3.JPG";
 import Hero from "../assets/Hero.jpg";
-import Community from "../assets/Community.jpg";
+import Scholarship from "../assets/Scholarship.jpg";
 
 const Home = () => {
   const heroImages = [image1, image2, image3];
@@ -114,15 +114,20 @@ const Home = () => {
               ✕
             </button>
             <img
-              src={Community}
+              src={Scholarship}
               alt="Community Service"
               className="popup-image"
             />
-            <h2>📋 Community Service Report Submission</h2>
+            <h2>Hulede Scholarship Application Form</h2>
             <p>
-              Remember to compile all necessary documents (report, photos,
-              attendance sheets, certificates, etc.) into a single{" "}
-              <strong>ZIP file</strong> before submission.
+              Please compile all required documents into one{" "}
+              <strong>ZIP file</strong>
+              before submission. All documents must be in{" "}
+              <strong>PDF format</strong> and include:
+              <br /> <br />
+              Results Slip Recommendation, Letter Proof of Need (Justification
+              for scholarship) and Endorsed Community Service Report. (For
+              continuing students who are renewing and final years only).
             </p>{" "}
             <br />
             <a
@@ -131,7 +136,7 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               <button className="popup-button" data-animate>
-                Submit
+                Apply
               </button>
             </a>
             <br />
