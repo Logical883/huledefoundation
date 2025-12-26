@@ -131,7 +131,7 @@ const Home = () => {
             </p>{" "}
             <br />
             <a
-              href="https://forms.gle/5fv4RGFL9gX95QYQ9s"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeWPgwRsnEWAikDgn8Nw3HPUzuJ2Ul1Rj6w97fufYBqeT0MpA/viewform"
               target="_blank"
               rel="noopener noreferrer"
             >
