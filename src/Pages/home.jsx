@@ -121,12 +121,12 @@ const Home = () => {
             <h2>Hulede Scholarship Application Form</h2>
             <p>
               Please compile all required documents into one{" "}
-              <strong>ZIP file</strong>
+              <strong>ZIP file </strong>
               before submission. All documents must be in{" "}
               <strong>PDF format</strong> and include:
               <br /> <br />
-              Results Slip Recommendation, Letter Proof of Need (Justification
-              for scholarship) and Endorsed Community Service Report. (For
+              Results Slip, Recommendation Letter, Proof of Need (Justification
+              for scholarship) and Endorsed Community Service Report (For
               continuing students who are renewing and final years only).
             </p>{" "}
             <br />
