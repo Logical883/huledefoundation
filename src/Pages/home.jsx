@@ -125,9 +125,11 @@ const Home = () => {
               before submission. All documents must be in{" "}
               <strong>PDF format</strong> and include:
               <br /> <br />
-              Results Slip, Recommendation Letter, Proof of Need (Justification
-              for scholarship) and Endorsed Community Service Report (For
-              continuing students who are renewing and final years only).
+              Results Slip,{" "}
+              <strong>At least two(2) Recommendation Letters</strong>, Proof of
+              Need (Justification for scholarship), Academic Transcript
+              (Endorsed) and Endorsed Community Service Report (For continuing
+              students who are renewing and final years only).
             </p>{" "}
             <br />
             <a
