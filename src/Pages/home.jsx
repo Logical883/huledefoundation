@@ -108,39 +108,35 @@ const Home = () => {
         <div className="popup-overlay" onClick={() => setShowPopup(false)}>
           <div
             className="popup-content"
-            // Prevent closing when clicking inside
+            onClick={(e) => e.stopPropagation()}
           >
             <button className="popup-close" onClick={() => setShowPopup(false)}>
               ✕
             </button>
             <img
               src={Scholarship}
-              alt="Community Service"
+              alt="Scholarship Update"
               className="popup-image"
             />
-            <h2>Hulede Scholarship Application Form</h2>
+            <h2>Scholarship Application Update</h2>
             <p>
-              Please compile all required documents into one{" "}
-              <strong>ZIP file </strong>
-              before submission. All documents must be in{" "}
-              <strong>PDF format</strong> and include:
+              Thank you to all students who applied for the{" "}
+              <strong>Hulede Foundation Scholarship</strong>. We appreciate
+              your interest and the effort you put into your applications.
               <br /> <br />
-              Results Slip,{" "}
-              <strong>At least two(2) Recommendation Letters</strong>, Proof of
-              Need (Justification for scholarship), Academic Transcript
-              (Endorsed) and Endorsed Community Service Report (For continuing
-              students who are renewing and final years only).
+              We are currently reviewing all submissions. You will receive a
+              response from us by{" "}
+              <strong>15th April, 2026</strong>. Please keep an eye on your
+              email and stay patient — we will be in touch shortly.
+              <br /> <br />
+              If you have any questions or require further information in the
+              meantime, please do not hesitate to reach out to us at{" "}
+              <strong>0243426670</strong>.
             </p>{" "}
             <br />
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeWPgwRsnEWAikDgn8Nw3HPUzuJ2Ul1Rj6w97fufYBqeT0MpA/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="popup-button" data-animate>
-                Apply Now
-              </button>
-            </a>
+            <button className="popup-button" onClick={() => setShowPopup(false)}>
+              OK, Got It!
+            </button>
             <br />
           </div>
         </div>
