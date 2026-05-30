@@ -72,6 +72,15 @@ const Home = () => {
     return () => clearTimeout(t);
   }, []);
 
+  useEffect(() => {
+  if (showPopup) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+  return () => { document.body.style.overflow = ""; };
+}, [showPopup]);
+
   // Scroll reveal
   useEffect(() => {
     const obs = new IntersectionObserver(
