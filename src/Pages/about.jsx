@@ -40,7 +40,7 @@ const About = () => {
               { num: "348", lbl: "Scholarships in 2024" },
               { num: "339", lbl: "Scholarships in 2025" },
               { num: "423", lbl: "Scholarships in 2026" },
-              { num: "1,051", lbl: "Total Scholarships" },
+              { num: "1,474", lbl: "Total Scholarships" },
               { num: "27", lbl: "Laptops in 2024" },
               { num: "27", lbl: "Laptops in 2025" },
               { num: "54", lbl: "Total Laptops" },
