@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-const LazyImage = ({ src, alt, className, style }) => {
+const LazyImage = ({ src, alt, className, wrapperStyle }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div style={{ position: "relative", overflow: "hidden", ...style }}>
-      {/* Skeleton placeholder */}
+    <div style={{ position: "relative", overflow: "hidden", width: "100%", height: "100%", ...wrapperStyle }}>
       {!loaded && (
         <div
           style={{
@@ -20,10 +19,18 @@ const LazyImage = ({ src, alt, className, style }) => {
       <img
         src={src}
         alt={alt}
-        className={`${className || ""} ${loaded ? "loaded" : ""}`}
+        className={className || ""}
         loading="lazy"
         onLoad={() => setLoaded(true)}
-        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "top",
+          display: "block",
+          opacity: loaded ? 1 : 0,
+          transition: "opacity 0.4s ease",
+        }}
       />
     </div>
   );

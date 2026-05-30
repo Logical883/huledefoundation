@@ -30,7 +30,7 @@ const Gallery = () => {
       <div className="gallery-hero">
         <p className="section-label" data-animate>Our Moments</p>
         <h1 className="section-title" data-animate data-delay="1">Gallery</h1>
-        <div className="section-rule" style={{margin:"14px auto 0"}} data-animate data-delay="2"></div>
+        <div className="section-rule" style={{ margin: "14px auto 0" }} data-animate data-delay="2"></div>
       </div>
 
       <section className="gallery-grid-section">
@@ -41,7 +41,11 @@ const Gallery = () => {
               key={i}
               data-animate
             >
-              <LazyImage src={item.image} alt={item.title} className="gallery-card-img" />
+              <LazyImage
+                src={item.image}
+                alt={item.title}
+                wrapperStyle={{ height: "100%", width: "100%" }}
+              />
               <div className="gallery-card-overlay">
                 <h3>{item.title}</h3>
                 {item.date && <span>{item.date}</span>}
@@ -56,11 +60,28 @@ const Gallery = () => {
 
       <footer className="site-footer full-bleed">
         <div className="footer-grid">
-          <div className="footer-brand"><h3>Hulede Foundation</h3><p>Making a difference in lives across Ghana and beyond.</p></div>
-          <div className="footer-col"><h4>Quick Links</h4><ul><li><a href="/home">Home</a></li><li><a href="/about">About</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/contact">Contact</a></li></ul></div>
-          <div className="footer-col"><h4>Contact</h4><p>huledefoundation@gmail.com</p><p>+1 (240) 708-0664</p></div>
+          <div className="footer-brand">
+            <h3>Hulede Foundation</h3>
+            <p>Making a difference in lives across Ghana and beyond.</p>
+          </div>
+          <div className="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <p>huledefoundation@gmail.com</p>
+            <p>+1 (240) 708-0664</p>
+          </div>
         </div>
-        <div className="footer-bottom"><p>© 2026 Hulede Foundation. All rights reserved.</p></div>
+        <div className="footer-bottom">
+          <p>© 2026 Hulede Foundation. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
