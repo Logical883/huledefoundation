@@ -1,33 +1,38 @@
 import React, { useEffect } from "react";
 import "./projects.css";
+import LazyImage from "../components/LazyImage";
+import Students from "../assets/Students.png";
+import s1 from "../assets/s1.JPG";
+import s2 from "../assets/s2.jpg";
+import Scholarship from "../assets/Scholarship.jpg";
 
 const featuredStories = [
   {
     title: "Assisting Community Public Schools",
     description: "Daniel Coffie commenced his volunteering project at Anyaa M/A Primary and JHS, providing computer literacy education after discovering students had limited computing knowledge.",
     link: "https://www.facebook.com/permalink.php?story_fbid=pfbid0KHEEPaSDjnMPbbxTP3zWVhism81qNNJm7d1iFXAixr4gA6oWDdm7tQVrCBCGwSXJl&id=100086620458577",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=400&fit=crop",
+    image: Students,
     tag: "Education",
   },
   {
     title: "Strength in Service",
     description: "Prince Fosu traveled from Kumasi to Amansie South District, offering voluntary service to a remote community that truly needed it, leaving a lasting impact.",
     link: "https://drive.google.com/drive/folders/1PBSNs1xkpw-8q_5Qj_bQ9vdLde8__tVQ?usp=drive_link",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
+    image: s1,
     tag: "Community",
   },
   {
     title: "Mechanized Borehole Donation",
     description: "Hulede Foundation donated a mechanized borehole water system to New Amakom M/A cluster of schools in Kumasi, improving access to portable drinking water.",
     link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop",
+    image: s2,
     tag: "Infrastructure",
   },
   {
     title: "Supporting 250 Needy Students",
     description: "Hulede Foundation provided financial support to 250 KNUST students to settle outstanding fees, ensuring they could continue their education without disruption.",
     link: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
+    image: Scholarship,
     tag: "Scholarship",
   },
 ];
@@ -64,7 +69,7 @@ const Projects = () => {
         <div className="projects-grid">
           {featuredStories.map((s, i) => (
             <div className="project-card" key={i} data-animate data-delay={String(i % 4)}>
-              <img src={s.image} alt={s.title} loading="lazy" />
+              <LazyImage src={s.image} alt={s.title} wrapperStyle={{ height: "200px" }} />
               <div className="project-card-body">
                 <span className="project-tag">{s.tag}</span>
                 <h3>{s.title}</h3>

@@ -214,6 +214,8 @@
 }
 .about-img-wrap {
   position: relative;
+  overflow: hidden;
+  border-radius: 4px;
 }
 .about-img-wrap img {
   width: 100%;

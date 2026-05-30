@@ -105,7 +105,7 @@ const Home = () => {
   <div className="popup-overlay" onClick={() => setShowPopup(false)}>
     <div className="popup-box" onClick={(e) => e.stopPropagation()}>
       <button className="popup-close" onClick={() => setShowPopup(false)}>✕</button>
-      <img src={Scholarship} alt="Hulede Foundation Event" className="popup-img" />
+      <img src={Scholarship} alt="Hulede Foundation Event" className="popup-img" onLoad={(e) => e.target.classList.add('loaded')} />
       <div className="popup-body">
         <h2>Important Event Reminders</h2>
         <p>
@@ -204,7 +204,7 @@ const Home = () => {
 
           <div className="about-grid">
             <div className="about-img-wrap" data-animate>
-              <img src={HeroImg} alt="Hulede Foundation" />
+              <img src={HeroImg} alt="Hulede Foundation" onLoad={(e) => e.target.classList.add('loaded')} />
               <div className="about-img-accent" />
             </div>
             <div className="about-text" data-animate data-delay="2">
