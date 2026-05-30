@@ -39,6 +39,7 @@ const featuredStories = [
 ];
 
 const scholarshipData = [
+  { year: "2025", recipients: 423 },
   { year: "2025", recipients: 339 },
   { year: "2024", recipients: 348 },
   { year: "2023", recipients: 250 },
