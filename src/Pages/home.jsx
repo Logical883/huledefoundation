@@ -93,26 +93,37 @@ const Home = () => {
     <div>
       {/* ── POPUP ─────────────────────────────────────── */}
       {showPopup && (
-        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
-          <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={() => setShowPopup(false)}>✕</button>
-            <img src={Scholarship} alt="Scholarship Update" className="popup-img" />
-            <div className="popup-body">
-              <h2>Scholarship Application Update</h2>
-              <p>
-                Thank you to all students who applied for the <strong>Hulede Foundation Scholarship</strong>. We appreciate your interest and the effort you put into your applications.
-                <br /><br />
-                We are currently reviewing all submissions. You will receive a response by <strong>15th April, 2026</strong>. Please keep an eye on your email.
-                <br /><br />
-                Questions? Reach us at <strong>0243426670</strong>.
-              </p>
-            </div>
-            <div className="popup-footer">
-              <button onClick={() => setShowPopup(false)}>OK, Got It!</button>
-            </div>
-          </div>
-        </div>
-      )}
+  <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+    <div className="popup-box" onClick={(e) => e.stopPropagation()}>
+      <button className="popup-close" onClick={() => setShowPopup(false)}>✕</button>
+      <img src={Scholarship} alt="Hulede Foundation Event" className="popup-img" />
+      <div className="popup-body">
+        <h2>Important Event Reminders</h2>
+        <p>
+          Dear Scholar,
+          <br /><br />
+          We hope you are doing well. As we prepare for the upcoming <strong>Hulede Foundation KNUST Scholars Event</strong>, kindly take note of the following important reminders:
+          <br /><br />
+          1. Please know and keep your <strong>HFKNUST2026-x Unique ID</strong> readily available.<br />
+          2. Attend the event on: <strong>Date:</strong> 30th May, 2026 &nbsp;|&nbsp; <strong>Time:</strong> 9:00 AM Promptly &nbsp;|&nbsp; <strong>Venue:</strong> Allotey Auditorium, College of Science, KNUST<br />
+          3. Ensure that you collect your <strong>HF T-Shirt</strong> and sign in during the event.<br />
+          4. Failure to attend will lead to the <strong>automatic forfeiture</strong> of your Hulede Foundation 2026 Scholarship.<br />
+          5. Kindly bring along your <strong>Student ID Card</strong> for check-in and verification.<br />
+          6. Please be present in all <strong>official pictures</strong> taken during the event day.
+          <br /><br />
+          We encourage all scholars to cooperate fully and arrive on time for a smooth and successful event.
+          <br /><br />
+          <em>Warm regards,<br /><strong>Hulede Foundation</strong> ~ Making a difference</em>
+        </p>
+      </div>
+      <div className="popup-footer">
+        <a href="https://hulede-checkin.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <button onClick={() => setShowPopup(false)}>Register Now</button>
+        </a>
+      </div>
+    </div>
+  </div>
+)}
 
       {/* ── HERO ──────────────────────────────────────── */}
       <section className="hero-section">
