@@ -1,0 +1,105 @@
+.gallery-page { padding-bottom: 0; }
+
+.gallery-hero {
+  text-align: center;
+  padding: 80px 5% 60px;
+  background: var(--bg-section);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 72px;
+}
+.gallery-hero .section-rule { margin: 14px auto 0; }
+
+.gallery-grid-section {
+  padding: 0 5% 100px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
+  gap: 16px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-card.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.gallery-card:hover img { transform: scale(1.06); }
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 20px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.gallery-card:hover .gallery-card-overlay { opacity: 1; }
+
+.gallery-card-overlay h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.gallery-card-overlay span {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.gallery-card-overlay a {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+.gallery-card-overlay a:hover { background: var(--green-dark); }
+
+@media (max-width: 768px) {
+  .gallery-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 220px;
+  }
+  .gallery-card.large { grid-column: span 2; grid-row: span 1; }
+}
+@media (max-width: 480px) {
+  .gallery-mosaic { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+  .gallery-card.large { grid-column: span 1; }
+  .gallery-card-overlay { opacity: 1; }
+}

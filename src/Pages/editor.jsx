@@ -1,0 +1,220 @@
+import "./editor.css";
+import Mauduana from "../assets/Mauduana.jpg";
+import Whyte from "../assets/Whyte.png";
+import Comfort from "../assets/Comfort.png";
+import Hannah from "../assets/Hannah.png";
+import Jane from "../assets/Jane.png";
+import Patrick from "../assets/Patrick.png";
+import Students from "../assets/Students.png";
+const Home = () => {
+  return (
+    <div className="home-container">
+      {/* Blog Section */}
+      <section className="blog-section">
+        <div className="blog-header">
+          <h2 className="blog-title">About Our Editor-in-Chief</h2>
+          <p className="blog-subtitle">
+            Discover more about Miss Mauduana, our dedicated Editor-in-Chief at
+            the Hulede Foundation, and her passion for making a difference
+            through storytelling.
+          </p>
+        </div>
+        {/* Featured Article */}
+        <div className="featured-article">
+          <div className="featured-image">
+            <img src={Mauduana} alt="Featured story" />
+          </div>
+          <div className="featured-content">
+            <h3>Miss Mauduana</h3>
+            <p className="featured-date">Editor-in-Chief - Hulede Foundation</p>
+            <p className="featured-excerpt">
+              Join us as we share the incredible journey of how educational
+              support has transformed lives in rural communities. Through
+              scholarships, mentorship, and resources, we're building a brighter
+              future for the next generation.
+            </p>
+            <a href="#" className="read-more-btn">
+              Read Full Story →
+            </a>
+          </div>
+        </div>
+        <div className="blog-header">
+          <h2 className="blog-title">Our Newsletters</h2>
+          <p className="blog-subtitle">
+            Discover the lives we've touched and the communities we've
+            transformed through our programs and initiatives. Read our
+            Newsletters to know more about our impact.
+          </p>
+        </div>
+        {/* Recent Stories Grid */}
+        <div className="stories-grid">
+          <div className="story-card">
+            <div className="story-image">
+              <img src={Whyte} alt="Story" />
+            </div>
+            <div className="story-content">
+              <h4>Building Hope: New School Facilities</h4>
+              <p className="story-date">November 28, 2024</p>
+              <p className="story-excerpt">
+                See how we're creating safe learning environments for children
+                in underserved areas
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1jzlooyZCAKz98sOpr_DKImWAbq9oiTtS/view?usp=sharing"
+                className="story-link"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+
+          <div className="story-card">
+            <div className="story-image">
+              <img src={Comfort} alt="Story" />
+            </div>
+            <div className="story-content">
+              <h4>Mentorship Program Success Stories</h4>
+              <p className="story-date">November 15, 2024</p>
+              <p className="story-excerpt">
+                Celebrating the achievements of students who found guidance
+                through our mentorship initiatives
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1XEbOS6vFyCBHGi5k58SzkckFx0l6DNFg/view?usp=sharing"
+                className="story-link"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+
+          <div className="story-card">
+            <div className="story-image">
+              <img src={Hannah} alt="Story" />
+            </div>
+            <div className="story-content">
+              <h4>Scholarship Recipients Share Their Journey</h4>
+              <p className="story-date">October 30, 2024</p>
+              <p className="story-excerpt">
+                Meet the inspiring individuals whose lives have been changed
+                through educational support
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1wNhBAPcJlJjRzvoul5wQJtq-E5gC5DsJ/view?usp=sharing"
+                className="story-link"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+
+          <div className="story-card">
+            <div className="story-image">
+              <img src={Jane} alt="Story" />
+            </div>
+            <div className="story-content">
+              <h4>Community Outreach: Making a Difference</h4>
+              <p className="story-date">October 12, 2024</p>
+              <p className="story-excerpt">
+                Discover how our volunteers are bringing positive change to
+                local communities
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1xjsi1dVhi9_CUmQmW_KFIH8AMZ0bnqEN/view?usp=sharing"
+                className="story-link"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+
+          <div className="story-card">
+            <div className="story-image">
+              <img src={Patrick} alt="Story" />
+            </div>
+            <div className="story-content">
+              <h4>Annual Impact Report 2024</h4>
+              <p className="story-date">September 20, 2024</p>
+              <p className="story-excerpt">
+                A comprehensive look at our achievements and the lives we've
+                touched this year
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1RW6ZTWJWObpKIY4pZokeiaAh4XAq_T4y/view?usp=sharing"
+                className="story-link"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+
+          <div className="story-card">
+            <div className="story-image">
+              <img src={Students} alt="Story" />
+            </div>
+            <div className="story-content">
+              <h4>Partnership for Progress</h4>
+              <p className="story-date">September 5, 2024</p>
+              <p className="story-excerpt">
+                Learn about our collaborations with local organizations to
+                expand our reach
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1laGlY1NVK82eOd3bIxetEJZSMLqr6AuX/view?usp=sharing"
+                className="story-link"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="view-all-container">
+          <a
+            href="https://drive.google.com/drive/folders/1PBSNs1xkpw-8q_5Qj_bQ9vdLde8__tVQ?usp=drive_link"
+            className="view-all-btn"
+          >
+            View All Stories
+          </a>
+        </div>
+      </section>
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h4>Our Vision</h4>
+            <p>
+              THE HULEDE FOUNDATION is here to help, and we believe that change
+              is possible when we put our hearts and minds to it.
+            </p>
+          </div>
+          <div className="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <a href="/home">Home</a>
+              </li>
+              <li>
+                <a href="/About">About</a>
+              </li>
+              <li>
+                <a href="/gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h4>Contact</h4>
+            <p>Email: huledefoundation@gmail.com</p>
+            <p>Phone: +1 (240) 708-0664</p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2025 Hulede Foundation. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Home;
