@@ -70,7 +70,7 @@ const Team = () => {
           <div className="board-grid">
             {boardMembers.map((m, i) => (
               <div className="board-card" key={i} data-animate data-delay={String(i % 4)}>
-                <img src={m.image} alt={m.name} />
+                <LazyImage src={m.image} alt={m.name} />
                 <div className="board-card-info">
                   <h3>{m.name}</h3>
                   <p>{m.title}</p>

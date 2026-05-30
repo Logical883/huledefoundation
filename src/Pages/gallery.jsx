@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./gallery.css";
+import LazyImage from "../components/LazyImage";
 
 const galleryItems = [
   { title: "2025 Hulede Foundation Scholarship Gallery", date: "MAY 18, 2025", image: "/images/2025.JPG", link: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/", size: "large" },
@@ -40,7 +41,7 @@ const Gallery = () => {
               key={i}
               data-animate
             >
-              <img src={item.image} alt={item.title} loading="lazy" />
+              <LazyImage src={item.image} alt={item.title} className="gallery-card-img" />
               <div className="gallery-card-overlay">
                 <h3>{item.title}</h3>
                 {item.date && <span>{item.date}</span>}
