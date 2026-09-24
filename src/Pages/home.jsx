@@ -1,343 +1,394 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./home.css";
+import PageShell from "../components/PageShell";
+import { APPLY_URL, CHECKIN_URL, REPORT_URL } from "../data/site";
 import image1 from "../assets/image1.JPG";
 import image2 from "../assets/image2.JPG";
 import image3 from "../assets/image3.JPG";
 import HeroImg from "../assets/Hero.jpg";
 import Scholarship from "../assets/Scholarship.jpg";
+import Students from "../assets/Students.png";
 
-const CheckIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-  </svg>
-);
-
-const heroImages = [image1, image2, image3];
-
-const featuredStories = [
+const slides = [
   {
-    title: "James Dankwah Amoako – Making a Difference Through Compassion",
-    description: "James, a Hulede Foundation Scholar, dedicates his time to assist a physically challenged woman in Akim Osiem, providing mobility support and companionship to church. His act of compassion is inspiring others to serve with empathy and humility.",
-    link: "https://drive.google.com/file/d/1sDKU_kSPNlhLtiLrNEk7rSEkhWOFXzE7/view?usp=sharing",
+    kind: "Upcoming Event",
+    title: "KNUST Scholars Event",
+    text: "30 May 2026, 9:00 AM prompt, at Allotey Auditorium, College of Science, KNUST. Bring your HFKNUST2026 unique ID and student ID, collect your HF T-shirt, and be present for official photographs.",
+    image: image1,
+    primary: { label: "Event Check-in", href: CHECKIN_URL },
+    secondary: { label: "Application Info", to: "/application" },
   },
   {
-    title: "Hon. Asare Freduah Edmond Senior – Empowering Minds Through Education",
-    description: "Asare devoted 54 hours to tutor children in his community, helping them build confidence, improve academically, and develop an entrepreneurial mindset. His leadership and problem-solving skills continue to shine through impactful community teaching.",
-    link: "https://drive.google.com/file/d/1ew-ytvSqDdn0UmwqHic08do_n8bt-Ofs/view?usp=sharing",
+    kind: "Past Event",
+    title: "2025 Meet & Greet",
+    text: "Scholars gathered to mark another year of awards, mentorship, and community service. Browse the galleries from 2022 through the 2025 graduands.",
+    image: image2,
+    primary: { label: "Open Gallery", to: "/gallery" },
+    secondary: { label: "About Us", to: "/about" },
   },
   {
-    title: 'The "Give Back" Story',
-    description: 'Daniel Coffie commenced his volunteering project at Anyaa M/A "1" Primary and JHS. After discovering students had limited computing knowledge, he undertook a computer literacy initiative — a model of giving back with purpose.',
-    link: "https://www.facebook.com/people/The-Hulede-Foundation/100086620458577/",
-  },
-  {
-    title: "Hulede Foundation Donates Mechanized Borehole",
-    description: "Hulede Foundation donated a mechanized borehole water system to New Amakom M/A cluster of schools in Kumasi, providing pupils and teachers with portable drinking water to facilitate teaching, learning, and quality education.",
-    link: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
+    kind: "News",
+    title: "1,474 scholarships, and the work continues",
+    text: "From 12 awards in 2021 to 423 in 2026, the Foundation keeps opening KNUST to brilliant but needy students — with 54 laptops given alongside the fees support.",
+    image: HeroImg,
+    primary: { label: "Apply Now", href: APPLY_URL },
+    secondary: { label: "See the numbers", to: "/about" },
   },
 ];
 
-const scholarshipData = [
-  { year: "2026", recipients: 423 },
-  { year: "2025", recipients: 339 },
-  { year: "2024", recipients: 348 },
-  { year: "2023", recipients: 250 },
-  { year: "2022", recipients: 102 },
-  { year: "2021", recipients: 12 },
+const notices = [
+  {
+    kind: "upcoming",
+    label: "Upcoming",
+    date: "30 May 2026",
+    title: "Hulede Foundation KNUST Scholars Event",
+    text: "Attendance is required. Missing the event leads to automatic forfeiture of the 2026 scholarship. Sign in, collect your T-shirt, and stay for official photographs.",
+    href: CHECKIN_URL,
+    image: Scholarship,
+    cta: "Register for check-in",
+  },
+  {
+    kind: "news",
+    label: "News",
+    date: "Open",
+    title: "Community service reports are due",
+    text: "Scholars complete at least 40 hours of annual community service, in the official T-shirt, and submit photos, video, and a written report.",
+    href: REPORT_URL,
+    image: Students,
+    cta: "Submit report",
+  },
+  {
+    kind: "news",
+    label: "News",
+    date: "Kumasi",
+    title: "Mechanized borehole for New Amakom schools",
+    text: "The Foundation donated a mechanized borehole water system so pupils and teachers at the New Amakom M/A cluster have drinking water for teaching and learning.",
+    href: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
+    image: image3,
+    cta: "Read the report",
+  },
+  {
+    kind: "past",
+    label: "Past Event",
+    date: "18 May 2025",
+    title: "2025 scholarship programme gallery",
+    text: "Photographs from the 2025 Hulede Foundation Scholarship programme, including the scholars who gathered that year.",
+    href: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/",
+    image: "/images/2025.JPG",
+    cta: "View album",
+  },
+  {
+    kind: "news",
+    label: "News",
+    date: "KNUST",
+    title: "Support for 250 students to clear fees",
+    text: "Financial support helped 250 KNUST students settle outstanding fees so they could stay in school without a break in their studies.",
+    href: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html",
+    image: HeroImg,
+    cta: "Read the story",
+  },
+  {
+    kind: "past",
+    label: "Past Event",
+    date: "November 2025",
+    title: "Graduands gallery — Hulede scholars",
+    text: "A record of Hulede scholars who graduated, and of the years of support that carried them to that day.",
+    href: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/",
+    image: "/images/Graduate.jpg",
+    cta: "View album",
+  },
 ];
 
-const laptopData = [
-  { year: "2025", laptops: 27 },
-  { year: "2024", laptops: 27 },
+const routes = [
+  { kicker: "Applicants", title: "I want to apply", text: "Read who the scholarship is for, what to bring, and how the 2026 scholars event works.", to: "/application", cta: "Application Info" },
+  { kicker: "Scholars", title: "I need to report service", text: "Community service of at least 40 hours is part of staying on the scholarship.", href: REPORT_URL, cta: "Submit report" },
+  { kicker: "Stories", title: "I want to see the work", text: "Scholarship days, graduands, laptops, and community service albums from 2022 onward.", to: "/gallery", cta: "Open Gallery" },
+  { kicker: "Questions", title: "I need to reach you", text: "Write from Kumasi, the United States, or anywhere else. We reply as soon as we can.", to: "/contact", cta: "Contact Us" },
 ];
 
-const tickerItems = [
-  "Educational Excellence","Community Service","Leadership Development",
-  "Social Impact Projects","Volunteerism","Youth Empowerment",
-  "Sustainable Development","Mentorship Programs","Innovation for Change",
-  "Empowering Future Leaders","Civic Responsibility","Lifelong Learning",
+const pathways = [
+  { title: "KNUST Scholarships", text: "Fees support for brilliant but needy Ghanaian students, concentrated at KNUST, growing from 12 awards in 2021 to 423 in 2026." },
+  { title: "Laptop Support", text: "54 laptops donated across 2024 and 2025 so scholars can study, research, and complete their work with a computer of their own." },
+  { title: "Community Service", text: "Every scholar gives at least 40 hours a year — tutoring, computer lessons, mobility support, and other work in their communities." },
+  { title: "Mentorship & Give-back", text: "Scholars are asked to carry the same opportunity forward: teach, volunteer, and document the difference they make." },
 ];
 
-const Home = () => {
+const steps = [
+  { title: "Read the requirements", text: "Confirm you are a brilliant but needy student, primarily seeking support at KNUST, and note the documents you will need." },
+  { title: "Submit the form", text: "Use the official Hulede application form. Do not pay an agent or a third party to submit on your behalf." },
+  { title: "Keep your unique ID", text: "If you are awarded, keep your HFKNUST unique ID ready and attend the scholars event with your student ID." },
+  { title: "Serve and report", text: "Complete at least 40 hours of community service in the HF T-shirt and submit your evidence for renewal." },
+];
+
+const faqs = [
+  { q: "Where do I apply?", a: "Use the Apply Now button. It opens the official Hulede Foundation application form. That is the only application channel on this site." },
+  { q: "Who is the scholarship for?", a: "Brilliant but needy Ghanaian students, primarily at KNUST. The Foundation was set up to create opportunities for people who are academically strong and financially disadvantaged." },
+  { q: "What happens at the scholars event?", a: "The 2026 gathering is on 30 May at Allotey Auditorium, College of Science, KNUST, at 9:00 AM. Bring your unique ID and student ID, collect your T-shirt, sign in, and join the official photographs. Missing it forfeits the 2026 award." },
+];
+
+function ActionLink({ item, className, children }) {
+  if (item.href) {
+    return (
+      <a className={className} href={item.href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link className={className} to={item.to}>
+      {children}
+    </Link>
+  );
+}
+
+export default function Home() {
   const [slide, setSlide] = useState(0);
-  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const id = setInterval(() => setSlide((s) => (s + 1) % heroImages.length), 5500);
+    const id = setInterval(() => setSlide((s) => (s + 1) % slides.length), 7000);
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    const t = setTimeout(() => setShowPopup(true), 1200);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-  if (showPopup) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
-  return () => { document.body.style.overflow = ""; };
-}, [showPopup]);
-
-  // Scroll reveal
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) e.target.classList.add("in-view");
-        else e.target.classList.remove("in-view");
-      }),
-      { threshold: 0.12 }
-    );
-    document.querySelectorAll("[data-animate]").forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
-
-  const totalRecipients = scholarshipData.reduce((s, i) => s + i.recipients, 0);
-  const totalLaptops = laptopData.reduce((s, i) => s + i.laptops, 0);
-  const doubled = [...tickerItems, ...tickerItems];
+  const go = (dir) => setSlide((s) => (s + dir + slides.length) % slides.length);
 
   return (
-    <div>
-      {/* ── POPUP ─────────────────────────────────────── */}
-      {showPopup && (
-  <div className="popup-overlay" onClick={() => setShowPopup(false)}>
-    <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-      <button className="popup-close" onClick={() => setShowPopup(false)}>✕</button>
-      <img src={Scholarship} alt="Hulede Foundation Event" className="popup-img" onLoad={(e) => e.target.classList.add('loaded')} />
-      <div className="popup-body">
-        <h2>Important Event Reminders</h2>
-        <p>
-          Dear Scholar,
-          <br /><br />
-          We hope you are doing well. As we prepare for the upcoming <strong>Hulede Foundation KNUST Scholars Event</strong>, kindly take note of the following important reminders:
-          <br /><br />
-          1. Please know and keep your <strong>HFKNUST2026-x Unique ID</strong> readily available.<br />
-          2. Attend the event on: <strong>Date:</strong> 30th May, 2026 &nbsp;|&nbsp; <strong>Time:</strong> 9:00 AM Promptly &nbsp;|&nbsp; <strong>Venue:</strong> Allotey Auditorium, College of Science, KNUST<br />
-          3. Ensure that you collect your <strong>HF T-Shirt</strong> and sign in during the event.<br />
-          4. Failure to attend will lead to the <strong>automatic forfeiture</strong> of your Hulede Foundation 2026 Scholarship.<br />
-          5. Kindly bring along your <strong>Student ID Card</strong> for check-in and verification.<br />
-          6. Please be present in all <strong>official pictures</strong> taken during the event day.
-          <br /><br />
-          We encourage all scholars to cooperate fully and arrive on time for a smooth and successful event.
-          <br /><br />
-          <em>Warm regards,<br /><strong>Hulede Foundation</strong> ~ Making a difference</em>
-        </p>
-      </div>
-      <div className="popup-footer">
-        <a href="https://hulede-checkin.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <button onClick={() => setShowPopup(false)}>Register Now</button>
-        </a>
-      </div>
-    </div>
-  </div>
-)}
-
-      {/* ── HERO ──────────────────────────────────────── */}
-      <section className="hero-section">
-        {heroImages.map((src, i) => (
-          <div
-            key={i}
-            className={`hero-bg${slide === i ? " active" : ""}`}
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))}
-        <div className="hero-overlay">
-          <p className="hero-eyebrow">Hulede Foundation · KNUST Scholarship</p>
-          <h1 className="hero-title">2025 Meet &amp; Greet</h1>
-          <div className="hero-actions">
-            <a href="https://forms.gle/WQGC3LJrTnmkvTra7" target="_blank" rel="noopener noreferrer">
-              <button className="btn btn-primary">Submit Report</button>
-            </a>
-            <Link to="/about">
-              <button className="btn btn-outline" style={{ borderColor:"rgba(255,255,255,0.7)", color:"#fff" }}>
-                Learn More
-              </button>
-            </Link>
+    <PageShell>
+      <section className="gsa-hero" aria-roledescription="carousel" aria-label="News and events">
+        <div className="gsa-hero-slider" aria-hidden="true">
+          {slides.map((item, i) => (
+            <div
+              key={item.title}
+              className={`gsa-hero-slide${i === slide ? " is-active" : ""}`}
+              style={{ backgroundImage: `url(${item.image})` }}
+            />
+          ))}
+        </div>
+        <div className="gsa-hero-overlay" />
+        <div className="gsa-hero-inner">
+          <div className="gsa-hero-copy">
+            <span className="gsa-eyebrow">Hulede Foundation</span>
+            {slides.map((item, i) => (
+              <div className={`gsa-hero-content${i === slide ? " is-active" : ""}`} key={item.title}>
+                <h1>{item.title}</h1>
+                <p>{item.text}</p>
+                <div className="gsa-actions">
+                  <ActionLink item={item.primary} className="gsa-btn primary">{item.primary.label}</ActionLink>
+                  <ActionLink item={item.secondary} className="gsa-btn ghost">{item.secondary.label}</ActionLink>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="hero-dots">
-            {heroImages.map((_, i) => (
+        </div>
+        <div className="gsa-hero-controls" aria-label="Banner slider controls">
+          <button className="gsa-hero-arrow" type="button" onClick={() => go(-1)} aria-label="Previous banner">‹</button>
+          <div className="gsa-hero-dots">
+            {slides.map((item, i) => (
               <button
-                key={i}
-                className={`hero-dot${slide === i ? " active" : ""}`}
+                key={item.kind}
+                type="button"
+                className={`gsa-hero-dot${i === slide ? " is-active" : ""}`}
+                aria-label={`Show ${item.kind}`}
+                aria-current={i === slide}
                 onClick={() => setSlide(i)}
-                aria-label={`Slide ${i + 1}`}
               />
             ))}
           </div>
-          <div className="scroll-cue">Scroll</div>
+          <button className="gsa-hero-arrow" type="button" onClick={() => go(1)} aria-label="Next banner">›</button>
         </div>
       </section>
 
-      {/* ── TICKER ────────────────────────────────────── */}
-      <div className="ticker-bar">
-        <div className="ticker-track" aria-hidden="true">
-          {doubled.map((item, i) => (
-            <span key={i}>✦ {item}</span>
-          ))}
+      <section className="trust-strip" aria-label="Foundation highlights">
+        <div className="trust-grid portal-container">
+          <div className="trust-item"><strong>2018</strong><span>Founded in memory of Mr. Patrick Hulede</span></div>
+          <div className="trust-item"><strong>1,474</strong><span>KNUST scholarships awarded, 2021–2026</span></div>
+          <div className="trust-item"><strong>54</strong><span>Laptops donated in 2024 and 2025</span></div>
+          <div className="trust-item"><strong>40 hrs</strong><span>Minimum community service each year</span></div>
         </div>
-      </div>
-
-      {/* ── CTA BANNER ────────────────────────────────── */}
-      <section className="cta-banner" data-animate>
-        <h2>Community Service Report</h2>
-        <p>
-          Take the next step toward your academic journey. Submit your Community Service report today and let your dreams find the support they deserve.
-        </p>
-        <a href="https://forms.gle/WQGC3LJrTnmkvTra7" target="_blank" rel="noopener noreferrer">
-          <button className="btn btn-white">Submit Now</button>
-        </a>
       </section>
 
-      {/* ── ABOUT ─────────────────────────────────────── */}
-      <section className="about-section">
-        <div className="about-inner">
-          <div data-animate>
-            <p className="section-label">Who We Are</p>
-            <h2 className="section-title">Transforming Lives Through Education</h2>
-            <div className="section-rule"></div>
-            <p className="section-body">
-              Our strength lies not only in the words we stand by, but most importantly in the actions of our initiatives. We purposely create opportunities for the underprivileged in our society to better their lives.
+      <section className="portal-section" id="notices">
+        <div className="portal-container">
+          <div className="section-head" data-animate>
+            <p className="section-label">Latest notices</p>
+            <h2 className="section-title">Upcoming events, past gatherings, and news.</h2>
+            <div className="section-rule" />
+            <p className="section-lede">
+              The same updates scholars ask about first: the next event date, service reports, and the stories already on record.
             </p>
           </div>
-
-          <div className="about-grid">
-            <div className="about-img-wrap" data-animate>
-              <img src={HeroImg} alt="Hulede Foundation" onLoad={(e) => e.target.classList.add('loaded')} />
-              <div className="about-img-accent" />
-            </div>
-            <div className="about-text" data-animate data-delay="2">
-              <p className="section-label">Our Scholarship</p>
-              <h3 className="section-title" style={{fontSize:"1.7rem"}}>About Hulede Foundation Scholarship</h3>
-              <div className="section-rule"></div>
-              <p className="section-body">
-                The Hulede Foundation Scholarship supports "brilliant but needy" Ghanaian students — primarily at KNUST — creating opportunities for those who are both academically strong and financially disadvantaged.
-              </p>
-              <br />
-              <p className="section-body">
-                Since 2021, we've awarded over 1,000 scholarships and donated 54 laptops, and we're just getting started.
-              </p>
-              <br />
-              <Link to="/about">
-                <button className="btn btn-primary">Read More</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── COMMUNITY SERVICE ─────────────────────────── */}
-      <section className="service-section">
-        <div className="service-header" data-animate>
-          <p className="section-label">The Spirit of Giving Multiples</p>
-          <h2 className="section-title">Community Service</h2>
-          <div className="section-rule"></div>
-          <p className="section-body">
-            Each scholar completes <strong>40 hours minimum of annual community service</strong> as a core requirement. This initiative is a vital contribution to society and a mandatory part of the scholarship renewal process.
-          </p>
-        </div>
-
-        <div className="service-requirements" data-animate data-delay="1">
-          <h3>To be eligible, scholars must:</h3>
-          <ul>
-            <li>Wear the official Hulede Foundation T-shirt during service</li>
-            <li>Document their work with photos, videos, and a detailed report</li>
-            <li>Complete at least 40 hours of service annually</li>
-            <li>Submit all evidence to the designated platform</li>
-          </ul>
-        </div>
-
-        <div className="story-grid">
-          {featuredStories.map((story, i) => (
-            <div className="story-card" key={i} data-animate data-delay={String(i % 4)}>
-              <div className="story-icon"><CheckIcon /></div>
-              <h4>{story.title}</h4>
-              <p>{story.description}</p>
-              <a href={story.link} target="_blank" rel="noopener noreferrer" className="story-link">
-                Read More
+          <div className="notice-grid">
+            {notices.map((item) => (
+              <a className="notice-card" key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" data-animate>
+                <img src={item.image} alt="" />
+                <div className="notice-body">
+                  <div className="notice-meta">
+                    <span className={`chip ${item.kind}`}>{item.label}</span>
+                    <span className="notice-date">{item.date}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <span className="read-more">{item.cta}</span>
+                </div>
               </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── STATISTICS ────────────────────────────────── */}
-      <section className="stats-section">
-        <div className="stats-inner">
-          <div style={{textAlign:"center", marginBottom:"48px"}} data-animate>
-            <p className="section-label">Our Impact</p>
-            <h2 className="section-title">Numbers That Speak</h2>
-            <div className="section-rule center"></div>
+            ))}
           </div>
-
-          <div className="stats-cards">
-            <div className="stat-card green" data-animate>
-              <div className="stat-num">{totalRecipients}</div>
-              <div className="stat-label">Scholarship Recipients</div>
-            </div>
-            <div className="stat-card blue" data-animate data-delay="2">
-              <div className="stat-num">{totalLaptops}</div>
-              <div className="stat-label">Laptops Donated</div>
-            </div>
-          </div>
-
-          <div className="tables-grid">
-            <div className="table-wrap" data-animate>
-              <div className="table-head">Scholarship Recipients by Year</div>
-              <table className="data-table">
-                <thead><tr><th>Year</th><th>Recipients</th></tr></thead>
-                <tbody>
-                  {scholarshipData.map((r, i) => (
-                    <tr key={i}><td>{r.year}</td><td>{r.recipients}</td></tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="table-wrap" data-animate data-delay="2">
-              <div className="table-head">Laptop Distribution</div>
-              <table className="data-table">
-                <thead><tr><th>Year</th><th>Laptops</th></tr></thead>
-                <tbody>
-                  {laptopData.map((r, i) => (
-                    <tr key={i}><td>{r.year}</td><td>{r.laptops}</td></tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className="portal-actions" style={{ marginTop: 28 }}>
+            <a
+              className="btn btn-outline"
+              href="https://drive.google.com/drive/folders/1PBSNs1xkpw-8q_5Qj_bQ9vdLde8__tVQ?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Scholar stories archive
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ── FOOTER ────────────────────────────────────── */}
-      <footer className="site-footer full-bleed">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <h3>Hulede Foundation</h3>
-            <p>THE HULEDE FOUNDATION is here to help, and we believe that change is possible when we put our hearts and minds to it.</p>
+      <section className="portal-section alt">
+        <div className="portal-container">
+          <div className="section-head" data-animate>
+            <p className="section-label">Find your route</p>
+            <h2 className="section-title">Start with the page that matches what you need.</h2>
+            <div className="section-rule" />
           </div>
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="/home">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/gallery">Gallery</a></li>
-              <li><a href="/contact">Contact</a></li>
+          <div className="route-grid">
+            {routes.map((item) => (
+              <ActionLink item={item} className="route-card" key={item.title}>
+                <span className="route-index">{item.kicker}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <span className="read-more">{item.cta}</span>
+              </ActionLink>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="portal-section">
+        <div className="portal-container">
+          <div className="section-head center" data-animate>
+            <p className="section-label">How support is organised</p>
+            <h2 className="section-title">Scholarships, tools, service, and mentorship.</h2>
+            <div className="section-rule center" />
+          </div>
+          <div className="pathway-grid">
+            {pathways.map((item) => (
+              <article className="pathway-card" key={item.title} data-animate>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="portal-section alt">
+        <div className="portal-container feature-split">
+          <div className="feature-photo" data-animate>
+            <img src={HeroImg} alt="Hulede Foundation scholars and community" />
+          </div>
+          <div className="feature-copy" data-animate>
+            <p className="section-label">About the Foundation</p>
+            <h2 className="section-title" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>
+              Set up in a father’s name, carried by his sons.
+            </h2>
+            <div className="section-rule" />
+            <p className="section-body">
+              Since 2018, the Hulede Foundation has worked in the name of Mr. Patrick Hulede of blessed memory — founder and first head of the KNUST Printing Press — established by his sons, Patrick and John.
+            </p>
+            <p className="section-body">
+              The scholarship supports brilliant but needy Ghanaian students, primarily at KNUST. Success is counted in people who stay in school, and in the service they give back.
+            </p>
+            <div className="portal-actions" style={{ marginTop: 22 }}>
+              <Link className="btn btn-primary" to="/about">About Us</Link>
+              <Link className="btn btn-outline" to="/management">Management</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="portal-section dark">
+        <div className="portal-container">
+          <div className="section-head center" data-animate>
+            <p className="section-label">Application journey</p>
+            <h2 className="section-title">Four steps from interest to renewal.</h2>
+            <div className="section-rule center" />
+          </div>
+          <div className="steps">
+            {steps.map((step, i) => (
+              <article className="step" key={step.title} data-animate>
+                <span>{i + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="portal-section">
+        <div className="portal-container prep-grid">
+          <div className="safety-card" data-animate>
+            <p className="section-label">Official channel</p>
+            <h3>Apply only through this site.</h3>
+            <p className="section-body">
+              The Apply Now button opens the Hulede Foundation form. Ignore anyone who asks you to pay for a guaranteed award or to submit through a private agent.
+            </p>
+            <div className="portal-actions" style={{ marginTop: 20 }}>
+              <a className="btn btn-primary" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
+            </div>
+          </div>
+          <div className="checklist-card" data-animate>
+            <p className="section-label">Before the scholars event</p>
+            <h3>Keep these with you.</h3>
+            <ul className="checklist">
+              <li>Your HFKNUST unique ID, written down and easy to find</li>
+              <li>Your KNUST student ID card for check-in</li>
+              <li>Time to collect your HF T-shirt and sign the register</li>
+              <li>Presence in the official photographs taken that day</li>
+              <li>For renewal: 40 hours of service, photos, video, and a report</li>
             </ul>
           </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <p>huledefoundation@gmail.com</p>
-            <p>+1 (240) 708-0664</p>
+        </div>
+      </section>
+
+      <section className="portal-section alt">
+        <div className="portal-container">
+          <div className="section-head center" data-animate>
+            <p className="section-label">Quick answers</p>
+            <h2 className="section-title">Before you apply or travel to the event.</h2>
+            <div className="section-rule center" />
+          </div>
+          <div className="faq-grid">
+            {faqs.map((item) => (
+              <article className="faq-card" key={item.q} data-animate>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </article>
+            ))}
+          </div>
+          <div className="portal-actions" style={{ justifyContent: "center", marginTop: 28 }}>
+            <Link className="btn btn-outline" to="/application">Full application info</Link>
           </div>
         </div>
-        <div className="footer-bottom">
-          <p>© 2026 Hulede Foundation. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
-  );
-};
+      </section>
 
-export default Home;
+      <section className="portal-section">
+        <div className="portal-container">
+          <div className="closing-cta" data-animate>
+            <p className="section-label" style={{ color: "#e6cf7a" }}>Ready to apply?</p>
+            <h2>Use the official form, then keep your details close.</h2>
+            <p>
+              Start with the Hulede application, read the event rules for 30 May 2026, and write to us if something on the form is unclear.
+            </p>
+            <div className="portal-actions">
+              <a className="btn btn-white" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
+              <Link className="btn btn-ghost" to="/contact">Contact</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </PageShell>
+  );
+}

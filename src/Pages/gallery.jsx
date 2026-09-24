@@ -1,90 +1,68 @@
-import React, { useEffect } from "react";
-import "./gallery.css";
-import LazyImage from "../components/LazyImage";
+import { Link } from "react-router-dom";
+import PageShell from "../components/PageShell";
 
-const galleryItems = [
-  { title: "2025 Hulede Foundation Scholarship Gallery", date: "MAY 18, 2025", image: "/images/2025.JPG", link: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/", size: "large" },
-  { title: "2025 Graduands Gallery – Hulede Scholars", date: "NOVEMBER 2025", image: "/images/Graduate.jpg", link: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/", size: "small" },
-  { title: "2024 Hulede Scholarship Foundation Gallery", date: "JUNE 6, 2024", image: "/images/2024.jpg", link: "https://huledefoundation.pixieset.com/2024huledescholarshipfoundationgallery/", size: "small" },
-  { title: "2023 Hulede Scholarship Foundation Gallery", date: "JUNE 10, 2023", image: "/images/2023.jpg", link: "https://huledefoundation.pixieset.com/2023huledefoundationscholarshipgallery/", size: "small" },
-  { title: "Community Service Gallery", date: "", image: "/images/COM_1.jpg", link: "https://huledefoundation.pixieset.com/huledefoundationcommunityservicegallery/", size: "small" },
-  { title: "Scholarship – Laptop Recipients Gallery", date: "", image: "/images/LAP_1.jpg", link: "https://huledefoundation.pixieset.com/huledefoundationscholarhiplaptoprecipientsgallery/", size: "large" },
-  { title: "2022 Hulede Scholarship Foundation Gallery", date: "2022", image: "/images/2022.jpg", link: "https://huledefoundation.pixieset.com/", size: "small" },
+const albums = [
+  { title: "2025 Hulede Foundation Scholarship Gallery", date: "18 May 2025", image: "/images/2025.JPG", href: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/", wide: true },
+  { title: "2025 Graduands — Hulede Scholars", date: "November 2025", image: "/images/Graduate.jpg", href: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/" },
+  { title: "2024 Scholarship Gallery", date: "6 June 2024", image: "/images/2024.jpg", href: "https://huledefoundation.pixieset.com/2024huledescholarshipfoundationgallery/" },
+  { title: "2023 Scholarship Gallery", date: "10 June 2023", image: "/images/2023.jpg", href: "https://huledefoundation.pixieset.com/2023huledefoundationscholarshipgallery/" },
+  { title: "2022 Scholarship Gallery", date: "2022", image: "/images/2022.jpg", href: "https://huledefoundation.pixieset.com/" },
+  { title: "Community Service Gallery", date: "Scholars in the field", image: "/images/COM_1.jpg", href: "https://huledefoundation.pixieset.com/huledefoundationcommunityservicegallery/", wide: true },
+  { title: "Laptop Recipients Gallery", date: "Scholarship laptops", image: "/images/LAP_1.jpg", href: "https://huledefoundation.pixieset.com/huledefoundationscholarhiplaptoprecipientsgallery/", wide: true },
 ];
 
-const Gallery = () => {
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) e.target.classList.add("in-view");
-        else e.target.classList.remove("in-view");
-      }),
-      { threshold: 0.08 }
-    );
-    document.querySelectorAll("[data-animate]").forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
-
+export default function Gallery() {
   return (
-    <div className="gallery-page">
-      <div className="gallery-hero">
-        <p className="section-label" data-animate>Our Moments</p>
-        <h1 className="section-title" data-animate data-delay="1">Gallery</h1>
-        <div className="section-rule" style={{ margin: "14px auto 0" }} data-animate data-delay="2"></div>
-      </div>
+    <PageShell>
+      <header className="gallery-hero">
+        <div className="gallery-hero-bg" style={{ backgroundImage: "url(/images/2024.jpg)" }} />
+        <div className="gallery-hero-shade" />
+        <div className="portal-container gallery-hero-grid">
+          <div>
+            <p className="crumbs crumbs-light"><Link to="/">Home</Link><span>/</span>Gallery</p>
+            <p className="gsa-eyebrow">Albums</p>
+            <h1>Gallery</h1>
+            <p className="page-lede">Past scholarship days, graduands, community service, and laptop presentations. Each card opens the full Pixieset album.</p>
+          </div>
+          <aside className="hero-glass">
+            <strong>2022 – 2025</strong>
+            <span>Scholarship days, graduands, service, and laptops</span>
+          </aside>
+        </div>
+      </header>
 
-      <section className="gallery-grid-section">
-        <div className="gallery-mosaic">
-          {galleryItems.map((item, i) => (
-            <div
-              className={`gallery-card${item.size === "large" ? " large" : ""}`}
-              key={i}
-              data-animate
-            >
-              <LazyImage
-                src={item.image}
-                alt={item.title}
-                wrapperStyle={{ height: "100%", width: "100%" }}
-              />
-              <div className="gallery-card-overlay">
-                <h3>{item.title}</h3>
-                {item.date && <span>{item.date}</span>}
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  View Gallery
-                </a>
-              </div>
-            </div>
-          ))}
+      <section className="portal-section">
+        <div className="portal-container">
+          <div className="album-grid">
+            {albums.map((album) => (
+              <a
+                className={`album-card${album.wide ? " wide" : ""}`}
+                key={album.title}
+                href={album.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-animate
+              >
+                <img src={album.image} alt="" />
+                <div className="album-caption">
+                  <div className="album-caption-row">
+                    <div>
+                      <h3>{album.title}</h3>
+                      {album.date && <p className="album-date">{album.date}</p>}
+                    </div>
+                    <span className="album-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="9 7 17 7 17 15" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
-
-      <footer className="site-footer full-bleed">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <h3>Hulede Foundation</h3>
-            <p>Making a difference in lives across Ghana and beyond.</p>
-          </div>
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="/home">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/gallery">Gallery</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <p>huledefoundation@gmail.com</p>
-            <p>+1 (240) 708-0664</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2026 Hulede Foundation. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    </PageShell>
   );
-};
-
-export default Gallery;
+}

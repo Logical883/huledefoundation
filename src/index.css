@@ -1,23 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Raleway:wght@500;700;800;900&display=swap");
 
 /* ─── CSS CUSTOM PROPERTIES ──────────────────────────────── */
 :root {
-  /* Brand */
-  --green:       #24b144;
-  --green-dark:  #1a8533;
-  --green-light: #e8f7ed;
-  --gold:        #c9a227;
+  /* Ghana scholarships colour flow, used with Hulede content */
+  --green:       #006b3f;
+  --green-dark:  #063f2b;
+  --green-light: rgba(0, 107, 63, 0.1);
+  --gold:        #f6d94a;
+  --red:         #c51d23;
 
   /* Light mode */
-  --bg:          #f7f6f2;
+  --bg:          #ffffff;
   --bg-card:     #ffffff;
-  --bg-section:  #f0ede6;
+  --bg-section:  #f7f8f3;
   --surface:     #ffffff;
-  --border:      rgba(0,0,0,0.08);
-  --text-primary:#141410;
-  --text-body:   #3d3c36;
-  --text-muted:  #7a7970;
-  --nav-bg:      rgba(247,246,242,0.92);
+  --border:      rgba(16, 24, 32, 0.1);
+  --text-primary:#101820;
+  --text-body:   #3a4542;
+  --text-muted:  #5f6b68;
+  --nav-bg:      rgba(255, 255, 255, 0.96);
   --shadow-sm:   0 2px 12px rgba(0,0,0,0.06);
   --shadow-md:   0 8px 32px rgba(0,0,0,0.10);
   --shadow-lg:   0 20px 60px rgba(0,0,0,0.14);
@@ -38,7 +39,7 @@
   --shadow-sm:   0 2px 12px rgba(0,0,0,0.3);
   --shadow-md:   0 8px 32px rgba(0,0,0,0.4);
   --shadow-lg:   0 20px 60px rgba(0,0,0,0.5);
-  --ticker-bg:   #24b144;
+  --ticker-bg:   #006b3f;
   --ticker-text: #0f1009;
 }
 
@@ -56,7 +57,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text-body);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   transition: background 0.35s ease, color 0.35s ease;
@@ -89,7 +90,7 @@ img {
 
 /* ─── TYPOGRAPHY SCALE ──────────────────────────────────── */
 .display-font {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Raleway', Lato, sans-serif;
 }
 
 /* ─── GLOBAL BUTTONS ────────────────────────────────────── */
@@ -98,14 +99,15 @@ img {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 32px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  min-height: 52px;
+  padding: 15px 24px;
+  font-family: 'Raleway', Lato, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  border: none;
-  border-radius: 4px;
+  border: 1px solid transparent;
+  border-radius: 6px;
   cursor: pointer;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
 }
@@ -113,28 +115,39 @@ img {
 .btn-primary {
   background: var(--green);
   color: #fff;
+  box-shadow: none;
 }
 .btn-primary:hover {
   background: var(--green-dark);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(36,177,68,0.30);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--green);
-  border: 2px solid var(--green);
+  background: #fff;
+  color: var(--green-dark);
+  border: 1px solid var(--border);
 }
 .btn-outline:hover {
   background: var(--green);
   color: #fff;
+  border-color: var(--green);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(36,177,68,0.25);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .btn-white {
   background: #fff;
-  color: var(--green);
+  color: var(--green-dark);
 }
 .btn-white:hover {
   background: #f0ede6;
@@ -144,21 +157,32 @@ img {
 
 /* ─── SECTION PATTERNS ──────────────────────────────────── */
 .section-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Raleway', Lato, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   color: var(--green);
   margin-bottom: 12px;
 }
+.section-label::before {
+  content: "";
+  width: 42px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--green);
+}
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 600;
+  font-family: 'Raleway', Lato, sans-serif;
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 900;
   color: var(--text-primary);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  letter-spacing: 0;
 }
 
 .section-title.light { color: #fff; }
@@ -212,11 +236,11 @@ img {
   gap: 48px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 5% 48px;
+  padding: 56px 5% 48px;
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .footer-brand h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Raleway', Lato, sans-serif;
   font-size: 1.6rem;
   color: #f0ede4;
   margin-bottom: 12px;
@@ -245,16 +269,6 @@ img {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
-
-/* Image lazy load fade-in */
-img {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-img.loaded {
-  opacity: 1;
-}
 
 @keyframes shimmer {
   0%   { background-position: 200% 0; }

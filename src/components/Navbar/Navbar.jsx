@@ -3,6 +3,7 @@ import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
+import { APPLY_URL, navItems } from "../../data/site";
 
 const SunIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -23,16 +24,6 @@ const MoonIcon = () => (
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
   </svg>
 );
-
-const navItems = [
-  { label: "Home", to: "/home" },
-  { label: "About", to: "/about" },
-  { label: "Projects", to: "/projects" },
-  { label: "Our Team", to: "/team" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Editor", to: "/editor" },
-  { label: "Contact", to: "/contact" },
-];
 
 const Navbar = () => {
   const { theme, toggle } = useTheme();
@@ -60,7 +51,7 @@ const Navbar = () => {
     <nav className={`navbar-root${scrolled ? " scrolled" : ""}`}>
       <div className="navbar-inner">
         {/* Logo */}
-        <NavLink to="/" className="navbar-logo" onClick={close}>
+        <NavLink to="/" end className="navbar-logo" onClick={close}>
           <img src={logo} alt="Hulede Foundation" />
         </NavLink>
 
@@ -70,6 +61,7 @@ const Navbar = () => {
             <li key={item.to}>
               <NavLink
                 to={item.to}
+                end={item.to === "/"}
                 className={({ isActive }) => isActive ? "active" : undefined}
               >
                 {item.label}
@@ -90,21 +82,10 @@ const Navbar = () => {
           </button>
 
           <a
-            href="https://forms.gle/5fv4RGFL9gX95QYQ9"
+            href={APPLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-apply"
-            style={{
-              display: "inline-block",
-              padding: "8px 20px",
-              background: "var(--green)",
-              color: "#fff",
-              borderRadius: "30px",
-              fontSize: "0.85rem",
-              fontWeight: 600,
-              letterSpacing: "0.04em",
-              transition: "background 0.22s, transform 0.22s",
-            }}
           >
             Apply Now
           </a>
@@ -126,6 +107,7 @@ const Navbar = () => {
           <li key={item.to}>
             <NavLink
               to={item.to}
+              end={item.to === "/"}
               className={({ isActive }) => isActive ? "active" : undefined}
               onClick={close}
             >
@@ -135,7 +117,7 @@ const Navbar = () => {
         ))}
         <li className="apply-mobile">
           <a
-            href="https://forms.gle/5fv4RGFL9gX95QYQ9"
+            href={APPLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={close}

@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 200;
   background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -49,8 +49,8 @@
 
 .navbar-links li a {
   display: block;
-  padding: 6px 14px;
-  font-size: 0.875rem;
+  padding: 6px 10px;
+  font-size: 0.84rem;
   font-weight: 500;
   color: var(--text-body);
   border-radius: 6px;
@@ -86,24 +86,25 @@
 
 /* Apply Now button */
 .navbar-apply {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 16px !important;
+  border: 0;
+  border-radius: 6px !important;
   background: var(--green) !important;
   color: #fff !important;
-  padding: 8px 20px !important;
-  border-radius: 30px !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.04em;
-  transition: background 0.22s, transform 0.22s, box-shadow 0.22s !important;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
   white-space: nowrap;
 }
+.navbar-apply::after { content: none !important; display: none !important; }
 .navbar-apply:hover {
   background: var(--green-dark) !important;
   color: #fff !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 6px 20px rgba(36,177,68,0.3) !important;
 }
-.navbar-apply::after { display: none !important; }
-
 /* Right side controls */
 .navbar-controls {
   display: flex;
@@ -136,6 +137,8 @@
 /* Hamburger */
 .hamburger {
   display: none;
+  border: 0;
+  background: transparent;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -165,14 +168,15 @@
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: var(--surface);
+  background: var(--bg-card);
   border-top: 1px solid var(--border);
   padding: 12px 5% 20px;
   gap: 2px;
-  position: absolute;
+  position: fixed;
   top: 68px;
   left: 0;
   width: 100%;
+  z-index: 220;
   box-shadow: var(--shadow-md);
   animation: slideDown 0.25s ease;
 }
@@ -221,7 +225,7 @@
 }
 
 /* Responsive */
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .navbar-links { display: none; }
   .hamburger { display: flex; }
 }
