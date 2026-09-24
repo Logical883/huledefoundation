@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
-import HeroImg from "../assets/Hero.jpg";
-import heroPhoto from "../assets/image1.JPG";
+import images from "../data/images";
 
 const stats = [
   { num: "1,474", lbl: "Scholarships, 2021–2026" },
@@ -36,7 +35,7 @@ export default function About() {
   return (
     <PageShell>
       <header className="app-hero">
-        <div className="app-hero-bg" style={{ backgroundImage: `url(${heroPhoto})` }} />
+        <div className="app-hero-bg" style={{ backgroundImage: `url(${images.y2023})` }} />
         <div className="app-hero-shade" />
         <div className="portal-container app-hero-grid">
           <div>
@@ -61,7 +60,7 @@ export default function About() {
       <section className="portal-section">
         <div className="portal-container feature-split">
           <div className="feature-photo" data-animate>
-            <img src={HeroImg} alt="Hulede Foundation gathering" />
+            <img src={images.hero} alt="Hulede Foundation gathering" />
           </div>
           <div className="feature-copy" data-animate>
             <p className="section-label">Origin and purpose</p>

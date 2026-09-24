@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
+import images from "../../data/images";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { APPLY_URL, navItems } from "../../data/site";
@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="navbar-inner">
         {/* Logo */}
         <NavLink to="/" end className="navbar-logo" onClick={close}>
-          <img src={logo} alt="Hulede Foundation" />
+          <img src={images.logo} alt="Hulede Foundation" />
         </NavLink>
 
         {/* Desktop links */}

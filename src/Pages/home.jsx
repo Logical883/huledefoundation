@@ -2,19 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import { APPLY_URL, CHECKIN_URL, REPORT_URL } from "../data/site";
-import image1 from "../assets/image1.JPG";
-import image2 from "../assets/image2.JPG";
-import image3 from "../assets/image3.JPG";
-import HeroImg from "../assets/Hero.jpg";
-import Scholarship from "../assets/Scholarship.jpg";
-import Students from "../assets/Students.png";
+import images from "../data/images";
 
 const slides = [
   {
     kind: "Upcoming Event",
     title: "KNUST Scholars Event",
     text: "30 May 2026, 9:00 AM prompt, at Allotey Auditorium, College of Science, KNUST. Bring your HFKNUST2026 unique ID and student ID, collect your HF T-shirt, and be present for official photographs.",
-    image: image1,
+    image: images.y2023,
     primary: { label: "Event Check-in", href: CHECKIN_URL },
     secondary: { label: "Application Info", to: "/application" },
   },
@@ -22,7 +17,7 @@ const slides = [
     kind: "Past Event",
     title: "2025 Meet & Greet",
     text: "Scholars gathered to mark another year of awards, mentorship, and community service. Browse the galleries from 2022 through the 2025 graduands.",
-    image: image2,
+    image: images.y2022,
     primary: { label: "Open Gallery", to: "/gallery" },
     secondary: { label: "About Us", to: "/about" },
   },
@@ -30,7 +25,7 @@ const slides = [
     kind: "News",
     title: "1,474 scholarships, and the work continues",
     text: "From 12 awards in 2021 to 423 in 2026, the Foundation keeps opening KNUST to brilliant but needy students — with 54 laptops given alongside the fees support.",
-    image: HeroImg,
+    image: images.hero,
     primary: { label: "Apply Now", href: APPLY_URL },
     secondary: { label: "See the numbers", to: "/about" },
   },
@@ -44,7 +39,7 @@ const notices = [
     title: "Hulede Foundation KNUST Scholars Event",
     text: "Attendance is required. Missing the event leads to automatic forfeiture of the 2026 scholarship. Sign in, collect your T-shirt, and stay for official photographs.",
     href: CHECKIN_URL,
-    image: Scholarship,
+    image: images.scholarship,
     cta: "Register for check-in",
   },
   {
@@ -54,7 +49,7 @@ const notices = [
     title: "Community service reports are due",
     text: "Scholars complete at least 40 hours of annual community service, in the official T-shirt, and submit photos, video, and a written report.",
     href: REPORT_URL,
-    image: Students,
+    image: images.community,
     cta: "Submit report",
   },
   {
@@ -64,7 +59,7 @@ const notices = [
     title: "Mechanized borehole for New Amakom schools",
     text: "The Foundation donated a mechanized borehole water system so pupils and teachers at the New Amakom M/A cluster have drinking water for teaching and learning.",
     href: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
-    image: image3,
+    image: images.laptops,
     cta: "Read the report",
   },
   {
@@ -74,7 +69,7 @@ const notices = [
     title: "2025 scholarship programme gallery",
     text: "Photographs from the 2025 Hulede Foundation Scholarship programme, including the scholars who gathered that year.",
     href: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/",
-    image: "/images/2025.JPG",
+    image: images.y2025,
     cta: "View album",
   },
   {
@@ -84,7 +79,7 @@ const notices = [
     title: "Support for 250 students to clear fees",
     text: "Financial support helped 250 KNUST students settle outstanding fees so they could stay in school without a break in their studies.",
     href: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html",
-    image: HeroImg,
+    image: images.hero,
     cta: "Read the story",
   },
   {
@@ -94,7 +89,7 @@ const notices = [
     title: "Graduands gallery — Hulede scholars",
     text: "A record of Hulede scholars who graduated, and of the years of support that carried them to that day.",
     href: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/",
-    image: "/images/Graduate.jpg",
+    image: images.graduate,
     cta: "View album",
   },
 ];
@@ -286,7 +281,7 @@ export default function Home() {
       <section className="portal-section alt">
         <div className="portal-container feature-split">
           <div className="feature-photo" data-animate>
-            <img src={HeroImg} alt="Hulede Foundation scholars and community" />
+            <img src={images.hero} alt="Hulede Foundation scholars and community" />
           </div>
           <div className="feature-copy" data-animate>
             <p className="section-label">About the Foundation</p>

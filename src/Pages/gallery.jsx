@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
+import images from "../data/images";
 
 const albums = [
-  { title: "2025 Hulede Foundation Scholarship Gallery", date: "18 May 2025", image: "/images/2025.JPG", href: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/", wide: true },
-  { title: "2025 Graduands — Hulede Scholars", date: "November 2025", image: "/images/Graduate.jpg", href: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/" },
-  { title: "2024 Scholarship Gallery", date: "6 June 2024", image: "/images/2024.jpg", href: "https://huledefoundation.pixieset.com/2024huledescholarshipfoundationgallery/" },
-  { title: "2023 Scholarship Gallery", date: "10 June 2023", image: "/images/2023.jpg", href: "https://huledefoundation.pixieset.com/2023huledefoundationscholarshipgallery/" },
-  { title: "2022 Scholarship Gallery", date: "2022", image: "/images/2022.jpg", href: "https://huledefoundation.pixieset.com/" },
-  { title: "Community Service Gallery", date: "Scholars in the field", image: "/images/COM_1.jpg", href: "https://huledefoundation.pixieset.com/huledefoundationcommunityservicegallery/", wide: true },
-  { title: "Laptop Recipients Gallery", date: "Scholarship laptops", image: "/images/LAP_1.jpg", href: "https://huledefoundation.pixieset.com/huledefoundationscholarhiplaptoprecipientsgallery/", wide: true },
+  { title: "2025 Hulede Foundation Scholarship Gallery", date: "18 May 2025", image: images.y2025, href: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/", wide: true },
+  { title: "2025 Graduands — Hulede Scholars", date: "November 2025", image: images.graduate, href: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/" },
+  { title: "2024 Scholarship Gallery", date: "6 June 2024", image: images.y2024, href: "https://huledefoundation.pixieset.com/2024huledescholarshipfoundationgallery/" },
+  { title: "2023 Scholarship Gallery", date: "10 June 2023", image: images.y2023, href: "https://huledefoundation.pixieset.com/2023huledefoundationscholarshipgallery/" },
+  { title: "2022 Scholarship Gallery", date: "2022", image: images.y2022, href: "https://huledefoundation.pixieset.com/" },
+  { title: "Community Service Gallery", date: "Scholars in the field", image: images.community, href: "https://huledefoundation.pixieset.com/huledefoundationcommunityservicegallery/", wide: true },
+  { title: "Laptop Recipients Gallery", date: "Scholarship laptops", image: images.laptops, href: "https://huledefoundation.pixieset.com/huledefoundationscholarhiplaptoprecipientsgallery/", wide: true },
 ];
 
 export default function Gallery() {
   return (
     <PageShell>
       <header className="gallery-hero">
-        <div className="gallery-hero-bg" style={{ backgroundImage: "url(/images/2024.jpg)" }} />
+        <div className="gallery-hero-bg" style={{ backgroundImage: `url(${images.y2024})` }} />
         <div className="gallery-hero-shade" />
         <div className="portal-container gallery-hero-grid">
           <div>

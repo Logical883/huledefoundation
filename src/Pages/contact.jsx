@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import { CONTACT, FORMSPREE_URL } from "../data/site";
-import HeroImg from "../assets/Hero.jpg";
+import images from "../data/images";
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <PageShell>
       <header className="contact-hero-band">
-        <div className="contact-hero-bg" style={{ backgroundImage: `url(${HeroImg})` }} />
+        <div className="contact-hero-bg" style={{ backgroundImage: `url(${images.hero})` }} />
         <div className="contact-hero-shade" />
         <div className="portal-container contact-hero-grid">
           <div>

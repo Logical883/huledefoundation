@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
-import heroPhoto from "../assets/Hero.jpg";
+import images from "../data/images";
 
 const ceo = {
   name: "Mr. John Hulede",
@@ -12,25 +12,25 @@ const ceo = {
     "Current President, Akatakyie Z Group, Global",
     "Current President, AFA-DMV, USA",
   ],
-  image: "/images/jhulede.png",
+  image: images.john,
 };
 
 const board = [
-  { name: "Mrs. Irene Hulede", title: "Board Member", image: "/images/Irene.png" },
-  { name: "Mr. Patrick Hulede", title: "Board Member", image: "/images/Patrick.png" },
-  { name: "Mr. Eric Anane Antwi", title: "Board Member", image: "/images/Eric.png" },
-  { name: "Prof. Rudolph Steiner", title: "Board Member", image: "/images/Steiner.png" },
-  { name: "Mary Hulede", title: "Member", image: "/images/Mary.png" },
-  { name: "John Hulede Jnr.", title: "Member", image: "/images/John.png" },
-  { name: "Mauduana A. Menyah", title: "General Secretary", image: "/images/Mauduana.jpg" },
-  { name: "Hulede Family", title: "Mr. Hulede with family", image: "/images/WithFam.png" },
+  { name: "Mrs. Irene Hulede", title: "Board Member", image: images.irene },
+  { name: "Mr. Patrick Hulede", title: "Board Member", image: images.patrick },
+  { name: "Mr. Eric Anane Antwi", title: "Board Member", image: images.eric },
+  { name: "Prof. Rudolph Steiner", title: "Board Member", image: images.steiner },
+  { name: "Mary Hulede", title: "Member", image: images.mary },
+  { name: "John Hulede Jnr.", title: "Member", image: images.johnJnr },
+  { name: "Mauduana A. Menyah", title: "General Secretary", image: images.mauduana },
+  { name: "Hulede Family", title: "Mr. Hulede with family", image: images.family },
 ];
 
 export default function Management() {
   return (
     <PageShell>
       <header className="app-hero">
-        <div className="app-hero-bg" style={{ backgroundImage: `url(${heroPhoto})` }} />
+        <div className="app-hero-bg" style={{ backgroundImage: `url(${images.hero})` }} />
         <div className="app-hero-shade" />
         <div className="portal-container app-hero-grid">
           <div>

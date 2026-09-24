@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import { APPLY_URL, CHECKIN_URL, REPORT_URL } from "../data/site";
+import images from "../data/images";
 
 const steps = [
   { title: "Confirm you fit", text: "The scholarship is for brilliant but needy Ghanaian students, primarily at KNUST." },
@@ -27,7 +28,7 @@ export default function Application() {
   return (
     <PageShell>
       <header className="app-hero">
-        <div className="app-hero-bg" style={{ backgroundImage: "url(/images/2025.JPG)" }} />
+        <div className="app-hero-bg" style={{ backgroundImage: `url(${images.y2025})` }} />
         <div className="app-hero-shade" />
         <div className="portal-container app-hero-grid">
           <div>
