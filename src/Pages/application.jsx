@@ -57,7 +57,7 @@ export default function Application() {
             </h2>
             <div className="section-rule" />
             <p className="section-body">
-              The Hulede Foundation Scholarship creates room for Ghanaian students who are academically strong and financially disadvantaged. Since 2021 the awards have been concentrated at KNUST: 1,474 scholarships in total, and 54 laptops in 2024 and 2025.
+              The Hulede Foundation Scholarship creates room for Ghanaian students who are academically strong and financially disadvantaged. Since 2021 the awards have been concentrated at KNUST: 1,474 scholarships in total, and 67 laptops issued to date.
             </p>
             <p className="section-body">
               This page collects the rules already published to scholars. If a detail is not listed here, ask through the contact form rather than through an intermediary.
@@ -96,7 +96,7 @@ export default function Application() {
             </article>
             <article className="faq-card" data-animate>
               <h3>Laptops</h3>
-              <p>27 laptops in 2024 and 27 in 2025. Laptop gifts are separate from the fee awards and are not promised to every scholar.</p>
+              <p>67 laptops have been issued to date. Laptop gifts are separate from the fee awards and are not promised to every scholar.</p>
             </article>
             <article className="faq-card" data-animate>
               <h3>A community of scholars</h3>

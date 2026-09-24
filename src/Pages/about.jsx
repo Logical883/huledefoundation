@@ -5,7 +5,7 @@ import images from "../data/images";
 const stats = [
   { num: "1,474", lbl: "Scholarships, 2021–2026" },
   { num: "423", lbl: "Awards in 2026" },
-  { num: "54", lbl: "Laptops donated" },
+  { num: "67", lbl: "Laptops issued to date" },
   { num: "2018", lbl: "Year the Foundation began" },
 ];
 
@@ -101,13 +101,10 @@ export default function About() {
               </table>
             </div>
             <div className="table-wrap" data-animate>
-              <div className="table-head">Laptop distribution</div>
+              <div className="table-head">Laptops issued to date</div>
               <table className="data-table">
-                <thead><tr><th>Year</th><th>Laptops</th></tr></thead>
                 <tbody>
-                  <tr><td>2025</td><td>27</td></tr>
-                  <tr><td>2024</td><td>27</td></tr>
-                  <tr><td>Total</td><td>54</td></tr>
+                  <tr><td>Total</td><td>67</td></tr>
                 </tbody>
               </table>
             </div>

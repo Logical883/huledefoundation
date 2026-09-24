@@ -526,7 +526,8 @@
   color: var(--text-body);
 }
 .data-table th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
-.tables-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; margin-top: 22px; }
+.data-table tr:last-child td { border-bottom: 0; }
+.tables-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; margin-top: 22px; align-items: start; }
 
 /* ─── MANAGEMENT ────────────────────────────────────────── */
 .leader-grid {
