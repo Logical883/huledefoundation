@@ -3,14 +3,14 @@ import PageShell from "../components/PageShell";
 import images from "../data/images";
 
 const stats = [
-  { num: "1,474", lbl: "Scholarships, 2021–2026" },
-  { num: "423", lbl: "Awards in 2026" },
+  { num: "1,447", lbl: "Scholarships, 2021–2026" },
+  { num: "396", lbl: "Awards in 2026" },
   { num: "61", lbl: "Laptops issued to date" },
   { num: "2018", lbl: "Year the Foundation began" },
 ];
 
 const yearly = [
-  { year: "2026", recipients: 423 },
+  { year: "2026", recipients: 396 },
   { year: "2025", recipients: 339 },
   { year: "2024", recipients: 348 },
   { year: "2023", recipients: 250 },
