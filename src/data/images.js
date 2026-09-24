@@ -1,12 +1,7 @@
 const urls = {
   logo: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253936/hulede/src/assets/logo.png",
   hero: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253925/hulede/src/assets/Hero.jpg",
-  image1: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253932/hulede/src/assets/image1.jpg",
-  image2: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253933/hulede/src/assets/image2.jpg",
-  image3: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253934/hulede/src/assets/image3.jpg",
   scholarship: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253929/hulede/src/assets/Scholarship.jpg",
-  students: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253929/hulede/src/assets/Students.png",
-  whiteArrow: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253942/hulede/src/assets/white_arrow.png",
   favicon: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253904/hulede/public/HF_OLogo.svg",
   y2022: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790254968/hulede/public/images/2022.jpg",
   y2023: "https://res.cloudinary.com/di8cjwluy/image/upload/v1790253908/hulede/public/images/2023.jpg",
