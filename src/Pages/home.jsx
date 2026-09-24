@@ -24,7 +24,7 @@ const slides = [
   {
     kind: "News",
     title: "1,474 scholarships, and the work continues",
-    text: "From 12 awards in 2021 to 423 in 2026, the Foundation keeps opening KNUST to brilliant but needy students — with 67 laptops given alongside the fees support.",
+    text: "From 12 awards in 2021 to 423 in 2026, the Foundation keeps opening KNUST to brilliant but needy students — with 61 laptops given alongside the fees support.",
     image: images.hero,
     primary: { label: "Apply Now", href: APPLY_URL },
     secondary: { label: "See the numbers", to: "/about" },
@@ -103,7 +103,7 @@ const routes = [
 
 const pathways = [
   { title: "KNUST Scholarships", text: "Fees support for brilliant but needy Ghanaian students, concentrated at KNUST, growing from 12 awards in 2021 to 423 in 2026." },
-  { title: "Laptop Support", text: "67 laptops issued to date so scholars can study, research, and complete their work with a computer of their own." },
+  { title: "Laptop Support", text: "61 laptops issued to date — 7 in 2026, 27 in 2025, and 27 in 2024 — so scholars can study, research, and complete their work with a computer of their own." },
   { title: "Community Service", text: "Every scholar gives at least 40 hours a year — tutoring, computer lessons, mobility support, and other work in their communities." },
   { title: "Mentorship & Give-back", text: "Scholars are asked to carry the same opportunity forward: teach, volunteer, and document the difference they make." },
 ];
@@ -196,7 +196,7 @@ export default function Home() {
         <div className="trust-grid portal-container">
           <div className="trust-item"><strong>2018</strong><span>Founded in memory of Mr. Patrick Hulede</span></div>
           <div className="trust-item"><strong>1,474</strong><span>KNUST scholarships awarded, 2021–2026</span></div>
-          <div className="trust-item"><strong>67</strong><span>Laptops issued to date</span></div>
+          <div className="trust-item"><strong>61</strong><span>Laptops issued to date</span></div>
           <div className="trust-item"><strong>40 hrs</strong><span>Minimum community service each year</span></div>
         </div>
       </section>
