@@ -22,7 +22,7 @@ const board = [
   { name: "Prof. Rudolph Steiner", title: "Board Member", image: images.steiner },
   { name: "Mary Hulede", title: "Member", image: images.mary },
   { name: "John Hulede Jnr.", title: "Member", image: images.johnJnr },
-  { name: "Mauduana A. Menyah", title: "General Secretary", image: images.mauduana },
+  { name: "Mauduana A. Menyah", title: "Secretary", image: images.mauduana },
   { name: "Hulede Family", title: "Mr. Hulede with family", image: images.family },
 ];
 
@@ -78,7 +78,7 @@ export default function Management() {
             <h2 className="section-title">Oversight from the family and the people who serve with them.</h2>
             <div className="section-rule" />
             <p className="section-lede">
-              Board members, family, and the General Secretary who also edits the Foundation’s stories.
+              Board members, family, and the Secretary who also edits the Foundation’s stories.
             </p>
           </div>
           <div className="board-grid">
