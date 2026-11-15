@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar/Navbar";
 import About from "./Pages/about.jsx";
 import Application from "./Pages/application.jsx";
 import Contact from "./Pages/contact.jsx";
+import Editor from "./Pages/editor.jsx";
+import Story from "./Pages/story.jsx";
 import Gallery from "./Pages/gallery.jsx";
 import Home from "./Pages/home.jsx";
 import Management from "./Pages/management.jsx";
@@ -19,11 +21,12 @@ function App() {
           <Route path="/management" element={<Management />} />
           <Route path="/application" element={<Application />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/editor" element={<Editor />} />
+          <Route path="/editor/:slug" element={<Story />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/team" element={<Navigate to="/management" replace />} />
           <Route path="/projects" element={<Navigate to="/" replace />} />
-          <Route path="/editor" element={<Navigate to="/gallery" replace />} />
           <Route path="/support" element={<Navigate to="/contact" replace />} />
         </Routes>
       </div>

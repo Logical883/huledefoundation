@@ -19,5 +19,6 @@ export const navItems = [
   { label: "Management", to: "/management" },
   { label: "Application Info", to: "/application" },
   { label: "Gallery", to: "/gallery" },
+  { label: "Editor's Corner", to: "/editor" },
   { label: "Contact", to: "/contact" },
 ];
