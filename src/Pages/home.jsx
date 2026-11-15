@@ -1,124 +1,73 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
-import { APPLY_URL, CHECKIN_URL, REPORT_URL } from "../data/site";
+import { APPLY_URL, APPLICATION, REPORT_URL } from "../data/site";
+import { STORIES } from "../data/editor";
 import images from "../data/images";
 
 const slides = [
   {
-    kind: "Upcoming Event",
-    title: "KNUST Scholars Event",
-    text: "30 May 2026, 9:00 AM prompt, at Allotey Auditorium, College of Science, KNUST. Bring your HFKNUST2026 unique ID and student ID, collect your HF T-shirt, and be present for official photographs.",
+    kind: "Applications",
+    title: "2026/2027 Scholarship Applications",
+    text: `Applications open on ${APPLICATION.opens} and close on ${APPLICATION.closes}. A one-year scholarship, in partnership with KNUST, for brilliant but needy students.`,
     image: images.y2023,
-    primary: { label: "Event Check-in", href: CHECKIN_URL },
-    secondary: { label: "Application Info", to: "/application" },
+    primary: { label: "Application Info", to: "/application" },
+    secondary: { label: "Apply Now", href: APPLY_URL },
   },
   {
-    kind: "Past Event",
-    title: "2025 Meet & Greet",
-    text: "Scholars gathered to mark another year of awards, mentorship, and community service. Browse the galleries from 2022 through the 2025 graduands.",
-    image: images.y2022,
-    primary: { label: "Open Gallery", to: "/gallery" },
-    secondary: { label: "About Us", to: "/about" },
+    kind: "Stories",
+    title: "Stories from our scholars",
+    text: "Read how Hulede scholars teach, research and serve their communities, in their own words and photos, from the Editor's Corner.",
+    image: images.community,
+    primary: { label: "Editor's Corner", to: "/editor" },
+    secondary: { label: "Open Gallery", to: "/gallery" },
   },
   {
     kind: "News",
     title: "1,447 scholarships, and the work continues",
-    text: "From 12 awards in 2021 to 396 in 2026, the Foundation keeps opening KNUST to brilliant but needy students — with 61 laptops given alongside the fees support.",
+    text: "From 12 awards in 2021 to 396 in 2026, the Foundation keeps opening KNUST to brilliant but needy students, with 61 laptops given alongside the fees support.",
     image: images.hero,
     primary: { label: "Apply Now", href: APPLY_URL },
     secondary: { label: "See the numbers", to: "/about" },
   },
 ];
 
-const notices = [
-  {
-    kind: "upcoming",
-    label: "Upcoming",
-    date: "30 May 2026",
-    title: "Hulede Foundation KNUST Scholars Event",
-    text: "Attendance is required. Missing the event leads to automatic forfeiture of the 2026 scholarship. Sign in, collect your T-shirt, and stay for official photographs.",
-    href: CHECKIN_URL,
-    image: images.scholarship,
-    cta: "Register for check-in",
-  },
-  {
-    kind: "news",
-    label: "News",
-    date: "Open",
-    title: "Community service reports are due",
-    text: "Scholars complete at least 40 hours of annual community service, in the official T-shirt, and submit photos, video, and a written report.",
-    href: REPORT_URL,
-    image: images.community,
-    cta: "Submit report",
-  },
-  {
-    kind: "news",
-    label: "News",
-    date: "Kumasi",
-    title: "Mechanized borehole for New Amakom schools",
-    text: "The Foundation donated a mechanized borehole water system so pupils and teachers at the New Amakom M/A cluster have drinking water for teaching and learning.",
-    href: "https://broadcastergh.com/afa-group-donates-mechanized-borehole-to-new-amakom-m-a-cluster-of-schools/",
-    image: images.laptops,
-    cta: "Read the report",
-  },
-  {
-    kind: "past",
-    label: "Past Event",
-    date: "18 May 2025",
-    title: "2025 scholarship programme gallery",
-    text: "Photographs from the 2025 Hulede Foundation Scholarship programme, including the scholars who gathered that year.",
-    href: "https://huledefoundation.pixieset.com/2025huledescholarshipprogram/",
-    image: images.y2025,
-    cta: "View album",
-  },
-  {
-    kind: "news",
-    label: "News",
-    date: "KNUST",
-    title: "Support for 250 students to clear fees",
-    text: "Financial support helped 250 KNUST students settle outstanding fees so they could stay in school without a break in their studies.",
-    href: "https://www.graphic.com.gh/news/education/knust-hulede-foundation-supports-250-needy-students-to-clear-outstanding-fees.html",
-    image: images.hero,
-    cta: "Read the story",
-  },
-  {
-    kind: "past",
-    label: "Past Event",
-    date: "November 2025",
-    title: "Graduands gallery — Hulede scholars",
-    text: "A record of Hulede scholars who graduated, and of the years of support that carried them to that day.",
-    href: "https://huledefoundation.pixieset.com/guaduationgalleryhuledescholars/",
-    image: images.graduate,
-    cta: "View album",
-  },
-];
+const notices = STORIES.map((st) => ({
+  kind: "news",
+  label: "Scholar Story",
+  date: st.name,
+  title: st.title,
+  text: st.summary,
+  to: `/editor/${st.slug}`,
+  image: st.cover,
+  cta: "Read the story",
+}));
 
 const routes = [
-  { kicker: "Applicants", title: "I want to apply", text: "Read who the scholarship is for, what to bring, and how the 2026 scholars event works.", to: "/application", cta: "Application Info" },
-  { kicker: "Scholars", title: "I need to report service", text: "Community service of at least 40 hours is part of staying on the scholarship.", href: REPORT_URL, cta: "Submit report" },
-  { kicker: "Stories", title: "I want to see the work", text: "Scholarship days, graduands, laptops, and community service albums from 2022 onward.", to: "/gallery", cta: "Open Gallery" },
+  { kicker: "Applicants", title: "I want to apply", text: "Read who can apply, what to submit, and the 2026/2027 application dates.", to: "/application", cta: "Application Info" },
+  { kicker: "Scholars", title: "I need to report service", text: "Scholars complete at least 40 hours of community service (80 for final-year scholars).", href: REPORT_URL, cta: "Submit report" },
+  { kicker: "Stories", title: "I want to read the stories", text: "Scholars on community service, research and mentorship, told in the Editor's Corner.", to: "/editor", cta: "Editor's Corner" },
   { kicker: "Questions", title: "I need to reach you", text: "Write from Kumasi, the United States, or anywhere else. We reply as soon as we can.", to: "/contact", cta: "Contact Us" },
 ];
 
 const pathways = [
   { title: "KNUST Scholarships", text: "Fees support for brilliant but needy Ghanaian students, concentrated at KNUST, growing from 12 awards in 2021 to 396 in 2026." },
   { title: "Laptop Support", text: "61 laptops issued to date — 7 in 2026, 27 in 2025, and 27 in 2024 — so scholars can study, research, and complete their work with a computer of their own." },
-  { title: "Community Service", text: "Every scholar gives at least 40 hours a year — tutoring, computer lessons, mobility support, and other work in their communities." },
+  { title: "Community Service", text: "Scholars give at least 40 hours a year, and final-year scholars 80 — tutoring, research support, outreach, and other work in their communities." },
   { title: "Mentorship & Give-back", text: "Scholars are asked to carry the same opportunity forward: teach, volunteer, and document the difference they make." },
 ];
 
 const steps = [
-  { title: "Read the requirements", text: "Confirm you are a brilliant but needy student, primarily seeking support at KNUST, and note the documents you will need." },
-  { title: "Submit the form", text: "Use the official Hulede application form. Do not pay an agent or a third party to submit on your behalf." },
-  { title: "Keep your unique ID", text: "If you are awarded, keep your HFKNUST unique ID ready and attend the scholars event with your student ID." },
-  { title: "Serve and report", text: "Complete at least 40 hours of community service in the HF T-shirt and submit your evidence for renewal." },
+  { title: "Check who can apply", text: "Fresh applicants need a CWA of 65 or higher (second year to final year). Former applicants need 40 service hours, or 80 for final-year scholars." },
+  { title: "Prepare your documents", text: "An endorsed transcript, a one-page write-up on your financial need, at least one recommendation letter, and relevant awards and certificates." },
+  { title: "Apply in the window", text: `Applications open on ${APPLICATION.opens} and close on ${APPLICATION.closes}. Follow the official guidelines carefully.` },
+  { title: "Interview and award", text: "Only shortlisted applicants are invited for an interview. Scholars then serve their community and report on it." },
 ];
 
 const faqs = [
-  { q: "Where do I apply?", a: "Use the Apply Now button. It opens the official Hulede Foundation application form. That is the only application channel on this site." },
-  { q: "Who is the scholarship for?", a: "Brilliant but needy Ghanaian students, primarily at KNUST. The Foundation was set up to create opportunities for people who are academically strong and financially disadvantaged." },
-  { q: "What happens at the scholars event?", a: "The 2026 gathering is on 30 May at Allotey Auditorium, College of Science, KNUST, at 9:00 AM. Bring your unique ID and student ID, collect your T-shirt, sign in, and join the official photographs. Missing it forfeits the 2026 award." },
+  { q: "When can I apply?", a: `Applications for the ${APPLICATION.year} Academic Year open on ${APPLICATION.opens} and close on ${APPLICATION.closes}.` },
+  { q: "Who is the scholarship for?", a: "Brilliant but needy students, supported through a one-year scholarship offered in partnership with KNUST." },
+  { q: "What are the application requirements?", a: "An endorsed academic transcript, a one-page write-up on your financial need, at least one recommendation letter, and other relevant awards and certificates. Write-ups must be in Times New Roman, size 12, double-spaced." },
 ];
 
 function ActionLink({ item, className, children }) {
@@ -197,23 +146,23 @@ export default function Home() {
           <div className="trust-item"><strong>2018</strong><span>Founded in memory of Mr. Patrick Hulede</span></div>
           <div className="trust-item"><strong>1,447</strong><span>KNUST scholarships awarded, 2021–2026</span></div>
           <div className="trust-item"><strong>61</strong><span>Laptops issued to date</span></div>
-          <div className="trust-item"><strong>40 hrs</strong><span>Minimum community service each year</span></div>
+          <div className="trust-item"><strong>40–80 hrs</strong><span>Community service each year</span></div>
         </div>
       </section>
 
       <section className="portal-section" id="notices">
         <div className="portal-container">
           <div className="section-head" data-animate>
-            <p className="section-label">Latest notices</p>
-            <h2 className="section-title">Upcoming events, past gatherings, and news.</h2>
+            <p className="section-label">Scholar stories</p>
+            <h2 className="section-title">Stories from our scholars.</h2>
             <div className="section-rule" />
             <p className="section-lede">
-              The same updates scholars ask about first: the next event date, service reports, and the stories already on record.
+              How Hulede scholars serve their communities, told in the Editor's Corner.
             </p>
           </div>
-          <div className="notice-grid">
+          <div className="notice-grid four">
             {notices.map((item) => (
-              <a className="notice-card" key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" data-animate>
+              <Link className="notice-card" key={item.title} to={item.to} data-animate>
                 <img src={item.image} alt="" />
                 <div className="notice-body">
                   <div className="notice-meta">
@@ -224,18 +173,11 @@ export default function Home() {
                   <p>{item.text}</p>
                   <span className="read-more">{item.cta}</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
-          <div className="portal-actions" style={{ marginTop: 28 }}>
-            <a
-              className="btn btn-outline"
-              href="https://drive.google.com/drive/folders/1PBSNs1xkpw-8q_5Qj_bQ9vdLde8__tVQ?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Scholar stories archive
-            </a>
+          <div className="portal-actions" style={{ marginTop: 28, justifyContent: "center" }}>
+            <Link className="btn btn-primary" to="/editor">Visit the Editor's Corner</Link>
           </div>
         </div>
       </section>
@@ -326,23 +268,23 @@ export default function Home() {
         <div className="portal-container prep-grid">
           <div className="safety-card" data-animate>
             <p className="section-label">Official channel</p>
-            <h3>Apply only through this site.</h3>
+            <h3>Apply only through official channels.</h3>
             <p className="section-body">
-              The Apply Now button opens the Hulede Foundation form. Ignore anyone who asks you to pay for a guaranteed award or to submit through a private agent.
+              For details, visit www.huledefoundation.org. Ignore anyone who asks you to pay for a guaranteed award or to submit through a private agent.
             </p>
             <div className="portal-actions" style={{ marginTop: 20 }}>
               <a className="btn btn-primary" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
             </div>
           </div>
           <div className="checklist-card" data-animate>
-            <p className="section-label">Before the scholars event</p>
-            <h3>Keep these with you.</h3>
+            <p className="section-label">Application requirements</p>
+            <h3>Have these ready.</h3>
             <ul className="checklist">
-              <li>Your HFKNUST unique ID, written down and easy to find</li>
-              <li>Your KNUST student ID card for check-in</li>
-              <li>Time to collect your HF T-shirt and sign the register</li>
-              <li>Presence in the official photographs taken that day</li>
-              <li>For renewal: 40 hours of service, photos, video, and a report</li>
+              <li>Endorsed academic transcript</li>
+              <li>One-page write-up: "Why Do You Think You Should Be Considered for This Scholarship?"</li>
+              <li>At least one recommendation letter</li>
+              <li>Other relevant awards and certificates</li>
+              <li>Follow the Foundation on social media to be prioritised</li>
             </ul>
           </div>
         </div>
@@ -352,7 +294,7 @@ export default function Home() {
         <div className="portal-container">
           <div className="section-head center" data-animate>
             <p className="section-label">Quick answers</p>
-            <h2 className="section-title">Before you apply or travel to the event.</h2>
+            <h2 className="section-title">Before you apply.</h2>
             <div className="section-rule center" />
           </div>
           <div className="faq-grid">
@@ -373,9 +315,9 @@ export default function Home() {
         <div className="portal-container">
           <div className="closing-cta" data-animate>
             <p className="section-label" style={{ color: "#e6cf7a" }}>Ready to apply?</p>
-            <h2>Use the official form, then keep your details close.</h2>
+            <h2>Applications for 2026/2027 open soon.</h2>
             <p>
-              Start with the Hulede application, read the event rules for 30 May 2026, and write to us if something on the form is unclear.
+              Applications run from 25 December 2026 to 13 February 2027. Read the guidelines, prepare your documents, and write to us if anything is unclear.
             </p>
             <div className="portal-actions">
               <a className="btn btn-white" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>

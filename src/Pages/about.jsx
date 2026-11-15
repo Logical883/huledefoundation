@@ -21,7 +21,7 @@ const yearly = [
 const pillars = [
   { title: "Access", text: "Open KNUST and further study to students who are academically strong and financially held back." },
   { title: "Opportunity", text: "Pair fees support with laptops, mentorship, and a community of scholars who are expected to serve." },
-  { title: "Service", text: "Ask every scholar for at least 40 hours of community service a year, documented and reported." },
+  { title: "Service", text: "Ask every scholar for community service, at least 40 hours a year and 80 for final-year scholars, documented and reported." },
 ];
 
 const values = [

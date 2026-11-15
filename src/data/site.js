@@ -22,3 +22,13 @@ export const navItems = [
   { label: "Editor's Corner", to: "/editor" },
   { label: "Contact", to: "/contact" },
 ];
+
+export const APPLICATION = {
+  year: "2026/2027",
+  opens: "25th December 2026",
+  closes: "13th February 2027",
+  opensShort: "25 Dec 2026",
+  closesShort: "13 Feb 2027",
+  website: "www.huledefoundation.org",
+  websiteUrl: "https://www.huledefoundation.org",
+};

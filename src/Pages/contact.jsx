@@ -37,7 +37,7 @@ export default function Contact() {
             <p className="crumbs crumbs-light"><Link to="/">Home</Link><span>/</span>Contact</p>
             <p className="gsa-eyebrow">Get in touch</p>
             <h1>Contact</h1>
-            <p className="page-lede">Questions about the scholarship, the 30 May scholars event, or a story you want to share. Use the route that matches the enquiry.</p>
+            <p className="page-lede">Questions about the scholarship, the 2026/2027 applications, or a story you want to share. Use the route that matches the enquiry.</p>
             <div className="gsa-actions">
               <a className="gsa-btn primary" href={`mailto:${CONTACT.email}`}>Email us</a>
               <a className="gsa-btn ghost" href={CONTACT.phoneHref}>Call</a>
@@ -67,7 +67,7 @@ export default function Contact() {
             <div className="contact-card">
               <span className="section-label">Location</span>
               <strong>{CONTACT.location}</strong>
-              <small>Scholars events are held on campus</small>
+              <small>Scholars gatherings are held on campus</small>
             </div>
           </div>
 
