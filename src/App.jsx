@@ -23,6 +23,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/editor" element={<Editor />} />
           <Route path="/editor/:slug" element={<Story />} />
+          <Route path="/news/:slug" element={<Story news />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/team" element={<Navigate to="/management" replace />} />

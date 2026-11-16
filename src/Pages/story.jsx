@@ -2,26 +2,27 @@ import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ExternalLink, Tag } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { EDITOR, STORIES } from "../data/editor";
+import { EDITOR, STORIES, NEWS } from "../data/editor";
 
-export default function Story() {
+export default function Story({ news = false }) {
   const { slug } = useParams();
-  const story = STORIES.find((s) => s.slug === slug);
+  const story = (news ? NEWS : STORIES).find((s) => s.slug === slug);
 
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
 
-  if (!story) return <Navigate to="/editor" replace />;
+  if (!story) return <Navigate to={news ? "/" : "/editor"} replace />;
 
   const more = STORIES.filter((s) => s.slug !== slug).slice(0, 3);
+  const moreHeading = news ? "Stories From Our Scholars" : "More Stories";
 
   return (
     <PageShell>
       <header className="story-hero">
-        <div className="story-hero-bg" style={{ backgroundImage: `url(${story.cover})` }} />
+        <div className="story-hero-bg" style={{ backgroundImage: `url(${story.heroImage || story.cover})`, backgroundPosition: story.focus || "center 30%" }} />
         <div className="story-hero-shade" />
         <div className="portal-container story-hero-inner">
           <p className="crumbs crumbs-light">
-            <Link to="/">Home</Link><span>/</span><Link to="/editor">Editor's Corner</Link><span>/</span>Story
+            <Link to="/">Home</Link><span>/</span>{news ? <>News</> : <><Link to="/editor">Editor's Corner</Link><span>/</span>Story</>}
           </p>
           <span className="story-tag"><Tag size={14} /> {story.tag}</span>
           <h1>{story.title}</h1>
@@ -72,7 +73,7 @@ export default function Story() {
               </a>
             </div>
 
-            <p className="story-sign">Words from the desk of {EDITOR.name}, {EDITOR.title}.</p>
+            {!news && <p className="story-sign">Words from the desk of {EDITOR.name}, {EDITOR.title}.</p>}
           </article>
         </div>
       </section>
@@ -80,7 +81,7 @@ export default function Story() {
       <section className="portal-section alt">
         <div className="portal-container">
           <div className="story-more-head">
-            <h2 className="section-title">More Stories</h2>
+            <h2 className="section-title">{moreHeading}</h2>
             <Link to="/editor#newsletters" className="nl-more">All stories <ArrowRight size={14} /></Link>
           </div>
           <div className="nl-grid">
@@ -96,7 +97,7 @@ export default function Story() {
             ))}
           </div>
           <p style={{ marginTop: 32 }}>
-            <Link to="/editor" className="nl-more"><ArrowLeft size={14} /> Back to Editor's Corner</Link>
+            <Link to={news ? "/" : "/editor"} className="nl-more"><ArrowLeft size={14} /> {news ? "Back to Home" : "Back to Editor's Corner"}</Link>
           </p>
         </div>
       </section>

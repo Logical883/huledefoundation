@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import { APPLY_URL, APPLICATION, REPORT_URL } from "../data/site";
-import { STORIES } from "../data/editor";
+import { STORIES, NEWS } from "../data/editor";
 import images from "../data/images";
 
 const slides = [
@@ -32,7 +32,7 @@ const slides = [
   },
 ];
 
-const notices = STORIES.map((st) => ({
+const notices = STORIES.slice(0, 4).map((st) => ({
   kind: "news",
   label: "Scholar Story",
   date: st.name,
@@ -147,6 +147,32 @@ export default function Home() {
           <div className="trust-item"><strong>1,447</strong><span>KNUST scholarships awarded, 2021–2026</span></div>
           <div className="trust-item"><strong>61</strong><span>Laptops issued to date</span></div>
           <div className="trust-item"><strong>40–80 hrs</strong><span>Community service each year</span></div>
+        </div>
+      </section>
+
+      <section className="portal-section news-section" id="news">
+        <div className="portal-container">
+          <div className="section-head" data-animate>
+            <p className="section-label">Latest news</p>
+            <h2 className="section-title">News from the Foundation.</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="news-list">
+            {NEWS.map((n) => (
+              <Link className="news-card" key={n.slug} to={`/news/${n.slug}`} data-animate>
+                <img src={n.cover} alt="" style={{ objectPosition: n.focus }} />
+                <div className="news-body">
+                  <div className="notice-meta">
+                    <span className="chip news">News</span>
+                    <span className="notice-date">{n.date}</span>
+                  </div>
+                  <h3>{n.title}</h3>
+                  <p>{n.summary}</p>
+                  <span className="read-more">Read more</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
